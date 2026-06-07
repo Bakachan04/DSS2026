@@ -1221,6 +1221,7 @@ section {
 .acc-desc {
   margin-top: 1rem;
   color: var(--color-text-muted);
+  font-size: 1.125rem;
 }
 
 .acc-link {
@@ -1538,6 +1539,7 @@ section {
   margin-top: 1rem;
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.9);
+  text-align: left;
 }
 
 .speaker-link {
@@ -1983,4 +1985,47 @@ footer {
 
 .faq-accordion-title {
   font-size: 1.1rem;
+}
+
+/* Security Hardening Utilities */
+.mt-6 {
+  margin-top: 1.5rem !important;
+}
+
+.line-height-tight {
+  line-height: 1.15 !important;
+}
+
+.border-0 {
+  border: 0 !important;
+}
+
+.text-muted {
+  color: var(--color-text-muted) !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.speaker-info {
+  text-align: left;
+}
+
+.merch-title {
+  font-size: 3rem;
+  font-weight: 900;
+  text-align: left;
+  line-height: 1.25;
+}
+
+.features-slider-title {
+  color: var(--color-primary);
+  margin-bottom: 0;
+}
+
+.schedule-note {
+  max-width: 900px;
+  margin: 3rem auto 0 auto;
+  text-align: justify;
 }

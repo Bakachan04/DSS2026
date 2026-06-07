@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const elements = document.querySelectorAll('.animate-text');
     elements.forEach((el) => {
       const text = el.innerText;
-      el.innerHTML = '';
+      el.textContent = '';
       const words = text.split(' ');
       words.forEach((word, idx) => {
         const span = document.createElement('span');
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   function generateGrid() {
     if (!gridContainer) return;
-    gridContainer.innerHTML = '';
+    gridContainer.textContent = '';
     
     // Grid box size is approximately 75px
     const squareSize = 75;
@@ -250,8 +250,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const marqueeTrack = document.getElementById('marquee-track');
   if (marqueeTrack) {
     // Clone all items in track to make the marquee loop infinitely and seamlessly
-    const items = marqueeTrack.innerHTML;
-    marqueeTrack.innerHTML = items + items;
+    const children = Array.from(marqueeTrack.children);
+    children.forEach(child => {
+      marqueeTrack.appendChild(child.cloneNode(true));
+    });
   }
 
   // 6. Lightbox Modal
@@ -329,9 +331,9 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // Toggle menu icon between bars and times (close)
       if (navLinks.classList.contains('mobile-active')) {
-        menuToggle.innerHTML = '&#x2715;'; // Close multiplication symbol
+        menuToggle.textContent = '\u2715'; // Close multiplication symbol
       } else {
-        menuToggle.innerHTML = '&#9776;'; // Hamburger symbol
+        menuToggle.textContent = '\u2630'; // Hamburger symbol
       }
     });
     
