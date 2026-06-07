@@ -1,0 +1,60 @@
+================================================================================
+REQUIRED FRONTEND ASSETS MANIFEST
+================================================================================
+This file lists every external asset referenced by the frontend, mapping the
+original remote URL to its expected local destination path under app/assets/.
+
+Format:
+Original URL | Expected Local Path | Asset Type | Status
+================================================================================
+
+1. Favicon:
+https://dss2025.iiitd.edu.in/favicon.ico | app/assets/icons/favicon.ico | Icon | Available locally
+
+2. Logos:
+https://dss2025.iiitd.edu.in/img/Logo.png | app/assets/logos/Logo.png | Logo | Available locally
+https://dss2025.iiitd.edu.in/logos/Logo.png | app/assets/logos/HCD_Logo.png | Logo | Available locally
+
+3. PDF Guides:
+https://dss2025.iiitd.edu.in/acc.pdf | app/assets/pdfs/acc.pdf | PDF | Available locally
+
+4. Merch Imagery:
+https://dss2025.iiitd.edu.in/Merch.png | app/assets/images/Merch.png | Image | Available locally
+
+5. About Section Group Image:
+https://dss2025.iiitd.edu.in/carousel/10.jpg | app/assets/images/carousel/10.jpg | Image | Available locally
+
+6. Theme Card Images:
+https://dss2025.iiitd.edu.in/img/4.jpg | app/assets/images/themes/4.jpg | Image | Available locally
+https://dss2025.iiitd.edu.in/img/3.jpg | app/assets/images/themes/3.jpg | Image | Available locally
+https://dss2025.iiitd.edu.in/img/1.jpg | app/assets/images/themes/1.jpg | Image | Available locally
+https://dss2025.iiitd.edu.in/img/2.jpg | app/assets/images/themes/2.jpg | Image | Available locally
+https://dss2025.iiitd.edu.in/carousel/11.jpg | app/assets/images/themes/11.jpg | Image | Available locally
+
+7. Classroom Photos (Marquee):
+https://dss2025.iiitd.edu.in/carousel/1.jpg | app/assets/images/carousel/1.jpg | Image | Available locally
+https://dss2025.iiitd.edu.in/carousel/4.jpg | app/assets/images/carousel/4.jpg | Image | Available locally
+https://dss2025.iiitd.edu.in/carousel/2.jpg | app/assets/images/carousel/2.jpg | Image | Available locally
+https://dss2025.iiitd.edu.in/carousel/3.jpg | app/assets/images/carousel/3.jpg | Image | Available locally
+https://dss2025.iiitd.edu.in/carousel/8.jpg | app/assets/images/carousel/8.jpg | Image | Available locally
+https://dss2025.iiitd.edu.in/carousel/5.jpg | app/assets/images/carousel/5.jpg | Image | Available locally
+
+8. Keynote & Guest Speakers:
+https://dss2025.iiitd.edu.in/img/Srinivasan-Venkataraman.png | app/assets/images/speakers/Srinivasan-Venkataraman.png | Image | Available locally
+https://dss2025.iiitd.edu.in/img/CDAC.png | app/assets/images/speakers/CDAC.png | Image | Available locally
+https://dss2025.iiitd.edu.in/img/Madhan_2024_2.jpg | app/assets/images/speakers/Madhan_2024_2.jpg | Image | Available locally
+https://dss2025.iiitd.edu.in/img/manojSinha.jpeg | app/assets/images/speakers/manojSinha.jpeg | Image | Available locally
+https://dss2025.iiitd.edu.in/img/gowdhamPrabhakar.jpeg | app/assets/images/speakers/gowdhamPrabhakar.jpeg | Image | Available locally
+https://dss2025.iiitd.edu.in/img/aruneshSingh.jpeg | app/assets/images/speakers/aruneshSingh.jpeg | Image | Available locally
+https://dss2025.iiitd.edu.in/img/Brijendra.png | app/assets/images/speakers/Brijendra.png | Image | Available locally
+
+9. Mentors:
+https://dss2025.iiitd.edu.in/img/aman_samuel.jpg | app/assets/images/mentors/aman_samuel.jpg | Image | Available locally
+https://dss2025.iiitd.edu.in/img/anmol_srivastav.jpg | app/assets/images/mentors/anmol_srivastav.jpg | Image | Available locally
+https://dss2025.iiitd.edu.in/img/anoopsir.png | app/assets/images/mentors/anoopsir.png | Image | Available locally
+https://dss2025.iiitd.edu.in/img/Jainendra.png | app/assets/images/mentors/Jainendra.png | Image | Available locally
+https://dss2025.iiitd.edu.in/img/Kalpana.png | app/assets/images/mentors/Kalpana.png | Image | Available locally
+https://dss2025.iiitd.edu.in/img/Pragma.png | app/assets/images/mentors/Pragma.png | Image | Available locally
+https://dss2025.iiitd.edu.in/img/Rajiv.png | app/assets/images/mentors/Rajiv.png | Image | Available locally
+https://dss2025.iiitd.edu.in/img/richa_gupta.jpg | app/assets/images/mentors/richa_gupta.jpg | Image | Available locally
+https://dss2025.iiitd.edu.in/img/sonal.png | app/assets/images/mentors/sonal.png | Image | Available locally
