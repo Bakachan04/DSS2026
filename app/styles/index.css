@@ -924,7 +924,7 @@ section {
 /* Custom background color utilities */
 .bg-green-300 { background-color: #84e1bc !important; }
 .bg-pink-400 { background-color: #f17eb4 !important; }
-.bg-indigo-500 { background-color: #6875f5 !important; }
+.bg-indigo-500 { background-color: #6875f5 !important; color: #ffffff !important; }
 .bg-yellow-300 { background-color: #faca15 !important; }
 .bg-blue-300 { background-color: #a4cafe !important; }
 
