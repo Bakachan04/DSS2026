@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. Stacked Theme Cards Drag & Swipe Cycling
   const themeCards = Array.from(document.querySelectorAll('.theme-card'));
   const themesStack = document.getElementById('themes-stack');
-  let cardPositions = [0, 1, 2, 3, 4]; // Map of card index to its current position
+  let cardPositions = themeCards.map((_, idx) => idx); // Dynamically set positions array
 
   function cycleThemeCards() {
     if (themeCards.length === 0) return;
@@ -88,8 +88,12 @@ document.addEventListener('DOMContentLoaded', () => {
     cardPositions.unshift(lastPos);
     
     themeCards.forEach((card, index) => {
-      // Clear all classes and add current position class
-      card.className = 'theme-card';
+      // Convert classList to static array before removing items to avoid live collection mutation bugs
+      Array.from(card.classList).forEach(cls => {
+        if (cls.startsWith('card-pos-')) {
+          card.classList.remove(cls);
+        }
+      });
       const pos = cardPositions[index];
       card.classList.add(`card-pos-${pos}`);
       
@@ -100,6 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
       // Indigo background card gets white text
       if (card.classList.contains('bg-indigo-500')) {
         card.classList.add('text-white');
+      } else {
+        card.classList.remove('text-white');
       }
     });
     
@@ -275,32 +281,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 7. Accordion for Schedule and FAQs
-  const accordionHeaders = document.querySelectorAll('.accordion-header');
+  // 7. Accordion system for Schedule and FAQs (Unified data-attribute logic)
+  const accordionTriggers = document.querySelectorAll('[data-accordion-trigger]');
   
-  accordionHeaders.forEach(header => {
-    header.addEventListener('click', () => {
-      const parent = header.parentElement;
-      const content = header.nextElementSibling;
-      const isActive = parent.classList.contains('active');
+  accordionTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const item = trigger.closest('[data-accordion-item]');
+      if (!item) return;
       
-      // Close other accordions in the same container (optional, but standard for schedule)
-      const siblingContainer = parent.parentElement;
-      const siblings = siblingContainer.querySelectorAll('.accordion-item');
-      siblings.forEach(sibling => {
-        sibling.classList.remove('active');
-        const siblingContent = sibling.querySelector('.accordion-content');
-        if (siblingContent) {
-          siblingContent.style.maxHeight = null;
-        }
-      });
+      const content = item.querySelector('[data-accordion-content]');
+      if (!content) return;
+      
+      const isActive = item.classList.contains('active');
+      
+      // Optional: Close sibling items within the same accordion group
+      const group = item.closest('[data-accordion-group]');
+      if (group) {
+        const siblingItems = group.querySelectorAll('[data-accordion-item]');
+        siblingItems.forEach(sibling => {
+          if (sibling !== item) {
+            sibling.classList.remove('active');
+            const siblingContent = sibling.querySelector('[data-accordion-content]');
+            if (siblingContent) {
+              siblingContent.style.maxHeight = null;
+            }
+          }
+        });
+      }
       
       if (!isActive) {
-        parent.classList.add('active');
-        // Set dynamic max-height based on scroll height of content
+        item.classList.add('active');
         content.style.maxHeight = content.scrollHeight + 'px';
       } else {
-        parent.classList.remove('active');
+        item.classList.remove('active');
         content.style.maxHeight = null;
       }
     });

@@ -182,29 +182,11 @@ header {
   transition: var(--transition-smooth);
 }
 
-.btn-register {
-  background-color: var(--color-primary);
-  color: var(--color-bg-white);
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border: none;
-  border-radius: 12px;
-  padding: 0.75rem 1.5rem;
-  cursor: pointer;
-  box-shadow: var(--shadow-md);
-  transition: var(--transition-smooth);
-}
 
-.btn-register:hover {
-  transform: scale(1.05);
-  box-shadow: var(--shadow-lg);
-  background-color: var(--color-primary-dark);
-}
 
-.btn-register:active {
-  transform: scale(1);
-}
+
+
+
 
 /* Mobile Nav Toggle */
 .mobile-nav-toggle {
@@ -894,27 +876,9 @@ section {
   text-decoration: underline;
 }
 
-.acc-btn {
-  margin-top: 2rem;
-  background-color: var(--color-primary);
-  color: var(--color-bg-white);
-  border: none;
-  font-weight: 800;
-  text-transform: uppercase;
-  border-radius: 12px;
-  padding: 0.75rem 1.5rem;
-  cursor: pointer;
-  box-shadow: var(--shadow-md);
-  transition: var(--transition-smooth);
-  display: inline-block;
-  text-decoration: none;
-}
 
-.acc-btn:hover {
-  transform: scale(1.05);
-  box-shadow: var(--shadow-lg);
-  background-color: var(--color-primary-dark);
-}
+
+
 
 .acc-list {
   margin-top: 2rem;
@@ -1052,21 +1016,17 @@ section {
   gap: 1.25rem;
 }
 
+
 .bring-card {
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  background-color: var(--color-bg-white);
   padding: 1.25rem 1.5rem;
-  border-radius: 16px;
-  box-shadow: var(--shadow-md);
-  transition: var(--transition-smooth);
 }
 
-.bring-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
-}
+
+
+
 
 .bring-card-icon {
   color: var(--color-primary);
@@ -1258,19 +1218,14 @@ section {
   gap: 2rem;
 }
 
+
 .mentor-card {
-  background-color: var(--color-bg-white);
-  border-radius: 16px;
   padding: 1.5rem;
   text-align: center;
-  box-shadow: var(--shadow-md);
-  transition: var(--transition-smooth);
 }
 
-.mentor-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-xl);
-}
+
+
 
 .mentor-img {
   width: 100%;
@@ -1571,4 +1526,108 @@ footer {
   opacity: 1;
   filter: blur(0px);
   transform: translateY(0px);
+}
+
+/* ==========================================================================
+   CONSOLIDATED UI COMPONENTS & UTILITIES (Refactored)
+   ========================================================================== */
+
+/* Buttons Component */
+.btn {
+  display: inline-block;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-smooth);
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn:active {
+  transform: scale(1);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-bg-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.btn-hero {
+  font-size: 1.25rem;
+  padding: 1rem 2.25rem;
+}
+
+/* Card Component Design Token */
+.card {
+  background-color: var(--color-bg-white);
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-smooth);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Spacing and Layout Utilities */
+.mb-4 {
+  margin-bottom: 1rem !important;
+}
+
+.mb-8 {
+  margin-bottom: 2rem !important;
+}
+
+.mb-12 {
+  margin-bottom: 3rem !important;
+}
+
+.pb-0 {
+  padding-bottom: 0 !important;
+}
+
+.text-dark {
+  color: var(--color-text-dark) !important;
+}
+
+.flex-align-gap {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.quote-author {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.guest-subtitle {
+  font-size: 1.5rem;
+  color: var(--color-primary-dark);
+  margin-bottom: 4rem;
+  font-weight: 700;
+}
+
+.faq-title-header {
+  font-size: 2.25rem;
+}
+
+.faq-accordion-title {
+  font-size: 1.1rem;
 }
