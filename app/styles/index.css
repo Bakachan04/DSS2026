@@ -448,9 +448,6 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* Import fonts from Google Fonts */
-
-
 /* CSS Reset & Variables */
 :root {
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -481,6 +478,11 @@
   --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.05);
   --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.05);
   --shadow-2xl: 0 25px 50px -12px rgba(0,0,0,0.1);
+
+  /* Ambient Glow Blobs */
+  --color-glow-1: rgba(37, 99, 235, 0.08); /* Soft blue wash */
+  --color-glow-2: rgba(168, 85, 247, 0.06); /* Soft violet wash */
+  --color-glow-3: rgba(236, 72, 153, 0.04); /* Soft pink wash */
 }
 
 /* Dark Mode (Obsidian) overrides */
@@ -500,6 +502,11 @@
   --color-primary-light: #60a5fa;
   --color-accent-purple: #a5b4fc;
   --color-accent-blue: #3b82f6;
+
+  /* Ambient Glow Blobs */
+  --color-glow-1: rgba(59, 130, 246, 0.16); /* Rich cobalt glow */
+  --color-glow-2: rgba(139, 92, 246, 0.12); /* Rich violet glow */
+  --color-glow-3: rgba(244, 63, 94, 0.07); /* Rich rose red glow */
 }
 
 * {
@@ -2246,18 +2253,40 @@ button.lightbox-close {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 3.5rem 0;
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
+  margin: 3.5rem auto;
+  border: 1px solid var(--color-border);
   padding: 2.25rem 0;
-  max-width: 650px;
+  max-width: 680px;
   width: 100%;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+  transition: border-color 0.4s ease, background-color 0.4s ease;
 }
+
+[data-theme="dark"] .countdown-container {
+  background-color: rgba(8, 11, 17, 0.4);
+}
+
+.countdown-tick {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 1.5px solid var(--color-primary);
+  opacity: 0.8;
+  transition: border-color 0.4s ease;
+}
+
+.tick-tl { top: -4px; left: -4px; border-right: none; border-bottom: none; }
+.tick-tr { top: -4px; right: -4px; border-left: none; border-bottom: none; }
+.tick-bl { bottom: -4px; left: -4px; border-right: none; border-top: none; }
+.tick-br { bottom: -4px; right: -4px; border-left: none; border-top: none; }
 
 .countdown-box {
   flex: 1;
   text-align: center;
   position: relative;
+  z-index: 2;
 }
 
 .countdown-box:not(:last-child)::after {
@@ -2268,6 +2297,7 @@ button.lightbox-close {
   height: 80%;
   width: 1px;
   background-color: var(--color-border);
+  transition: background-color 0.4s ease;
 }
 
 .countdown-num {
@@ -2277,16 +2307,18 @@ button.lightbox-close {
   color: var(--color-text-dark);
   line-height: 1;
   margin-bottom: 0.5rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;
+  transition: color 0.4s ease;
 }
 
 .countdown-label {
   font-family: var(--font-mono);
   font-size: 0.65rem;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.25em;
   color: var(--color-text-muted);
   font-weight: 600;
+  transition: color 0.4s ease;
 }
 
 .hero-subtitle-soon {
@@ -2398,21 +2430,38 @@ button.lightbox-close {
   margin-bottom: 3.5rem;
   letter-spacing: -0.03em;
 }
-
 .subscribe-form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   max-width: 500px;
   margin: 0 auto;
+  position: relative;
 }
 
 @media (min-width: 640px) {
   .subscribe-form {
     flex-direction: row;
     align-items: center;
-    border-bottom: 1.5px solid var(--color-text-dark);
+    border-bottom: 1.5px solid var(--color-border);
     padding-bottom: 0.5rem;
+    transition: border-color 0.4s ease;
+  }
+  
+  .subscribe-form::after {
+    content: "";
+    position: absolute;
+    bottom: -1.5px;
+    left: 50%;
+    width: 0%;
+    height: 1.5px;
+    background-color: var(--color-primary);
+    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1), left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .subscribe-form:focus-within::after {
+    width: 100%;
+    left: 0%;
   }
 }
 
@@ -2560,5 +2609,183 @@ header {
   border-radius: 4px !important;
   padding: 1rem 2.25rem !important;
 }
+
+/* ----------------------------------------------------
+   DSS 2026 VISUAL IDENTITY & DECORATIVE ACCENTS
+   ---------------------------------------------------- */
+
+/* Grain texture overlay across all content */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  opacity: 0.035;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  transition: opacity 0.4s ease;
+}
+
+[data-theme="dark"] body::after {
+  opacity: 0.055;
+}
+
+/* Ambient glow blobs layer */
+.ambient-glows {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.glow-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  will-change: transform;
+}
+
+.glow-1 {
+  width: 50vw;
+  height: 50vw;
+  max-width: 600px;
+  max-height: 600px;
+  background: radial-gradient(circle, var(--color-glow-1) 0%, transparent 70%);
+  top: -10%;
+  left: -5%;
+  animation: float-glow-1 25s infinite alternate ease-in-out;
+}
+
+.glow-2 {
+  width: 45vw;
+  height: 45vw;
+  max-width: 500px;
+  max-height: 500px;
+  background: radial-gradient(circle, var(--color-glow-2) 0%, transparent 70%);
+  bottom: 5%;
+  right: -5%;
+  animation: float-glow-2 30s infinite alternate ease-in-out;
+}
+
+.glow-3 {
+  width: 40vw;
+  height: 40vw;
+  max-width: 450px;
+  max-height: 450px;
+  background: radial-gradient(circle, var(--color-glow-3) 0%, transparent 70%);
+  top: 35%;
+  left: 25%;
+  animation: float-glow-3 20s infinite alternate ease-in-out;
+}
+
+@keyframes float-glow-1 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(120px, 90px) scale(1.15); }
+}
+
+@keyframes float-glow-2 {
+  0% { transform: translate(0, 0) scale(1.1); }
+  100% { transform: translate(-100px, -70px) scale(0.9); }
+}
+
+@keyframes float-glow-3 {
+  0% { transform: translate(0, 0) scale(0.95); }
+  100% { transform: translate(70px, -80px) scale(1.1); }
+}
+
+/* Blueprint visual layout lines */
+.blueprint-guides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.guide-line-v {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: var(--color-border);
+  opacity: 0.35;
+  transition: background-color 0.4s ease;
+}
+
+.guide-left {
+  left: 8%;
+}
+
+.guide-right {
+  right: 8%;
+}
+
+/* Technical coordinates geolocation badges */
+.geo-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  position: absolute;
+  opacity: 0.6;
+  z-index: 2;
+  transition: color 0.4s ease;
+}
+
+.geo-tag-1 {
+  top: 3rem;
+  left: 9%;
+}
+
+.geo-tag-2 {
+  bottom: 3rem;
+  right: 9%;
+}
+
+/* SVG Crosshairs layout markers */
+.crosshair {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  opacity: 0.4;
+  z-index: 2;
+}
+
+.crosshair::before,
+.crosshair::after {
+  content: "";
+  position: absolute;
+  background-color: var(--color-text-dark);
+  transition: background-color 0.4s ease;
+}
+
+.crosshair::before {
+  top: 7px;
+  left: 0;
+  width: 15px;
+  height: 1px;
+}
+
+.crosshair::after {
+  top: 0;
+  left: 7px;
+  width: 1px;
+  height: 15px;
+}
+
+.ch-tl { top: 2rem; left: 2rem; }
+.ch-tr { top: 2rem; right: 2rem; }
+.ch-bl { bottom: 2rem; left: 2rem; }
+.ch-br { bottom: 2rem; right: 2rem; }
 
 
