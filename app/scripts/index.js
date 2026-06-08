@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLightbox();
   initAccordions();
   initMobileMenu();
+  initCountdown();
 });
 
 /**
@@ -102,6 +103,7 @@ function initThemeCards() {
   const themeCards = Array.from(document.querySelectorAll('.theme-card'));
   const themesStack = document.getElementById('themes-stack');
   if (themeCards.length === 0 || !themesStack) return;
+  if (themesStack.closest('.hidden-section')) return;
 
   let cardPositions = themeCards.map((_, idx) => idx); // Tracks position indexes (0 to 4)
   let startX = 0;
@@ -246,6 +248,7 @@ function initFeatureSlider() {
   const featureCards = document.querySelectorAll('.feature-card'); // Cached query collection
   
   if (!featureTrack || !btnPrevFeature || !btnNextFeature || featureCards.length === 0) return;
+  if (featureTrack.closest('.hidden-section')) return;
   
   let currentFeatureIndex = 0;
   const totalFeatures = featureCards.length;
@@ -283,6 +286,7 @@ function initFeatureSlider() {
 function initMarquee() {
   const marqueeTrack = document.getElementById('marquee-track');
   if (!marqueeTrack) return;
+  if (marqueeTrack.closest('.hidden-section')) return;
   
   // Clones and appends standard list elements to make the scroll seamless
   const children = Array.from(marqueeTrack.children);
@@ -301,6 +305,7 @@ function initLightbox() {
   const marqueeTriggers = document.querySelectorAll('.lightbox-trigger'); // Accessible button triggers
   
   if (!lightbox || !lightboxImg || !lightboxClose || marqueeTriggers.length === 0) return;
+  if (lightbox.closest('.hidden-section')) return;
 
   let lastActiveTrigger = null; // Caches the button focused before modal launch
 
@@ -351,7 +356,7 @@ function initLightbox() {
  * 7. Unified Accordion trigger system (Schedule & FAQs with ARIA attributes)
  */
 function initAccordions() {
-  const accordionTriggers = document.querySelectorAll('[data-accordion-trigger]');
+  const accordionTriggers = Array.from(document.querySelectorAll('[data-accordion-trigger]')).filter(trigger => !trigger.closest('.hidden-section'));
   
   accordionTriggers.forEach(trigger => {
     trigger.addEventListener('click', () => {
@@ -426,3 +431,46 @@ function initMobileMenu() {
     });
   });
 }
+
+/**
+ * 9. DSS 2026 Countdown Timer
+ */
+function initCountdown() {
+  const countdownContainer = document.getElementById('countdown');
+  const daysEl = document.getElementById('days');
+  const hoursEl = document.getElementById('hours');
+  const minutesEl = document.getElementById('minutes');
+  const secondsEl = document.getElementById('seconds');
+  
+  if (!countdownContainer || !daysEl || !hoursEl || !minutesEl || !secondsEl) return;
+  
+  // Set tentative target date: July 1, 2026 at 09:30:00 AM
+  const targetDate = new Date('July 1, 2026 09:30:00').getTime();
+  
+  function updateTimer() {
+    const now = new Date().getTime();
+    const difference = targetDate - now;
+    
+    if (difference <= 0) {
+      daysEl.textContent = '00';
+      hoursEl.textContent = '00';
+      minutesEl.textContent = '00';
+      secondsEl.textContent = '00';
+      return;
+    }
+    
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+    
+    daysEl.textContent = String(days).padStart(2, '0');
+    hoursEl.textContent = String(hours).padStart(2, '0');
+    minutesEl.textContent = String(minutes).padStart(2, '0');
+    secondsEl.textContent = String(seconds).padStart(2, '0');
+  }
+  
+  updateTimer();
+  setInterval(updateTimer, 1000);
+}
+
