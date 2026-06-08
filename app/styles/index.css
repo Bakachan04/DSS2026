@@ -455,11 +455,11 @@
   --font-mono: 'Space Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
   
   /* Dynamic values mapped to Light Mode (Canvas) by default */
-  --color-bg-light: #fafafa; /* premium canvas gray */
+  --color-bg-light: #f3f3f6; /* soft warm grey/sand canvas */
   --color-bg-white: #ffffff;
-  --color-bg-dark: #080b11; /* deep obsidian black */
+  --color-bg-dark: #080a10; /* deep night sky black */
   --color-bg-card-dark: #111827;
-  --color-bg-header: rgba(250, 250, 250, 0.85);
+  --color-bg-header: rgba(243, 243, 246, 0.85);
   
   --color-primary: #2563eb; /* royal blue */
   --color-primary-dark: #1d4ed8;
@@ -479,18 +479,18 @@
   --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.05);
   --shadow-2xl: 0 25px 50px -12px rgba(0,0,0,0.1);
 
-  /* Ambient Glow Blobs */
-  --color-glow-1: rgba(37, 99, 235, 0.08); /* Soft blue wash */
-  --color-glow-2: rgba(168, 85, 247, 0.06); /* Soft violet wash */
-  --color-glow-3: rgba(236, 72, 153, 0.04); /* Soft pink wash */
+  /* Saturated Ambient Glow Blobs */
+  --color-glow-1: rgba(37, 99, 235, 0.22); /* Saturated royal blue */
+  --color-glow-2: rgba(249, 115, 22, 0.18); /* Saturated sunset orange */
+  --color-glow-3: rgba(219, 39, 119, 0.12); /* Saturated coral pink */
 }
 
 /* Dark Mode (Obsidian) overrides */
 [data-theme="dark"] {
-  --color-bg-light: #080b11; /* dark background replaces canvas */
+  --color-bg-light: #080a10; /* dark background replaces canvas */
   --color-bg-white: #111827; /* dark card background replaces white card */
   --color-bg-dark: #000000;
-  --color-bg-header: rgba(8, 11, 17, 0.85);
+  --color-bg-header: rgba(8, 10, 16, 0.85);
   
   --color-text-dark: #f9fafb; /* off-white replaces dark text */
   --color-text-muted: #9ca3af; /* lighter gray replaces medium gray */
@@ -503,10 +503,10 @@
   --color-accent-purple: #a5b4fc;
   --color-accent-blue: #3b82f6;
 
-  /* Ambient Glow Blobs */
-  --color-glow-1: rgba(59, 130, 246, 0.16); /* Rich cobalt glow */
-  --color-glow-2: rgba(139, 92, 246, 0.12); /* Rich violet glow */
-  --color-glow-3: rgba(244, 63, 94, 0.07); /* Rich rose red glow */
+  /* Saturated Ambient Glow Blobs */
+  --color-glow-1: rgba(59, 130, 246, 0.35); /* Rich cobalt glow */
+  --color-glow-2: rgba(147, 51, 234, 0.30); /* Rich violet glow */
+  --color-glow-3: rgba(236, 72, 153, 0.18); /* Rich hot magenta glow */
 }
 
 * {
@@ -699,11 +699,15 @@ header {
   height: 110vh;
   z-index: 1;
 }
-
 .grid-square {
-  border-right: 1px solid #f1f5f9; /* slate-100 */
-  border-bottom: 1px solid #f1f5f9;
+  border-right: 1px solid rgba(0, 0, 0, 0.035);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.035);
   transition: background-color 0.8s ease, border-color 0.8s ease;
+}
+
+[data-theme="dark"] .grid-square {
+  border-right: 1px solid rgba(255, 255, 255, 0.015);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.015);
 }
 
 .grid-square.active {
@@ -2787,5 +2791,109 @@ body::after {
 .ch-tr { top: 2rem; right: 2rem; }
 .ch-bl { bottom: 2rem; left: 2rem; }
 .ch-br { bottom: 2rem; right: 2rem; }
+
+/* Centerpiece: The Design Chrono-Orb styles */
+.chrono-centerpiece {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  height: 90vw;
+  max-width: 750px;
+  max-height: 750px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.85;
+  transition: opacity 0.4s ease;
+}
+
+.chrono-orb-core {
+  fill: radial-gradient(circle, var(--color-primary-light) 0%, transparent 60%);
+  opacity: 0.15;
+}
+
+.chrono-ring {
+  fill: none;
+  stroke: var(--color-text-dark);
+  vector-effect: non-scaling-stroke;
+  transform-origin: center;
+  transition: stroke 0.4s ease;
+}
+
+.ring-outer-dashed {
+  stroke-width: 1px;
+  stroke-dasharray: 4, 12;
+  opacity: 0.18;
+  animation: rotate-clockwise 85s infinite linear;
+}
+
+.ring-middle-solid {
+  stroke-width: 0.5px;
+  opacity: 0.12;
+}
+
+.ring-middle-dashed {
+  stroke-width: 1px;
+  stroke-dasharray: 80, 15, 5, 15;
+  opacity: 0.22;
+  animation: rotate-counter 65s infinite linear;
+}
+
+.ring-inner-axis {
+  stroke-width: 0.5px;
+  stroke-dasharray: 1, 6;
+  opacity: 0.15;
+  animation: rotate-clockwise 45s infinite linear;
+}
+
+.ring-dial {
+  stroke-width: 1.5px;
+  stroke-dasharray: 2, 40;
+  opacity: 0.35;
+  animation: rotate-counter 125s infinite linear;
+}
+
+/* Glass Lens Centerpiece Overlay */
+.chrono-lens {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 50%, transparent 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  z-index: 2;
+  box-shadow: 
+    0 15px 35px -5px rgba(0, 0, 0, 0.05),
+    inset 0 0 15px rgba(255, 255, 255, 0.2);
+  transition: border-color 0.4s ease;
+  pointer-events: none;
+}
+
+[data-theme="dark"] .chrono-lens {
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 60%, transparent 100%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 
+    0 20px 45px -10px rgba(0, 0, 0, 0.3),
+    inset 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+@keyframes rotate-clockwise {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes rotate-counter {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.hero-content {
+  z-index: 3;
+}
 
 
