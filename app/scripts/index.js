@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAccordions();
   initMobileMenu();
   initCountdown();
+  initThemeToggle();
 });
 
 /**
@@ -472,5 +473,39 @@ function initCountdown() {
   
   updateTimer();
   setInterval(updateTimer, 1000);
+}
+
+/**
+ * 10. Light/Dark Mode (Canvas/Obsidian) Theme Toggle
+ */
+function initThemeToggle() {
+  const toggleBtn = document.getElementById('theme-toggle');
+  if (!toggleBtn) return;
+
+  const getPreferredTheme = () => {
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) return storedTheme;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  };
+
+  const setTheme = (theme) => {
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      toggleBtn.textContent = '[ CANVAS ]';
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      toggleBtn.textContent = '[ OBSIDIAN ]';
+      localStorage.setItem('theme', 'light');
+    }
+  };
+
+  // Set initial theme
+  setTheme(getPreferredTheme());
+
+  toggleBtn.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    setTheme(isDark ? 'light' : 'dark');
+  });
 }
 
