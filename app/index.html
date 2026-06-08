@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="styles/index.css" />
 </head>
 <body class="antialiased">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- 1. Loading Screen -->
   <div id="loading-screen" class="loading-screen">
@@ -86,7 +87,8 @@
     </div>
   </header>
 
-  <!-- 3. Hero Section -->
+  <main id="main-content">
+    <!-- 3. Hero Section -->
   <section class="hero" id="home">
     <div id="hero-grid" class="hero-grid"></div>
     <div class="hero-content">
@@ -145,29 +147,29 @@
           <!-- Stack of Cards -->
           <div id="themes-stack" class="themes-stack">
             <!-- Card 1 -->
-            <div class="theme-card card-pos-0 bg-green-300">
+            <div class="theme-card card-pos-0 bg-green-300" tabindex="0" role="button" aria-label="Theme: XR & AR, VR & MR. Press Enter or Space to cycle card.">
               <img src="assets/images/themes/4.jpg" alt="XR & AR, VR & MR" class="theme-card-img-circle" />
-              <h4 class="theme-card-title-custom font-krona">XR & AR, VR & MR</h4>
+              <h3 class="theme-card-title-custom font-krona">XR & AR, VR & MR</h3>
             </div>
             <!-- Card 2 -->
-            <div class="theme-card card-pos-1 bg-pink-400">
+            <div class="theme-card card-pos-1 bg-pink-400" tabindex="0" role="button" aria-label="Theme: Creative Thinking & Character Design. Press Enter or Space to cycle card.">
               <img src="assets/images/themes/3.jpg" alt="Creative Thinking & Character Design" class="theme-card-img-circle" />
-              <h4 class="theme-card-title-custom font-krona">Creative Thinking & Character Design</h4>
+              <h3 class="theme-card-title-custom font-krona">Creative Thinking & Character Design</h3>
             </div>
             <!-- Card 3 -->
-            <div class="theme-card card-pos-2 bg-indigo-500 text-white">
+            <div class="theme-card card-pos-2 bg-indigo-500 text-white" tabindex="0" role="button" aria-label="Theme: Photography & Videography/Calligraphy. Press Enter or Space to cycle card.">
               <img src="assets/images/themes/1.jpg" alt="Photography & Videography/Calligraphy" class="theme-card-img-circle" />
-              <h4 class="theme-card-title-custom font-krona">Photography & Videography/Calligraphy</h4>
+              <h3 class="theme-card-title-custom font-krona">Photography & Videography/Calligraphy</h3>
             </div>
             <!-- Card 4 -->
-            <div class="theme-card card-pos-3 bg-yellow-300">
+            <div class="theme-card card-pos-3 bg-yellow-300" tabindex="0" role="button" aria-label="Theme: Design Thinking Processes. Press Enter or Space to cycle card.">
               <img src="assets/images/themes/2.jpg" alt="Design Thinking Processes" class="theme-card-img-circle" />
-              <h4 class="theme-card-title-custom font-krona">Design Thinking Processes</h4>
+              <h3 class="theme-card-title-custom font-krona">Design Thinking Processes</h3>
             </div>
             <!-- Card 5 -->
-            <div class="theme-card card-pos-4 bg-blue-300">
+            <div class="theme-card card-pos-4 bg-blue-300" tabindex="0" role="button" aria-label="Theme: Sensing & HC AI. Press Enter or Space to cycle card.">
               <img src="assets/images/themes/11.jpg" alt="Sensing & HC AI" class="theme-card-img-circle" />
-              <h4 class="theme-card-title-custom font-krona">Sensing & HC AI</h4>
+              <h3 class="theme-card-title-custom font-krona">Sensing & HC AI</h3>
             </div>
           </div>
           <div class="themes-indicator-wrapper">
@@ -188,8 +190,8 @@
           We're good. <span class="text-muted">Heres why.</span>
         </h2>
         <div class="slider-controls">
-          <button id="btn-prev-feature" class="btn-slider">&#8592;</button>
-          <button id="btn-next-feature" class="btn-slider">&#8594;</button>
+          <button id="btn-prev-feature" class="btn-slider" aria-label="Previous features">&#8592;</button>
+          <button id="btn-next-feature" class="btn-slider" aria-label="Next features">&#8594;</button>
         </div>
       </div>
       
@@ -246,19 +248,43 @@
   <section class="marquee-section">
     <div class="marquee-container">
       <div id="marquee-track" class="marquee-track">
-        <div class="marquee-item"><img src="assets/images/carousel/1.jpg" alt="Classroom 1" /></div>
-        <div class="marquee-item"><img src="assets/images/carousel/4.jpg" alt="Classroom 4" /></div>
-        <div class="marquee-item"><img src="assets/images/carousel/2.jpg" alt="Classroom 2" /></div>
-        <div class="marquee-item"><img src="assets/images/carousel/3.jpg" alt="Classroom 3" /></div>
-        <div class="marquee-item"><img src="assets/images/carousel/8.jpg" alt="Classroom 8" /></div>
-        <div class="marquee-item"><img src="assets/images/carousel/5.jpg" alt="Classroom 5" /></div>
+        <div class="marquee-item">
+          <button class="lightbox-trigger" aria-label="Expand image of Classroom 1">
+            <img src="assets/images/carousel/1.jpg" alt="Classroom 1" />
+          </button>
+        </div>
+        <div class="marquee-item">
+          <button class="lightbox-trigger" aria-label="Expand image of Classroom 4">
+            <img src="assets/images/carousel/4.jpg" alt="Classroom 4" />
+          </button>
+        </div>
+        <div class="marquee-item">
+          <button class="lightbox-trigger" aria-label="Expand image of Classroom 2">
+            <img src="assets/images/carousel/2.jpg" alt="Classroom 2" />
+          </button>
+        </div>
+        <div class="marquee-item">
+          <button class="lightbox-trigger" aria-label="Expand image of Classroom 3">
+            <img src="assets/images/carousel/3.jpg" alt="Classroom 3" />
+          </button>
+        </div>
+        <div class="marquee-item">
+          <button class="lightbox-trigger" aria-label="Expand image of Classroom 8">
+            <img src="assets/images/carousel/8.jpg" alt="Classroom 8" />
+          </button>
+        </div>
+        <div class="marquee-item">
+          <button class="lightbox-trigger" aria-label="Expand image of Classroom 5">
+            <img src="assets/images/carousel/5.jpg" alt="Classroom 5" />
+          </button>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Lightbox Modal -->
-  <div id="lightbox" class="lightbox">
-    <span id="lightbox-close" class="lightbox-close">&times;</span>
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Classroom photo viewer">
+    <button id="lightbox-close" class="lightbox-close" aria-label="Close photo viewer">&times;</button>
     <img id="lightbox-img" class="lightbox-content" src="" alt="Lightbox View" />
   </div>
 
@@ -267,10 +293,10 @@
     <div class="container">
       <div class="merch-grid">
         <div class="merch-left">
-          <h1 class="font-krona merch-title">
+          <h2 class="font-krona merch-title">
             <span class="text-gradient">DSS 2025</span><br/>
             Swag. Snacks. Vibes.
-          </h1>
+          </h2>
           <p class="acc-desc mt-6">
             Celebrate DSS 2025 with exclusive merchandise and a curated selection of gourmet food, designed for developers, innovators, and visionaries alike.
           </p>
@@ -332,11 +358,11 @@
       <div class="schedule-container" data-accordion-group>
         <!-- Monday -->
         <div class="accordion-item" data-accordion-item>
-          <button class="accordion-header" data-accordion-trigger>
+          <button class="accordion-header" id="schedule-trigger-1" aria-controls="schedule-content-1" aria-expanded="false" data-accordion-trigger>
             <span class="accordion-header-title font-krona">Monday, 21st July 2025: Design Thinking Processes</span>
             <span class="accordion-header-arrow">&#9660;</span>
           </button>
-          <div class="accordion-content" data-accordion-content>
+          <div class="accordion-content" id="schedule-content-1" role="region" aria-labelledby="schedule-trigger-1" data-accordion-content>
             <div class="accordion-content-inner">
               <div class="schedule-row">
                 <div class="schedule-time">08:45 a.m. - 09:15 a.m.</div>
@@ -372,11 +398,11 @@
 
         <!-- Tuesday -->
         <div class="accordion-item" data-accordion-item>
-          <button class="accordion-header" data-accordion-trigger>
+          <button class="accordion-header" id="schedule-trigger-2" aria-controls="schedule-content-2" aria-expanded="false" data-accordion-trigger>
             <span class="accordion-header-title font-krona">Tuesday, 22nd July 2025: Creative Thinking & Character Design</span>
             <span class="accordion-header-arrow">&#9660;</span>
           </button>
-          <div class="accordion-content" data-accordion-content>
+          <div class="accordion-content" id="schedule-content-2" role="region" aria-labelledby="schedule-trigger-2" data-accordion-content>
             <div class="accordion-content-inner">
               <div class="schedule-row">
                 <div class="schedule-time">09:30 a.m. - 11:00 a.m.</div>
@@ -408,11 +434,11 @@
 
         <!-- Wednesday -->
         <div class="accordion-item" data-accordion-item>
-          <button class="accordion-header" data-accordion-trigger>
+          <button class="accordion-header" id="schedule-trigger-3" aria-controls="schedule-content-3" aria-expanded="false" data-accordion-trigger>
             <span class="accordion-header-title font-krona">Wednesday, 23rd July 2025: Sensing & HC AI</span>
             <span class="accordion-header-arrow">&#9660;</span>
           </button>
-          <div class="accordion-content" data-accordion-content>
+          <div class="accordion-content" id="schedule-content-3" role="region" aria-labelledby="schedule-trigger-3" data-accordion-content>
             <div class="accordion-content-inner">
               <div class="schedule-row">
                 <div class="schedule-time">09:30 a.m. - 11:00 a.m.</div>
@@ -444,11 +470,11 @@
 
         <!-- Thursday -->
         <div class="accordion-item" data-accordion-item>
-          <button class="accordion-header" data-accordion-trigger>
+          <button class="accordion-header" id="schedule-trigger-4" aria-controls="schedule-content-4" aria-expanded="false" data-accordion-trigger>
             <span class="accordion-header-title font-krona">Thursday, 24th July 2025: Photography & Videography/Storytelling</span>
             <span class="accordion-header-arrow">&#9660;</span>
           </button>
-          <div class="accordion-content" data-accordion-content>
+          <div class="accordion-content" id="schedule-content-4" role="region" aria-labelledby="schedule-trigger-4" data-accordion-content>
             <div class="accordion-content-inner">
               <div class="schedule-row">
                 <div class="schedule-time">09:30 a.m. - 11:00 a.m.</div>
@@ -480,11 +506,11 @@
 
         <!-- Friday -->
         <div class="accordion-item" data-accordion-item>
-          <button class="accordion-header" data-accordion-trigger>
+          <button class="accordion-header" id="schedule-trigger-5" aria-controls="schedule-content-5" aria-expanded="false" data-accordion-trigger>
             <span class="accordion-header-title font-krona">Friday, 25th July 2025: XR & AR, VR & MR</span>
             <span class="accordion-header-arrow">&#9660;</span>
           </button>
-          <div class="accordion-content" data-accordion-content>
+          <div class="accordion-content" id="schedule-content-5" role="region" aria-labelledby="schedule-trigger-5" data-accordion-content>
             <div class="accordion-content-inner">
               <div class="schedule-row">
                 <div class="schedule-time">09:30 a.m. - 11:00 a.m.</div>
@@ -721,55 +747,55 @@
         <!-- Mentor 1 -->
         <div class="mentor-card card">
           <img src="assets/images/mentors/aman_samuel.jpg" alt="Mr. Aman Samuel" class="mentor-img" />
-          <h4 class="mentor-name font-krona">Mr. Aman Samuel</h4>
+          <h3 class="mentor-name font-krona">Mr. Aman Samuel</h3>
           <p class="mentor-role">MBA, University of Madras</p>
         </div>
         <!-- Mentor 2 -->
         <div class="mentor-card card">
           <img src="assets/images/mentors/anmol_srivastav.jpg" alt="Dr. Anmol Srivastava" class="mentor-img" />
-          <h4 class="mentor-name font-krona">Dr. Anmol Srivastava</h4>
+          <h3 class="mentor-name font-krona">Dr. Anmol Srivastava</h3>
           <p class="mentor-role">Ph.D, IIT Guwahati</p>
         </div>
         <!-- Mentor 3 -->
         <div class="mentor-card card">
           <img src="assets/images/mentors/anoopsir.png" alt="Mr. Anoop Ratan" class="mentor-img" />
-          <h4 class="mentor-name font-krona">Mr. Anoop Ratan</h4>
+          <h3 class="mentor-name font-krona">Mr. Anoop Ratan</h3>
           <p class="mentor-role">MFA, Teerthanker Mahaveer University</p>
         </div>
         <!-- Mentor 4 -->
         <div class="mentor-card card">
           <img src="assets/images/mentors/Jainendra.png" alt="Dr. Jainendra Sukhla" class="mentor-img" />
-          <h4 class="mentor-name font-krona">Dr. Jainendra Sukhla</h4>
+          <h3 class="mentor-name font-krona">Dr. Jainendra Sukhla</h3>
           <p class="mentor-role">Ph.D, Universitat Rovira i Virgili</p>
         </div>
         <!-- Mentor 5 -->
         <div class="mentor-card card">
           <img src="assets/images/mentors/Kalpana.png" alt="Dr. Kalpana Shankhwar" class="mentor-img" />
-          <h4 class="mentor-name font-krona">Dr. Kalpana Shankhwar</h4>
+          <h3 class="mentor-name font-krona">Dr. Kalpana Shankhwar</h3>
           <p class="mentor-role">Ph.D, National Taiwan University</p>
         </div>
         <!-- Mentor 6 -->
         <div class="mentor-card card">
           <img src="assets/images/mentors/Pragma.png" alt="Dr. Pragma Kar" class="mentor-img" />
-          <h4 class="mentor-name font-krona">Dr. Pragma Kar</h4>
+          <h3 class="mentor-name font-krona">Dr. Pragma Kar</h3>
           <p class="mentor-role">Ph.D, Jadavpur University</p>
         </div>
         <!-- Mentor 7 -->
         <div class="mentor-card card">
           <img src="assets/images/mentors/Rajiv.png" alt="Dr. Rajiv Ratn Shah" class="mentor-img" />
-          <h4 class="mentor-name font-krona">Dr. Rajiv Ratn Shah</h4>
+          <h3 class="mentor-name font-krona">Dr. Rajiv Ratn Shah</h3>
           <p class="mentor-role">Ph.D, National University of Singapore</p>
         </div>
         <!-- Mentor 8 -->
         <div class="mentor-card card">
           <img src="assets/images/mentors/richa_gupta.jpg" alt="Dr. Richa Gupta" class="mentor-img" />
-          <h4 class="mentor-name font-krona">Dr. Richa Gupta</h4>
+          <h3 class="mentor-name font-krona">Dr. Richa Gupta</h3>
           <p class="mentor-role">Ph.D, IIT Delhi</p>
         </div>
         <!-- Mentor 9 -->
         <div class="mentor-card card">
           <img src="assets/images/mentors/sonal.png" alt="Dr. Sonal Keshwani" class="mentor-img" />
-          <h4 class="mentor-name font-krona">Dr. Sonal Keshwani</h4>
+          <h3 class="mentor-name font-krona">Dr. Sonal Keshwani</h3>
           <p class="mentor-role">Ph.D, IISc Bangalore</p>
         </div>
       </div>
@@ -784,11 +810,11 @@
       <div class="faq-container" data-accordion-group>
         <!-- Q1 -->
         <div class="accordion-item" data-accordion-item>
-          <button class="accordion-header" data-accordion-trigger>
+          <button class="accordion-header" id="faq-trigger-1" aria-controls="faq-content-1" aria-expanded="false" data-accordion-trigger>
             <span class="accordion-header-title font-krona faq-accordion-title">Is the program open to beginners, or do I need prior design experience?</span>
             <span class="accordion-header-arrow">&#9660;</span>
           </button>
-          <div class="accordion-content" data-accordion-content>
+          <div class="accordion-content" id="faq-content-1" role="region" aria-labelledby="faq-trigger-1" data-accordion-content>
             <div class="accordion-content-inner faq-answer">
               The Design Summer School is open to everyone whether you're a beginner or already have some design experience. No prior background is required to attend.
             </div>
@@ -797,11 +823,11 @@
 
         <!-- Q2 -->
         <div class="accordion-item" data-accordion-item>
-          <button class="accordion-header" data-accordion-trigger>
+          <button class="accordion-header" id="faq-trigger-2" aria-controls="faq-content-2" aria-expanded="false" data-accordion-trigger>
             <span class="accordion-header-title font-krona faq-accordion-title">What is the registration deadline?</span>
             <span class="accordion-header-arrow">&#9660;</span>
           </button>
-          <div class="accordion-content" data-accordion-content>
+          <div class="accordion-content" id="faq-content-2" role="region" aria-labelledby="faq-trigger-2" data-accordion-content>
             <div class="accordion-content-inner faq-answer">
               The registration deadline for DSS'25 is 30th June 2025.
             </div>
@@ -810,11 +836,11 @@
 
         <!-- Q3 -->
         <div class="accordion-item" data-accordion-item>
-          <button class="accordion-header" data-accordion-trigger>
+          <button class="accordion-header" id="faq-trigger-3" aria-controls="faq-content-3" aria-expanded="false" data-accordion-trigger>
             <span class="accordion-header-title font-krona faq-accordion-title">What is the minimum attendance requirement to receive a certificate?</span>
             <span class="accordion-header-arrow">&#9660;</span>
           </button>
-          <div class="accordion-content" data-accordion-content>
+          <div class="accordion-content" id="faq-content-3" role="region" aria-labelledby="faq-trigger-3" data-accordion-content>
             <div class="accordion-content-inner faq-answer">
               To receive a certificate, you must attend at least 75% of the sessions. This ensures that you gain the maximum benefit from the program and can apply what you learn effectively.
             </div>
@@ -823,11 +849,11 @@
 
         <!-- Q4 -->
         <div class="accordion-item" data-accordion-item>
-          <button class="accordion-header" data-accordion-trigger>
+          <button class="accordion-header" id="faq-trigger-4" aria-controls="faq-content-4" aria-expanded="false" data-accordion-trigger>
             <span class="accordion-header-title font-krona faq-accordion-title">Can I attend only specific sessions, or is it mandatory to attend the entire program?</span>
             <span class="accordion-header-arrow">&#9660;</span>
           </button>
-          <div class="accordion-content" data-accordion-content>
+          <div class="accordion-content" id="faq-content-4" role="region" aria-labelledby="faq-trigger-4" data-accordion-content>
             <div class="accordion-content-inner faq-answer">
               Registration is required for the entire program, and there is no scope for partial registrations for individual sessions. However, once registered, you are free to attend sessions based on your interest and availability.
             </div>
@@ -836,11 +862,11 @@
 
         <!-- Q5 -->
         <div class="accordion-item" data-accordion-item>
-          <button class="accordion-header" data-accordion-trigger>
+          <button class="accordion-header" id="faq-trigger-5" aria-controls="faq-content-5" aria-expanded="false" data-accordion-trigger>
             <span class="accordion-header-title font-krona faq-accordion-title">What is the Design Summer School, and who is it for?</span>
             <span class="accordion-header-arrow">&#9660;</span>
           </button>
-          <div class="accordion-content" data-accordion-content>
+          <div class="accordion-content" id="faq-content-5" role="region" aria-labelledby="faq-trigger-5" data-accordion-content>
             <div class="accordion-content-inner faq-answer">
               The Design Summer School is a 5-days event where the attendees get to participate in interesting talks, lectures, and workshops on various aspects of design. DSS is curated for students, industry professionals, designers, artists, and anyone interested in exploring design and its allied fields.
             </div>
@@ -859,6 +885,7 @@
       </div>
     </div>
   </section>
+  </main>
 
   <!-- 17. Footer -->
   <footer>

@@ -96,7 +96,7 @@ function initHeroGrid() {
 }
 
 /**
- * 3. Draggable Card Stack for Themes
+ * 3. Draggable Card Stack for Themes (with Keyboard Cycling support)
  */
 function initThemeCards() {
   const themeCards = Array.from(document.querySelectorAll('.theme-card'));
@@ -195,14 +195,32 @@ function initThemeCards() {
     }, 50);
   }
 
+  // Accessibility: Keyboard swipe trigger handler (Space or Enter keys)
+  function onCardKeydown(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      cycleThemeCards();
+      
+      // Auto-focus the new active top card so user can continue tab-triggering cycles
+      setTimeout(() => {
+        const newTopCard = themesStack.querySelector('.theme-card.card-pos-0');
+        if (newTopCard) {
+          newTopCard.focus();
+        }
+      }, 100);
+    }
+  }
+
   function setupDragEvents() {
     themeCards.forEach(card => {
       card.removeEventListener('mousedown', onDragStart);
       card.removeEventListener('touchstart', onDragStart);
+      card.removeEventListener('keydown', onCardKeydown);
       
       if (card.classList.contains('card-pos-0')) {
         card.addEventListener('mousedown', onDragStart);
         card.addEventListener('touchstart', onDragStart);
+        card.addEventListener('keydown', onCardKeydown);
       }
     });
   }
@@ -274,24 +292,45 @@ function initMarquee() {
 }
 
 /**
- * 6. Photo Lightbox Dialog Modal
+ * 6. Photo Lightbox Dialog Modal (with Focus Shifting and Alt sync support)
  */
 function initLightbox() {
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxClose = document.getElementById('lightbox-close');
-  const marqueeImages = document.querySelectorAll('.marquee-item img');
+  const marqueeTriggers = document.querySelectorAll('.lightbox-trigger'); // Accessible button triggers
   
-  if (!lightbox || !lightboxImg || !lightboxClose || marqueeImages.length === 0) return;
+  if (!lightbox || !lightboxImg || !lightboxClose || marqueeTriggers.length === 0) return;
 
-  marqueeImages.forEach(img => {
-    img.addEventListener('click', () => {
-      lightboxImg.src = img.src;
-      lightbox.classList.add('show');
+  let lastActiveTrigger = null; // Caches the button focused before modal launch
+
+  marqueeTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const img = trigger.querySelector('img');
+      if (img) {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt || 'Classroom expanded view';
+        lightbox.classList.add('show');
+        lastActiveTrigger = trigger;
+        
+        // Accessibility: Move focus to Close control inside modal dialog
+        setTimeout(() => {
+          lightboxClose.focus();
+        }, 100);
+      }
     });
   });
 
-  const closeLightbox = () => lightbox.classList.remove('show');
+  const closeLightbox = () => {
+    if (lightbox.classList.contains('show')) {
+      lightbox.classList.remove('show');
+      
+      // Accessibility: Return focus back to original trigger button
+      if (lastActiveTrigger) {
+        lastActiveTrigger.focus();
+      }
+    }
+  };
 
   lightboxClose.addEventListener('click', closeLightbox);
   lightbox.addEventListener('click', (e) => {
@@ -300,16 +339,16 @@ function initLightbox() {
     }
   });
   
-  // Accessibility improvement: Close on pressing Escape key
+  // Close on pressing Escape key
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lightbox.classList.contains('show')) {
+    if (e.key === 'Escape') {
       closeLightbox();
     }
   });
 }
 
 /**
- * 7. Unified Accordion trigger system (Schedule & FAQs)
+ * 7. Unified Accordion trigger system (Schedule & FAQs with ARIA attributes)
  */
 function initAccordions() {
   const accordionTriggers = document.querySelectorAll('[data-accordion-trigger]');
@@ -331,6 +370,12 @@ function initAccordions() {
         siblingItems.forEach(sibling => {
           if (sibling !== item) {
             sibling.classList.remove('active');
+            
+            const siblingTrigger = sibling.querySelector('[data-accordion-trigger]');
+            if (siblingTrigger) {
+              siblingTrigger.setAttribute('aria-expanded', 'false'); // Sync ARIA collapsed state
+            }
+            
             const siblingContent = sibling.querySelector('[data-accordion-content]');
             if (siblingContent) {
               siblingContent.style.maxHeight = null;
@@ -341,9 +386,11 @@ function initAccordions() {
       
       if (!isActive) {
         item.classList.add('active');
+        trigger.setAttribute('aria-expanded', 'true'); // Sync ARIA expanded state
         content.style.maxHeight = `${content.scrollHeight}px`;
       } else {
         item.classList.remove('active');
+        trigger.setAttribute('aria-expanded', 'false'); // Sync ARIA collapsed state
         content.style.maxHeight = null;
       }
     });
@@ -362,7 +409,7 @@ function initMobileMenu() {
   const toggleMenu = () => {
     const isExpanded = navLinks.classList.toggle('mobile-active');
     
-    // Toggle navigation symbol visuals
+    // Toggle navigation symbol visuals and sync ARIA attributes
     menuToggle.textContent = isExpanded ? '\u2715' : '\u2630';
     menuToggle.setAttribute('aria-expanded', isExpanded);
   };
