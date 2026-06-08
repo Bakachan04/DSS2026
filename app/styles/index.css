@@ -480,9 +480,16 @@
   --shadow-2xl: 0 25px 50px -12px rgba(0,0,0,0.1);
 
   /* Saturated Ambient Glow Blobs */
-  --color-glow-1: rgba(37, 99, 235, 0.22); /* Saturated royal blue */
-  --color-glow-2: rgba(249, 115, 22, 0.18); /* Saturated sunset orange */
-  --color-glow-3: rgba(219, 39, 119, 0.12); /* Saturated coral pink */
+  --color-glow-1: rgba(37, 99, 235, 0.35); /* Saturated royal blue */
+  --color-glow-2: rgba(249, 115, 22, 0.28); /* Saturated sunset orange */
+  --color-glow-3: rgba(219, 39, 119, 0.22); /* Saturated coral pink */
+  --color-glow-4: rgba(245, 158, 11, 0.18); /* Saturated warm gold */
+
+  /* Graphic Art Colors */
+  --color-art-1: #4f46e5; /* Indigo */
+  --color-art-2: #ff6b6b; /* Peach coral */
+  --color-art-3: #f59e0b; /* Sunset gold */
+  --color-art-4: #3b82f6; /* Cobalt blue */
 }
 
 /* Dark Mode (Obsidian) overrides */
@@ -504,9 +511,16 @@
   --color-accent-blue: #3b82f6;
 
   /* Saturated Ambient Glow Blobs */
-  --color-glow-1: rgba(59, 130, 246, 0.35); /* Rich cobalt glow */
-  --color-glow-2: rgba(147, 51, 234, 0.30); /* Rich violet glow */
-  --color-glow-3: rgba(236, 72, 153, 0.18); /* Rich hot magenta glow */
+  --color-glow-1: rgba(59, 130, 246, 0.50); /* Rich cobalt glow */
+  --color-glow-2: rgba(147, 51, 234, 0.45); /* Rich violet glow */
+  --color-glow-3: rgba(236, 72, 153, 0.32); /* Rich hot magenta glow */
+  --color-glow-4: rgba(6, 182, 212, 0.25); /* Rich cyan glow */
+
+  /* Graphic Art Colors */
+  --color-art-1: #7c3aed; /* Luminous violet */
+  --color-art-2: #ec4899; /* Luminous pink */
+  --color-art-3: #06b6d4; /* Luminous cyan */
+  --color-art-4: #2563eb; /* Cobalt blue */
 }
 
 * {
@@ -752,14 +766,14 @@ header {
   color: var(--color-text-dark);
   margin-bottom: 0.5rem;
 }
-
 .hero-title {
-  font-size: 3.5rem;
-  font-weight: 900;
+  font-size: 4.5rem;
+  font-weight: 800;
   text-transform: uppercase;
   margin-bottom: 1.5rem;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+  transition: color 0.4s ease;
 }
 
 .hero-subtitle {
@@ -2258,18 +2272,22 @@ button.lightbox-close {
   justify-content: center;
   align-items: center;
   margin: 3.5rem auto;
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(255, 255, 255, 0.45);
   padding: 2.25rem 0;
   max-width: 680px;
   width: 100%;
   position: relative;
-  background-color: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(8px);
-  transition: border-color 0.4s ease, background-color 0.4s ease;
+  background-color: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 45px 90px -20px rgba(0, 0, 0, 0.08);
+  transition: border-color 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+  z-index: 4;
 }
 
 [data-theme="dark"] .countdown-container {
-  background-color: rgba(8, 11, 17, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(8, 10, 16, 0.75);
+  box-shadow: 0 45px 90px -20px rgba(0, 0, 0, 0.45);
 }
 
 .countdown-tick {
@@ -2652,56 +2670,73 @@ body::after {
 .glow-circle {
   position: absolute;
   border-radius: 50%;
-  filter: blur(140px);
+  filter: blur(160px);
   will-change: transform;
+  transition: background-color 0.4s ease;
 }
 
 .glow-1 {
-  width: 50vw;
-  height: 50vw;
-  max-width: 600px;
-  max-height: 600px;
+  width: 75vw;
+  height: 75vw;
+  max-width: 950px;
+  max-height: 950px;
   background: radial-gradient(circle, var(--color-glow-1) 0%, transparent 70%);
-  top: -10%;
-  left: -5%;
+  top: -20%;
+  left: -15%;
   animation: float-glow-1 25s infinite alternate ease-in-out;
 }
 
 .glow-2 {
-  width: 45vw;
-  height: 45vw;
-  max-width: 500px;
-  max-height: 500px;
+  width: 70vw;
+  height: 70vw;
+  max-width: 850px;
+  max-height: 850px;
   background: radial-gradient(circle, var(--color-glow-2) 0%, transparent 70%);
-  bottom: 5%;
-  right: -5%;
+  bottom: -10%;
+  right: -15%;
   animation: float-glow-2 30s infinite alternate ease-in-out;
 }
 
 .glow-3 {
-  width: 40vw;
-  height: 40vw;
-  max-width: 450px;
-  max-height: 450px;
+  width: 65vw;
+  height: 65vw;
+  max-width: 750px;
+  max-height: 750px;
   background: radial-gradient(circle, var(--color-glow-3) 0%, transparent 70%);
-  top: 35%;
-  left: 25%;
+  top: 25%;
+  left: 15%;
   animation: float-glow-3 20s infinite alternate ease-in-out;
+}
+
+.glow-4 {
+  width: 60vw;
+  height: 60vw;
+  max-width: 650px;
+  max-height: 650px;
+  background: radial-gradient(circle, var(--color-glow-4) 0%, transparent 70%);
+  bottom: 15%;
+  left: -10%;
+  animation: float-glow-4 22s infinite alternate ease-in-out;
 }
 
 @keyframes float-glow-1 {
   0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(120px, 90px) scale(1.15); }
+  100% { transform: translate(140px, 110px) scale(1.15); }
 }
 
 @keyframes float-glow-2 {
   0% { transform: translate(0, 0) scale(1.1); }
-  100% { transform: translate(-100px, -70px) scale(0.9); }
+  100% { transform: translate(-120px, -90px) scale(0.9); }
 }
 
 @keyframes float-glow-3 {
   0% { transform: translate(0, 0) scale(0.95); }
-  100% { transform: translate(70px, -80px) scale(1.1); }
+  100% { transform: translate(90px, -100px) scale(1.1); }
+}
+
+@keyframes float-glow-4 {
+  0% { transform: translate(0, 0) scale(1.05); }
+  100% { transform: translate(80px, -70px) scale(0.95); }
 }
 
 /* Blueprint visual layout lines */
@@ -2793,26 +2828,6 @@ body::after {
 .ch-br { bottom: 2rem; right: 2rem; }
 
 /* Centerpiece: The Design Chrono-Orb styles */
-.chrono-centerpiece {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90vw;
-  height: 90vw;
-  max-width: 750px;
-  max-height: 750px;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.85;
-  transition: opacity 0.4s ease;
-}
-
-.chrono-orb-core {
-  fill: radial-gradient(circle, var(--color-primary-light) 0%, transparent 60%);
-  opacity: 0.15;
-}
-
 .chrono-ring {
   fill: none;
   stroke: var(--color-text-dark);
@@ -2854,34 +2869,6 @@ body::after {
   animation: rotate-counter 125s infinite linear;
 }
 
-/* Glass Lens Centerpiece Overlay */
-.chrono-lens {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 50%, transparent 100%);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(8px);
-  z-index: 2;
-  box-shadow: 
-    0 15px 35px -5px rgba(0, 0, 0, 0.05),
-    inset 0 0 15px rgba(255, 255, 255, 0.2);
-  transition: border-color 0.4s ease;
-  pointer-events: none;
-}
-
-[data-theme="dark"] .chrono-lens {
-  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 60%, transparent 100%);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  box-shadow: 
-    0 20px 45px -10px rgba(0, 0, 0, 0.3),
-    inset 0 0 20px rgba(255, 255, 255, 0.05);
-}
-
 @keyframes rotate-clockwise {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -2892,8 +2879,300 @@ body::after {
   100% { transform: rotate(0deg); }
 }
 
-.hero-content {
+/* Giant background typography monogram */
+.hero-monogram {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-display);
+  font-size: 26vw;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  opacity: 0.05;
+  user-select: none;
+  pointer-events: none;
+  letter-spacing: -0.06em;
+  z-index: 1;
+  transition: color 0.4s ease, opacity 0.4s ease;
+}
+
+[data-theme="dark"] .hero-monogram {
+  opacity: 0.09;
+}
+
+/* Asymmetric Hero Layout Wrapper */
+.hero-layout-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  padding: 8rem 2.5rem 2rem 2.5rem;
+  z-index: 5;
+}
+
+.hero-left-content {
+  flex: 1.15;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.hero-right-visual {
+  flex: 0.85;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+/* Glass Frame for Centerpiece Art */
+.art-composition-frame {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  height: 480px;
+  background: radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 32px;
+  box-shadow: 
+    0 35px 70px -15px rgba(0, 0, 0, 0.1),
+    inset 0 0 35px rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  overflow: visible;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+  will-change: transform;
+}
+
+[data-theme="dark"] .art-composition-frame {
+  background: radial-gradient(circle at 10% 10%, rgba(17, 24, 39, 0.45) 0%, rgba(17, 24, 39, 0.15) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 
+    0 45px 90px -20px rgba(0, 0, 0, 0.45),
+    inset 0 0 45px rgba(255, 255, 255, 0.03);
+}
+
+.art-composition-frame:hover {
+  transform: translateY(-10px) rotate(1deg);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    0 45px 90px -10px rgba(0, 0, 0, 0.15),
+    inset 0 0 35px rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .art-composition-frame:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 
+    0 55px 110px -15px rgba(0, 0, 0, 0.55),
+    inset 0 0 45px rgba(255, 255, 255, 0.06);
+}
+
+/* Background Plate inside Frame to give richness */
+.art-color-plate {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.28) 0%, rgba(219, 39, 119, 0.18) 50%, transparent 100%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+[data-theme="dark"] .art-color-plate {
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.38) 0%, rgba(236, 72, 153, 0.22) 60%, transparent 100%);
+}
+
+.art-svg-composition {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Morphing fluid mesh paths in SVG */
+.fluid-mesh-shape {
+  transform-origin: center;
+  mix-blend-mode: multiply;
+  will-change: transform;
+}
+
+[data-theme="dark"] .fluid-mesh-shape {
+  mix-blend-mode: screen;
+}
+
+.anim-fluid-1 {
+  animation: morph-shape-1 22s infinite alternate ease-in-out;
+}
+
+.anim-fluid-2 {
+  animation: morph-shape-2 18s infinite alternate ease-in-out;
+}
+
+@keyframes morph-shape-1 {
+  0% { transform: scale(1) rotate(0deg) translate(0, 0); }
+  50% { transform: scale(1.15) rotate(180deg) translate(20px, -25px); }
+  100% { transform: scale(0.9) rotate(360deg) translate(-15px, 20px); }
+}
+
+@keyframes morph-shape-2 {
+  0% { transform: scale(1.05) rotate(0deg) translate(0, 0); }
+  50% { transform: scale(0.85) rotate(-180deg) translate(-25px, 20px); }
+  100% { transform: scale(1.18) rotate(-360deg) translate(20px, -15px); }
+}
+
+/* Layered Glass overlay panels inside the Art frame */
+.art-glass-pane {
+  position: absolute;
+  padding: 0.85rem 1.15rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.08);
+  font-family: var(--font-mono);
+  color: var(--color-text-dark);
   z-index: 3;
+  pointer-events: none;
+  transition: transform 0.4s ease, background-color 0.4s ease;
+  will-change: transform;
+}
+
+[data-theme="dark"] .art-glass-pane {
+  background: rgba(17, 24, 39, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--color-text-dark);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+}
+
+.pane-front {
+  top: 12%;
+  right: -8%;
+  transform: rotate(4deg);
+  animation: float-pane-front 14s infinite alternate ease-in-out;
+}
+
+.pane-back {
+  bottom: 10%;
+  left: -8%;
+  transform: rotate(-6deg);
+  animation: float-pane-back 16s infinite alternate ease-in-out;
+}
+
+.pane-meta {
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  opacity: 0.65;
+  margin-bottom: 0.25rem;
+}
+
+.pane-title {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@keyframes float-pane-front {
+  0% { transform: rotate(4deg) translate(0, 0); }
+  100% { transform: rotate(6deg) translate(-15px, 20px); }
+}
+
+@keyframes float-pane-back {
+  0% { transform: rotate(-6deg) translate(0, 0); }
+  100% { transform: rotate(-4deg) translate(20px, -15px); }
+}
+
+/* Responsive Overrides for Biennale Art Layout */
+@media (max-width: 1024px) {
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 5rem;
+  }
+  
+  .hero-layout-container {
+    flex-direction: column;
+    gap: 3.5rem;
+    padding: 7rem 1.5rem 2.5rem 1.5rem;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .hero-left-content {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .hero-subtitle-soon {
+    margin: 1.5rem auto;
+  }
+  
+  .hero-right-visual {
+    width: 100%;
+    max-width: 380px;
+    height: 380px;
+  }
+  
+  .art-composition-frame {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .pane-front {
+    right: -3%;
+  }
+  
+  .pane-back {
+    left: -3%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3.5rem;
+    line-height: 1.1;
+  }
+  
+  .hero-right-visual {
+    max-width: 340px;
+    height: 340px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.75rem;
+  }
+  
+  .hero-right-visual {
+    max-width: 290px;
+    height: 290px;
+  }
+  
+  .pane-front {
+    padding: 0.65rem 0.85rem;
+  }
+  
+  .pane-back {
+    padding: 0.65rem 0.85rem;
+  }
 }
 
 
