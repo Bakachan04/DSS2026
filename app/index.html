@@ -81,7 +81,7 @@
         <div class="hero-left-content">
           <div class="coming-soon-badge">[ DSS 2026 : COMING_SOON ]</div>
           <h1 class="hero-title">
-            DESIGN<br/>SUMMER<br/>SCHOOL<br/>2026.
+            DESIGN<br/>SUMMER<br/>SCHOOL<br/><span class="text-gradient">2026.</span>
           </h1>
           <div class="hero-subtitle-soon">Immersive Design & Technology Workshops returning in Summer 2026 at IIIT Delhi</div>
           
@@ -141,6 +141,9 @@
                   <feGaussianBlur stdDeviation="25" result="blur" />
                   <feComposite in="SourceGraphic" in2="blur" operator="over" />
                 </filter>
+                
+                <!-- Circular text path for concentric typography integration -->
+                <path id="textPath-circle" d="M 300 300 m -205,0 a 205,205 0 1,1 410,0 a 205,205 0 1,1 -410,0" fill="none" />
               </defs>
 
               <!-- Dynamic morphing background vector paths -->
@@ -154,19 +157,26 @@
               <circle cx="300" cy="300" r="110" class="chrono-ring ring-inner-axis" />
               <circle cx="300" cy="300" r="70" class="chrono-ring ring-dial" />
 
+              <!-- Rotating concentric editorial text branding -->
+              <g class="ring-outer-dashed">
+                <text fill="var(--color-text-dark)" font-family="var(--font-mono)" font-size="8" font-weight="700" letter-spacing="0.12em" opacity="0.45">
+                  <textPath href="#textPath-circle">DESIGN SUMMER SCHOOL 2026 • IIIT DELHI • HUMAN-CENTERED DESIGN • </textPath>
+                </text>
+              </g>
+
               <!-- Crosshair guides inside visual art frame -->
               <line x1="300" y1="30" x2="300" y2="570" stroke="var(--color-text-dark)" stroke-width="0.5" opacity="0.12" stroke-dasharray="4, 4" />
               <line x1="30" y1="300" x2="570" y2="300" stroke="var(--color-text-dark)" stroke-width="0.5" opacity="0.12" stroke-dasharray="4, 4" />
             </svg>
             
-            <!-- Layered Glass overlay panels inside the Art frame -->
-            <div class="art-glass-pane pane-front">
-              <div class="pane-meta">[ DSS26 // ART_DIR ]</div>
-              <div class="pane-title">EXPRESSIVE FORM</div>
+            <!-- Editorial Curation stamps overlaying the centerpiece -->
+            <div class="art-editorial-label pane-front">
+              <div class="label-meta">[ CURATED THEMES ]</div>
+              <div class="label-title">CREATIVE SYSTEMS</div>
             </div>
-            <div class="art-glass-pane pane-back">
-              <div class="pane-meta">[ LATENCY_OK // MONIT_ON ]</div>
-              <div class="pane-title">MESH GRADIENT</div>
+            <div class="art-editorial-label pane-back">
+              <div class="label-meta">[ HCD ASSOCIATION ]</div>
+              <div class="label-title">INTERACTION & FORM</div>
             </div>
           </div>
         </div>

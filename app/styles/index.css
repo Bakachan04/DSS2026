@@ -767,12 +767,12 @@ header {
   margin-bottom: 0.5rem;
 }
 .hero-title {
-  font-size: 4.5rem;
+  font-size: 5.5rem;
   font-weight: 800;
   text-transform: uppercase;
   margin-bottom: 1.5rem;
-  line-height: 1.05;
-  letter-spacing: -0.05em;
+  line-height: 0.95;
+  letter-spacing: -0.06em;
   transition: color 0.4s ease;
 }
 
@@ -2364,7 +2364,29 @@ button.lightbox-close {
 .about-section-container {
   padding: 8rem 0;
   border-bottom: 1px solid var(--color-border);
-  background-color: #fafafa;
+  background-color: var(--color-bg-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-section-container::before {
+  content: "";
+  position: absolute;
+  width: 60vw;
+  height: 60vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--color-glow-2) 0%, transparent 70%);
+  filter: blur(160px);
+  bottom: -20%;
+  left: -15%;
+  pointer-events: none;
+  opacity: 0.75;
+  z-index: 0;
+  transition: background-color 0.4s ease;
+}
+
+[data-theme="dark"] .about-section-container::before {
+  opacity: 0.5;
 }
 
 .about-columns {
@@ -2832,7 +2854,8 @@ body::after {
   fill: none;
   stroke: var(--color-text-dark);
   vector-effect: non-scaling-stroke;
-  transform-origin: center;
+  transform-origin: 300px 300px;
+  transform-box: fill-box;
   transition: stroke 0.4s ease;
 }
 
@@ -2841,11 +2864,15 @@ body::after {
   stroke-dasharray: 4, 12;
   opacity: 0.18;
   animation: rotate-clockwise 85s infinite linear;
+  transform-origin: 300px 300px;
+  transform-box: fill-box;
 }
 
 .ring-middle-solid {
   stroke-width: 0.5px;
   opacity: 0.12;
+  transform-origin: 300px 300px;
+  transform-box: fill-box;
 }
 
 .ring-middle-dashed {
@@ -2853,6 +2880,8 @@ body::after {
   stroke-dasharray: 80, 15, 5, 15;
   opacity: 0.22;
   animation: rotate-counter 65s infinite linear;
+  transform-origin: 300px 300px;
+  transform-box: fill-box;
 }
 
 .ring-inner-axis {
@@ -2860,6 +2889,8 @@ body::after {
   stroke-dasharray: 1, 6;
   opacity: 0.15;
   animation: rotate-clockwise 45s infinite linear;
+  transform-origin: 300px 300px;
+  transform-box: fill-box;
 }
 
 .ring-dial {
@@ -2867,6 +2898,8 @@ body::after {
   stroke-dasharray: 2, 40;
   opacity: 0.35;
   animation: rotate-counter 125s infinite linear;
+  transform-origin: 300px 300px;
+  transform-box: fill-box;
 }
 
 @keyframes rotate-clockwise {
@@ -2942,39 +2975,28 @@ body::after {
   width: 100%;
   max-width: 480px;
   height: 480px;
-  background: radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.05) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  border-radius: 32px;
-  box-shadow: 
-    0 35px 70px -15px rgba(0, 0, 0, 0.1),
-    inset 0 0 35px rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(20px);
+  background: none;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
   overflow: visible;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform;
 }
 
 [data-theme="dark"] .art-composition-frame {
-  background: radial-gradient(circle at 10% 10%, rgba(17, 24, 39, 0.45) 0%, rgba(17, 24, 39, 0.15) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  box-shadow: 
-    0 45px 90px -20px rgba(0, 0, 0, 0.45),
-    inset 0 0 45px rgba(255, 255, 255, 0.03);
+  background: none;
+  border: none;
+  box-shadow: none;
 }
 
 .art-composition-frame:hover {
-  transform: translateY(-10px) rotate(1deg);
-  border-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 
-    0 45px 90px -10px rgba(0, 0, 0, 0.15),
-    inset 0 0 35px rgba(255, 255, 255, 0.2);
+  transform: scale(1.04) rotate(0.5deg);
 }
 
 [data-theme="dark"] .art-composition-frame:hover {
-  border-color: rgba(255, 255, 255, 0.18);
-  box-shadow: 
-    0 55px 110px -15px rgba(0, 0, 0, 0.55),
-    inset 0 0 45px rgba(255, 255, 255, 0.06);
+  border-color: transparent;
+  box-shadow: none;
 }
 
 /* Background Plate inside Frame to give richness */
@@ -2985,14 +3007,14 @@ body::after {
   width: 70%;
   height: 70%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(249, 115, 22, 0.28) 0%, rgba(219, 39, 119, 0.18) 50%, transparent 100%);
-  filter: blur(40px);
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.35) 0%, rgba(219, 39, 119, 0.22) 50%, transparent 100%);
+  filter: blur(50px);
   pointer-events: none;
   z-index: 1;
 }
 
 [data-theme="dark"] .art-color-plate {
-  background: radial-gradient(circle, rgba(147, 51, 234, 0.38) 0%, rgba(236, 72, 153, 0.22) 60%, transparent 100%);
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.45) 0%, rgba(236, 72, 153, 0.28) 60%, transparent 100%);
 }
 
 .art-svg-composition {
@@ -3007,7 +3029,8 @@ body::after {
 
 /* Morphing fluid mesh paths in SVG */
 .fluid-mesh-shape {
-  transform-origin: center;
+  transform-origin: 300px 300px;
+  transform-box: fill-box;
   mix-blend-mode: multiply;
   will-change: transform;
 }
@@ -3036,67 +3059,60 @@ body::after {
   100% { transform: scale(1.18) rotate(-360deg) translate(20px, -15px); }
 }
 
-/* Layered Glass overlay panels inside the Art frame */
-.art-glass-pane {
+/* Editorial Curation labels overlaying the composition */
+.art-editorial-label {
   position: absolute;
-  padding: 0.85rem 1.15rem;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.38);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.08);
+  padding-left: 0.85rem;
+  border-left: 2px solid var(--color-primary);
   font-family: var(--font-mono);
   color: var(--color-text-dark);
-  z-index: 3;
+  z-index: 10;
   pointer-events: none;
-  transition: transform 0.4s ease, background-color 0.4s ease;
+  transition: transform 0.4s ease, border-color 0.4s ease, color 0.4s ease;
   will-change: transform;
 }
 
-[data-theme="dark"] .art-glass-pane {
-  background: rgba(17, 24, 39, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+.label-meta {
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  color: var(--color-primary);
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.label-title {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
   color: var(--color-text-dark);
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+  line-height: 1.1;
 }
 
 .pane-front {
-  top: 12%;
-  right: -8%;
-  transform: rotate(4deg);
+  top: 15%;
+  right: -5%;
+  transform: rotate(2deg);
   animation: float-pane-front 14s infinite alternate ease-in-out;
 }
 
 .pane-back {
-  bottom: 10%;
-  left: -8%;
-  transform: rotate(-6deg);
+  bottom: 12%;
+  left: -5%;
+  transform: rotate(-3deg);
   animation: float-pane-back 16s infinite alternate ease-in-out;
 }
 
-.pane-meta {
-  font-size: 0.55rem;
-  letter-spacing: 0.12em;
-  opacity: 0.65;
-  margin-bottom: 0.25rem;
-}
-
-.pane-title {
-  font-family: var(--font-display);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
 @keyframes float-pane-front {
-  0% { transform: rotate(4deg) translate(0, 0); }
-  100% { transform: rotate(6deg) translate(-15px, 20px); }
+  0% { transform: rotate(2deg) translate(0, 0); }
+  100% { transform: rotate(4deg) translate(-15px, 20px); }
 }
 
 @keyframes float-pane-back {
-  0% { transform: rotate(-6deg) translate(0, 0); }
-  100% { transform: rotate(-4deg) translate(20px, -15px); }
+  0% { transform: rotate(-3deg) translate(0, 0); }
+  100% { transform: rotate(-1deg) translate(20px, -15px); }
 }
 
 /* Responsive Overrides for Biennale Art Layout */
