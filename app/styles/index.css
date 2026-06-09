@@ -712,22 +712,16 @@ header {
   width: 100%;
   height: 110vh;
   z-index: 1;
+  pointer-events: none; /* Let pointer pass to overlay controls */
 }
 .grid-square {
-  border-right: 1px solid rgba(0, 0, 0, 0.035);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.035);
-  transition: background-color 0.8s ease, border-color 0.8s ease;
+  border-right: 1px solid rgba(0, 0, 0, 0.02); /* More subtle grid line */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.02);
 }
 
 [data-theme="dark"] .grid-square {
-  border-right: 1px solid rgba(255, 255, 255, 0.015);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.015);
-}
-
-.grid-square.active {
-  background-color: rgba(99, 102, 241, 0.12); /* indigo-500 soft glow */
-  border-color: rgba(99, 102, 241, 0.25);
-  transition: background-color 0s;
+  border-right: 1px solid rgba(255, 255, 255, 0.008); /* More subtle dark mode grid line */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.008);
 }
 
 /* Hero Overlay Content */
@@ -2355,9 +2349,8 @@ button.lightbox-close {
 }
 
 .hero-grid-soon {
-  border-bottom: 1px solid var(--color-border);
   position: relative;
-  background-color: #ffffff;
+  background-color: var(--color-bg-light);
 }
 
 /* About Column Layout */
@@ -2700,8 +2693,6 @@ body::after {
 .glow-1 {
   width: 75vw;
   height: 75vw;
-  max-width: 950px;
-  max-height: 950px;
   background: radial-gradient(circle, var(--color-glow-1) 0%, transparent 70%);
   top: -20%;
   left: -15%;
@@ -2711,8 +2702,6 @@ body::after {
 .glow-2 {
   width: 70vw;
   height: 70vw;
-  max-width: 850px;
-  max-height: 850px;
   background: radial-gradient(circle, var(--color-glow-2) 0%, transparent 70%);
   bottom: -10%;
   right: -15%;
@@ -2722,8 +2711,6 @@ body::after {
 .glow-3 {
   width: 65vw;
   height: 65vw;
-  max-width: 750px;
-  max-height: 750px;
   background: radial-gradient(circle, var(--color-glow-3) 0%, transparent 70%);
   top: 25%;
   left: 15%;
@@ -2733,8 +2720,6 @@ body::after {
 .glow-4 {
   width: 60vw;
   height: 60vw;
-  max-width: 650px;
-  max-height: 650px;
   background: radial-gradient(circle, var(--color-glow-4) 0%, transparent 70%);
   bottom: 15%;
   left: -10%;
@@ -2967,6 +2952,7 @@ body::after {
   align-items: center;
   z-index: 10;
   pointer-events: auto;
+  overflow: visible; /* Prevent glow filters and spinning rings from clipping */
 }
 
 /* Glass Frame for Centerpiece Art */
@@ -3002,19 +2988,19 @@ body::after {
 /* Background Plate inside Frame to give richness */
 .art-color-plate {
   position: absolute;
-  top: 15%;
-  left: 15%;
-  width: 70%;
-  height: 70%;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(249, 115, 22, 0.35) 0%, rgba(219, 39, 119, 0.22) 50%, transparent 100%);
-  filter: blur(50px);
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.3) 0%, rgba(219, 39, 119, 0.15) 40%, rgba(129, 140, 248, 0.05) 70%, transparent 100%);
+  filter: blur(120px);
   pointer-events: none;
   z-index: 1;
 }
 
 [data-theme="dark"] .art-color-plate {
-  background: radial-gradient(circle, rgba(147, 51, 234, 0.45) 0%, rgba(236, 72, 153, 0.28) 60%, transparent 100%);
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.4) 0%, rgba(236, 72, 153, 0.2) 50%, rgba(59, 130, 246, 0.06) 80%, transparent 100%);
 }
 
 .art-svg-composition {
@@ -3025,6 +3011,7 @@ body::after {
   height: 100%;
   z-index: 2;
   pointer-events: none;
+  overflow: visible; /* Prevent SVG content clipping */
 }
 
 /* Morphing fluid mesh paths in SVG */

@@ -73,16 +73,6 @@ function initHeroGrid() {
       square.className = 'grid-square';
       square.id = `square-${i}`;
       
-      square.addEventListener('mouseenter', () => {
-        square.classList.add('active');
-      });
-      
-      square.addEventListener('mouseleave', () => {
-        setTimeout(() => {
-          square.classList.remove('active');
-        }, 850); // Decay delay creates smooth hover trails
-      });
-      
       fragment.appendChild(square);
     }
     gridContainer.appendChild(fragment);
