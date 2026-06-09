@@ -477,15 +477,14 @@ function initThemeToggle() {
     if (storedTheme) return storedTheme;
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   };
-
   const setTheme = (theme) => {
     if (theme === 'dark') {
       document.documentElement.setAttribute('data-theme', 'dark');
-      toggleBtn.textContent = '[ CANVAS ]';
+      toggleBtn.setAttribute('aria-pressed', 'true');
       localStorage.setItem('theme', 'dark');
     } else {
       document.documentElement.removeAttribute('data-theme');
-      toggleBtn.textContent = '[ OBSIDIAN ]';
+      toggleBtn.setAttribute('aria-pressed', 'false');
       localStorage.setItem('theme', 'light');
     }
   };
