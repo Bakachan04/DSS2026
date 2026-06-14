@@ -4829,7 +4829,7 @@ body::after {
   .schedule-section-container,
   .legacy-section-container,
   .mentors-section-container {
-    padding: 3.5rem 0;
+    padding: 2.25rem 0 !important;
   }
 
   /* Typography Sizing for portrait mobile */
@@ -4837,52 +4837,215 @@ body::after {
   .schedule-title-large,
   .legacy-title-large,
   .mentors-title-large {
-    font-size: 1.65rem;
+    font-size: 1.35rem !important;
+    margin-bottom: 0.5rem !important;
   }
 
   .about-desc-editorial,
   .schedule-desc-editorial,
   .legacy-desc-editorial,
   .mentors-desc-editorial {
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 0.88rem !important;
+    line-height: 1.45 !important;
+  }
+
+  /* Tighten paragraph spacing below/between blocks */
+  .about-right-col,
+  .schedule-right-col,
+  .legacy-right-col,
+  .mentors-right-col {
+    gap: 0.75rem !important;
+  }
+
+  /* Section Header Grid Spacing & Margins */
+  .about-columns,
+  .schedule-header,
+  .legacy-header,
+  .mentors-header {
+    gap: 1.0rem !important;
+    margin-bottom: 1.5rem !important;
   }
 
   /* Carousel Card sizing & margins */
   .legacy-story-panel {
-    padding: 1.25rem;
-    gap: 1.25rem;
-    flex: 0 0 88%;
+    padding: 1.0rem !important;
+    gap: 1.0rem !important;
+    flex: 0 0 88% !important;
+  }
+
+  .panel-image-container {
+    aspect-ratio: 16/9 !important;
   }
 
   .panel-title {
-    font-size: 1.35rem;
-    margin-bottom: 0.75rem;
+    font-size: 1.15rem !important;
+    margin-bottom: 0.5rem !important;
   }
 
   .panel-desc {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin-bottom: 1rem;
+    font-size: 0.85rem !important;
+    line-height: 1.45 !important;
+    margin-bottom: 0.75rem !important;
   }
 
   .panel-highlights {
-    font-size: 0.8rem;
-    padding-left: 0.75rem;
+    font-size: 0.75rem !important;
+    padding-left: 0.5rem !important;
   }
 
   .panel-meta {
-    margin-bottom: 0.75rem;
+    font-size: 0.58rem !important;
+    margin-bottom: 0.5rem !important;
   }
 
-  /* Mentor Card internal padding */
+  /* Mentor Card internal padding & images */
   .mentor-card {
-    padding: 1.5rem 1rem;
+    padding: 1.25rem 1.0rem !important;
+  }
+
+  .mentor-img {
+    width: 130px !important;
+    height: 130px !important;
+    margin-bottom: 0.85rem !important;
+  }
+
+  .mentor-name {
+    font-size: 1.0rem !important;
+    margin-bottom: 0.2rem !important;
+  }
+
+  .mentor-role {
+    font-size: 0.75rem !important;
   }
 
   /* Schedule Cards Padding */
   .schedule-day-card {
-    padding: 2.0rem 1.25rem;
+    padding: 1.5rem 1.0rem !important;
+  }
+
+  .schedule-day-number {
+    font-size: 2.25rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .schedule-day-theme {
+    font-size: 0.95rem !important;
+    margin-bottom: 1.0rem !important;
+    min-height: auto !important;
+  }
+
+  .schedule-topics-list {
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* HCD Institutional logo strip scaling in hero & footer */
+  .hero-institutional-strip {
+    margin-bottom: 0.75rem !important;
+  }
+
+  .hero-inst-logos {
+    gap: 1.0rem !important;
+    justify-content: center !important;
+  }
+
+  .hero-inst-logo {
+    height: auto !important;
+    max-height: 38px !important;
+    max-width: 80% !important;
+    object-fit: contain !important;
+  }
+
+  .footer-institutional-strip {
+    padding: 1.5rem 0 !important;
+    margin: 1.5rem 0 1.0rem 0 !important;
+    gap: 1.5rem !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+  }
+
+  .footer-logo-wrapper {
+    max-width: 80% !important;
+  }
+
+  .footer-inst-logo {
+    height: auto !important;
+    max-height: 60px !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+  }
+
+  .footer-inst-logo.logo-hcd {
+    max-height: 70px !important;
+  }
+
+  /* Hero Subtitle Compression */
+  .hero-subtitle-soon {
+    font-size: 0.82rem !important;
+    line-height: 1.35 !important;
+    max-width: 270px !important;
+    margin: 0.75rem auto 1.0rem auto !important;
+  }
+
+  /* Workshop Date Display Compression */
+  .workshop-date-display {
+    padding: 0.45rem 0.75rem !important;
+    margin: 0.75rem auto 1.0rem auto !important;
+    max-width: 280px !important;
+    border-left-width: 2px !important;
+    border-radius: 4px !important;
+  }
+
+  .workshop-date-main {
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+    gap: 0.25rem !important;
+    justify-content: center !important;
+  }
+
+  .workshop-date-day {
+    font-size: 1.1rem !important;
+  }
+
+  .workshop-date-separator {
+    font-size: 0.95rem !important;
+  }
+
+  .workshop-date-year {
+    font-size: 1.0rem !important;
+    padding-left: 0.15rem !important;
+  }
+
+  .workshop-date-label {
+    font-size: 0.68rem !important;
+    margin-bottom: 0.08rem !important;
+    letter-spacing: 0.15em !important;
+  }
+
+  /* Footer layout and spacing adjustments */
+  .footer-column p,
+  .footer-column a {
+    font-size: 0.8rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 0.4rem !important;
+  }
+
+  .footer-column h3 {
+    font-size: 1.0rem !important;
+    margin-bottom: 0.85rem !important;
+  }
+
+  .footer-bottom p {
+    font-size: 0.75rem !important;
+  }
+
+  .footer-map-section {
+    margin: 1.25rem auto 1.5rem auto !important;
+    padding: 0 1.25rem !important;
+  }
+
+  .footer-map-container {
+    height: 180px !important;
+    border-radius: 12px !important;
   }
 }
 
