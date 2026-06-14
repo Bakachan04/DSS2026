@@ -32,7 +32,9 @@ def verify():
     
     missing_files = []
     for ref in all_refs:
-        local_path = os.path.join("app", ref)
+        # Strip query parameters (e.g. ?v=1.2) for path check
+        clean_ref = ref.split('?')[0]
+        local_path = os.path.join("app", clean_ref)
         if not os.path.exists(local_path):
             missing_files.append(local_path)
             

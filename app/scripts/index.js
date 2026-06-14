@@ -5,10 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initFeatureSlider();
   initMarquee();
   initLightbox();
-  initAccordions();
   initMobileMenu();
-  initCountdown();
   initThemeToggle();
+  initLegacyCarousel();
 });
 
 /**
@@ -343,55 +342,6 @@ function initLightbox() {
   });
 }
 
-/**
- * 7. Unified Accordion trigger system (Schedule & FAQs with ARIA attributes)
- */
-function initAccordions() {
-  const accordionTriggers = Array.from(document.querySelectorAll('[data-accordion-trigger]')).filter(trigger => !trigger.closest('.hidden-section'));
-  
-  accordionTriggers.forEach(trigger => {
-    trigger.addEventListener('click', () => {
-      const item = trigger.closest('[data-accordion-item]');
-      if (!item) return;
-      
-      const content = item.querySelector('[data-accordion-content]');
-      if (!content) return;
-      
-      const isActive = item.classList.contains('active');
-      const group = item.closest('[data-accordion-group]');
-      
-      // Close all sister items inside the same section tabs
-      if (group) {
-        const siblingItems = group.querySelectorAll('[data-accordion-item]');
-        siblingItems.forEach(sibling => {
-          if (sibling !== item) {
-            sibling.classList.remove('active');
-            
-            const siblingTrigger = sibling.querySelector('[data-accordion-trigger]');
-            if (siblingTrigger) {
-              siblingTrigger.setAttribute('aria-expanded', 'false'); // Sync ARIA collapsed state
-            }
-            
-            const siblingContent = sibling.querySelector('[data-accordion-content]');
-            if (siblingContent) {
-              siblingContent.style.maxHeight = null;
-            }
-          }
-        });
-      }
-      
-      if (!isActive) {
-        item.classList.add('active');
-        trigger.setAttribute('aria-expanded', 'true'); // Sync ARIA expanded state
-        content.style.maxHeight = `${content.scrollHeight}px`;
-      } else {
-        item.classList.remove('active');
-        trigger.setAttribute('aria-expanded', 'false'); // Sync ARIA collapsed state
-        content.style.maxHeight = null;
-      }
-    });
-  });
-}
 
 /**
  * 8. Mobile Navigation Toggle Menu
@@ -421,48 +371,6 @@ function initMobileMenu() {
       menuToggle.setAttribute('aria-expanded', 'false');
     });
   });
-}
-
-/**
- * 9. DSS 2026 Countdown Timer
- */
-function initCountdown() {
-  const countdownContainer = document.getElementById('countdown');
-  const daysEl = document.getElementById('days');
-  const hoursEl = document.getElementById('hours');
-  const minutesEl = document.getElementById('minutes');
-  const secondsEl = document.getElementById('seconds');
-  
-  if (!countdownContainer || !daysEl || !hoursEl || !minutesEl || !secondsEl) return;
-  
-  // Set tentative target date: July 1, 2026 at 09:30:00 AM
-  const targetDate = new Date('July 1, 2026 09:30:00').getTime();
-  
-  function updateTimer() {
-    const now = new Date().getTime();
-    const difference = targetDate - now;
-    
-    if (difference <= 0) {
-      daysEl.textContent = '00';
-      hoursEl.textContent = '00';
-      minutesEl.textContent = '00';
-      secondsEl.textContent = '00';
-      return;
-    }
-    
-    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-    
-    daysEl.textContent = String(days).padStart(2, '0');
-    hoursEl.textContent = String(hours).padStart(2, '0');
-    minutesEl.textContent = String(minutes).padStart(2, '0');
-    secondsEl.textContent = String(seconds).padStart(2, '0');
-  }
-  
-  updateTimer();
-  setInterval(updateTimer, 1000);
 }
 
 /**
@@ -496,5 +404,236 @@ function initThemeToggle() {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
     setTheme(isDark ? 'light' : 'dark');
   });
+}
+
+/**
+ * 11. DSS Legacy horizontal carousel storytelling interactions
+ */
+function initLegacyCarousel() {
+  const track = document.getElementById('legacy-carousel-track');
+  const prevBtn = document.getElementById('legacy-prev');
+  const nextBtn = document.getElementById('legacy-next');
+  const progressBar = document.getElementById('legacy-progress-bar');
+  
+  if (!track) return;
+
+  // 1. Dynamic Cloning
+  const originalPanels = Array.from(track.querySelectorAll('.legacy-story-panel'));
+  const N = originalPanels.length;
+  if (N === 0) return;
+
+  // Clone first panel and append to end
+  const firstClone = originalPanels[0].cloneNode(true);
+  firstClone.classList.add('is-clone');
+  track.appendChild(firstClone);
+
+  // Clone last panel and prepend to start
+  const lastClone = originalPanels[N - 1].cloneNode(true);
+  lastClone.classList.add('is-clone');
+  track.insertBefore(lastClone, originalPanels[0]);
+
+  // Helper function to get target scrollLeft to center a panel
+  const getPanelScrollPosition = (panel) => {
+    return panel.offsetLeft - (track.clientWidth - panel.clientWidth) / 2;
+  };
+
+  // Helper to get scroll position of first and last real panels
+  const getFirstRealScroll = () => getPanelScrollPosition(track.children[1]);
+  const getLastRealScroll = () => getPanelScrollPosition(track.children[track.children.length - 2]);
+
+  // 2. Progress Bar update
+  const updateProgress = () => {
+    if (!progressBar) return;
+    const firstRealScroll = getFirstRealScroll();
+    const lastRealScroll = getLastRealScroll();
+    const range = lastRealScroll - firstRealScroll;
+    
+    if (range <= 0) {
+      progressBar.style.width = '0%';
+      return;
+    }
+    
+    let percent = ((track.scrollLeft - firstRealScroll) / range) * 100;
+    percent = Math.max(0, Math.min(100, percent));
+    progressBar.style.width = `${percent}%`;
+  };
+
+  // 3. Scroll End Handler (Infinite Loop jump)
+  let scrollTimeout;
+  const handleScrollEnd = () => {
+    if (isDown) return; // Do not jump during active mouse drag
+
+    const children = Array.from(track.children);
+    let closestIdx = 1;
+    let minDiff = Infinity;
+
+    children.forEach((panel, idx) => {
+      const targetScroll = getPanelScrollPosition(panel);
+      const diff = Math.abs(track.scrollLeft - targetScroll);
+      if (diff < minDiff) {
+        minDiff = diff;
+        closestIdx = idx;
+      }
+    });
+
+    if (closestIdx === 0) {
+      // Snapped to first clone (clone of last panel) -> jump to real last panel
+      track.style.scrollSnapType = 'none';
+      track.style.scrollBehavior = 'auto';
+      track.scrollLeft = getPanelScrollPosition(children[children.length - 2]);
+      
+      // Force layout recalculation and restore snap in next frame/tick
+      track.getBoundingClientRect();
+      setTimeout(() => {
+        track.style.scrollSnapType = 'x mandatory';
+        track.style.scrollBehavior = 'smooth';
+      }, 50);
+    } else if (closestIdx === children.length - 1) {
+      // Snapped to last clone (clone of first panel) -> jump to real first panel
+      track.style.scrollSnapType = 'none';
+      track.style.scrollBehavior = 'auto';
+      track.scrollLeft = getPanelScrollPosition(children[1]);
+      
+      // Force layout recalculation and restore snap in next frame/tick
+      track.getBoundingClientRect();
+      setTimeout(() => {
+        track.style.scrollSnapType = 'x mandatory';
+        track.style.scrollBehavior = 'smooth';
+      }, 50);
+    }
+    
+    updateProgress();
+  };
+
+  // Scroll event listener
+  track.addEventListener('scroll', () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(handleScrollEnd, 100);
+    updateProgress();
+  });
+
+  window.addEventListener('scroll', updateProgress); // backup refresh
+  
+  // Handle viewport resizing gracefully
+  window.addEventListener('resize', () => {
+    const children = Array.from(track.children);
+    let closestIdx = 1;
+    let minDiff = Infinity;
+    
+    // Find closest panel before resize adjustment
+    children.forEach((panel, idx) => {
+      const targetScroll = getPanelScrollPosition(panel);
+      const diff = Math.abs(track.scrollLeft - targetScroll);
+      if (diff < minDiff) {
+        minDiff = diff;
+        closestIdx = idx;
+      }
+    });
+
+    // Snap exactly to that panel in the resized container
+    track.style.scrollSnapType = 'none';
+    track.style.scrollBehavior = 'auto';
+    track.scrollLeft = getPanelScrollPosition(children[closestIdx]);
+    
+    track.getBoundingClientRect();
+    track.style.scrollSnapType = 'x mandatory';
+    track.style.scrollBehavior = 'smooth';
+
+    updateProgress();
+  });
+
+  // 4. Drag to scroll interactivity
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+  
+  track.addEventListener('mousedown', (e) => {
+    isDown = true;
+    track.classList.add('active');
+    // Temporarily disable scroll-snap during dragging for buttery fluidity
+    track.style.scrollSnapType = 'none';
+    track.style.scrollBehavior = 'auto';
+    startX = e.pageX - track.offsetLeft;
+    scrollLeft = track.scrollLeft;
+  });
+  
+  const endDrag = () => {
+    if (!isDown) return;
+    isDown = false;
+    track.classList.remove('active');
+    // Restore snap behavior
+    track.style.scrollSnapType = 'x mandatory';
+    track.style.scrollBehavior = 'smooth';
+    
+    // Trigger scroll end check with delay to allow snap animation to finish
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(handleScrollEnd, 150);
+  };
+
+  track.addEventListener('mouseleave', endDrag);
+  track.addEventListener('mouseup', endDrag);
+  
+  track.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - track.offsetLeft;
+    const walk = (x - startX) * 1.5; // Drag sensitivity
+    track.scrollLeft = scrollLeft - walk;
+    updateProgress();
+  });
+  
+  // Helper to find the closest panel index
+  const getClosestIdx = () => {
+    const children = Array.from(track.children);
+    let closestIdx = 1;
+    let minDiff = Infinity;
+    children.forEach((panel, idx) => {
+      const targetScroll = getPanelScrollPosition(panel);
+      const diff = Math.abs(track.scrollLeft - targetScroll);
+      if (diff < minDiff) {
+        minDiff = diff;
+        closestIdx = idx;
+      }
+    });
+    return closestIdx;
+  };
+
+  // 5. Navigation arrows
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      const children = Array.from(track.children);
+      const currentIdx = getClosestIdx();
+      const targetIdx = currentIdx - 1;
+      if (targetIdx < 0) return;
+      
+      const targetScroll = getPanelScrollPosition(children[targetIdx]);
+      track.style.scrollBehavior = 'smooth';
+      track.scrollLeft = targetScroll;
+    });
+  }
+  
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      const children = Array.from(track.children);
+      const currentIdx = getClosestIdx();
+      const targetIdx = currentIdx + 1;
+      if (targetIdx >= children.length) return;
+      
+      const targetScroll = getPanelScrollPosition(children[targetIdx]);
+      track.style.scrollBehavior = 'smooth';
+      track.scrollLeft = targetScroll;
+    });
+  }
+  
+  // Initialize to show the first real card (index 1) centered
+  const initializePosition = () => {
+    const firstRealPanel = track.children[1];
+    track.style.scrollBehavior = 'auto';
+    track.scrollLeft = getPanelScrollPosition(firstRealPanel);
+    updateProgress();
+  };
+  
+  // Delay initialization slightly to ensure offsetLayout calculations are correct
+  setTimeout(initializePosition, 100);
 }
 

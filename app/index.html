@@ -1,51 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DSS 2025 | Design Summer School</title>
-  <meta name="description" content="Our 5-Day Design Summer School is aimed at networking, learning, and developing design solutions for real-world problems." />
+  <title>DSS 2026</title>
+  <meta name="description"
+    content="Our 5-Day Design Summer School is aimed at networking, learning, and developing design solutions for real-world problems." />
   <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon" sizes="16x16" />
-  
+
   <!-- CSS Styles -->
-  <link rel="stylesheet" href="styles/index.css" />
+  <link rel="stylesheet" href="styles/index.css?v=1.4" />
 </head>
+
 <body class="antialiased">
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- 1. Loading Screen -->
   <div id="loading-screen" class="loading-screen">
     <img src="assets/logos/Logo.png" alt="DSS Logo" />
-    <div class="loading-text">Good Things Take Time <br/>- DSS Team 💜</div>
-  </div>
-
-  <!-- 2. Sticky Header / Navbar -->
+    <div class="loading-text">Good Things Take Time <br />- DSS Team 💜</div>
+  </div> <!-- 2. Sticky Header / Navbar -->
   <header>
     <div class="nav-container">
       <div class="flex-align flex-align-gap">
-        <button id="mobile-menu-toggle" class="mobile-nav-toggle" aria-expanded="false" aria-label="Toggle navigation menu">&#9776;</button>
-        <a href="/" class="nav-logo-text">DESIGN SUMMER SCHOOL</a>
+        <button id="mobile-menu-toggle" class="mobile-nav-toggle" aria-expanded="false"
+          aria-label="Toggle navigation menu">&#9776;</button>
+        <a href="/" class="nav-logo">
+          <img src="assets/logos/Logo_Icon.png" alt="Design Summer School (DSS) Logo Icon" class="nav-logo-img" />
+          <span class="nav-logo-text-dss">Design Summer School</span>
+        </a>
         <nav id="nav-links" class="nav-links">
           <a class="nav-link" href="#about">
             <div class="nav-link-inner">
-              <span>About</span>
-              <span>About</span>
+              <span>About us</span>
+              <span>About us</span>
             </div>
           </a>
-          <a class="nav-link" href="#subscribe">
+          <a class="nav-link" href="#schedule">
             <div class="nav-link-inner">
-              <span>Follow</span>
-              <span>Follow</span>
+              <span>Schedule</span>
+              <span>Schedule</span>
+            </div>
+          </a>
+          <a class="nav-link" href="#legacy">
+            <div class="nav-link-inner">
+              <span>Workshops</span>
+              <span>Workshops</span>
+            </div>
+          </a>
+          <a class="nav-link" href="#faculty">
+            <div class="nav-link-inner">
+              <span>Mentors</span>
+              <span>Mentors</span>
+            </div>
+          </a>
+          <a class="nav-link" href="#merch" style="display:none">
+            <div class="nav-link-inner">
+              <span>Merchandise</span>
+              <span>Merchandise</span>
+            </div>
+          </a>
+          <a class="nav-link" href="#faq" style="display:none">
+            <div class="nav-link-inner">
+              <span>FAQ</span>
+              <span>FAQ</span>
             </div>
           </a>
         </nav>
       </div>
+
       <div class="nav-actions">
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme (Canvas / Obsidian)" aria-pressed="false">
+        <a href="https://forms.gle/DSS2026register" class="nav-register-btn" id="nav-register-cta" target="_blank"
+          rel="noopener noreferrer">Register Now</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
           <span class="theme-toggle-label-left">Canvas</span>
-          <span class="theme-toggle-track">
-            <span class="theme-toggle-thumb"></span>
-          </span>
+          <div class="theme-toggle-track">
+            <div class="theme-toggle-thumb"></div>
+          </div>
           <span class="theme-toggle-label-right">Obsidian</span>
         </button>
       </div>
@@ -53,998 +85,1270 @@
   </header>
 
   <main id="main-content">
-    <!-- 3. Hero Section -->
-    <section class="hero hero-grid-soon" id="home">
-      <div id="hero-grid" class="hero-grid"></div>
-      
-      <!-- Ambient morphing mesh glows -->
-      <div class="ambient-glows">
-        <div class="glow-circle glow-1"></div>
-        <div class="glow-circle glow-2"></div>
-        <div class="glow-circle glow-3"></div>
-        <div class="glow-circle glow-4"></div>
-      </div>
-      
-      <!-- Blueprint Guides & Badges -->
-      <div class="blueprint-guides">
-        <div class="guide-line-v guide-left"></div>
-        <div class="guide-line-v guide-right"></div>
-        <div class="geo-tag geo-tag-1">[ IIITD // 28.5458° N, 77.2706° E ]</div>
-        <div class="geo-tag geo-tag-2">[ LATENCY_OK // MONIT_ON ]</div>
-        <div class="crosshair ch-tl"></div>
-        <div class="crosshair ch-tr"></div>
-        <div class="crosshair ch-bl"></div>
-        <div class="crosshair ch-br"></div>
-      </div>
+    <div class="hero-grid-soon">
+      <!-- 3. Hero Section -->
+      <section id="home" class="hero">
+        <div class="hero-container">
 
-      <!-- Giant typographic background monogram -->
-      <div class="hero-monogram" aria-hidden="true">DSS26</div>
-
-      <!-- Asymmetric Hero Layout Container -->
-      <div class="hero-layout-container">
-        
-        <!-- Left Side: Typography & Interaction -->
-        <div class="hero-left-content">
-          <div class="coming-soon-badge">[ DSS 2026 : COMING_SOON ]</div>
-          <h1 class="hero-title">
-            DESIGN<br/>SUMMER<br/>SCHOOL<br/><span class="text-gradient">2026.</span>
-          </h1>
-          <div class="hero-subtitle-soon">Immersive Design & Technology Workshops returning in Summer 2026 at IIIT Delhi</div>
-          
-          <!-- Countdown Timer Widget -->
-          <div class="countdown-container" id="countdown" aria-live="polite">
-            <div class="countdown-tick tick-tl"></div>
-            <div class="countdown-tick tick-tr"></div>
-            <div class="countdown-tick tick-bl"></div>
-            <div class="countdown-tick tick-br"></div>
-            <div class="countdown-box">
-              <div class="countdown-num" id="days">--</div>
-              <div class="countdown-label">Days</div>
-            </div>
-            <div class="countdown-box">
-              <div class="countdown-num" id="hours">--</div>
-              <div class="countdown-label">Hours</div>
-            </div>
-            <div class="countdown-box">
-              <div class="countdown-num" id="minutes">--</div>
-              <div class="countdown-label">Mins</div>
-            </div>
-            <div class="countdown-box">
-              <div class="countdown-num" id="seconds">--</div>
-              <div class="countdown-label">Secs</div>
-            </div>
+          <!-- Ambient morphing mesh glows -->
+          <div class="ambient-glows">
+            <div class="glow-circle glow-1"></div>
+            <div class="glow-circle glow-2"></div>
+            <div class="glow-circle glow-3"></div>
+            <div class="glow-circle glow-4"></div>
           </div>
-          
-          <a href="#about" class="hero-cta-link">EXPLORE THE VISION &rarr;</a>
-        </div>
 
-        <!-- Right Side: Rich Visual Art Centerpiece -->
-        <div class="hero-right-visual">
-          <div class="art-composition-frame">
-            <!-- Background mesh color plate inside the frame -->
-            <div class="art-color-plate"></div>
-            
-            <!-- Custom Layered SVG Visual Composition -->
-            <svg class="art-svg-composition" viewBox="0 0 600 600" aria-hidden="true">
-              <defs>
-                <linearGradient id="artGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="var(--color-art-1)" />
-                  <stop offset="50%" stop-color="var(--color-art-2)" />
-                  <stop offset="100%" stop-color="var(--color-art-3)" />
-                </linearGradient>
-                <linearGradient id="artGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stop-color="var(--color-art-3)" stop-opacity="0.9" />
-                  <stop offset="100%" stop-color="var(--color-art-4)" stop-opacity="0.9" />
-                </linearGradient>
-                <radialGradient id="meshGrad" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stop-color="var(--color-art-2)" stop-opacity="0.8" />
-                  <stop offset="100%" stop-color="transparent" />
-                </radialGradient>
-                <filter id="softShadow" x="-20%" y="-20%" width="150%" height="150%">
-                  <feDropShadow dx="0" dy="20" stdDeviation="25" flood-color="#000000" flood-opacity="0.15" />
-                </filter>
-                <filter id="glowFilter" x="-30%" y="-30%" width="160%" height="160%">
-                  <feGaussianBlur stdDeviation="25" result="blur" />
-                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                </filter>
-                
-                <!-- Circular text path for concentric typography integration -->
-                <path id="textPath-circle" d="M 300 300 m -205,0 a 205,205 0 1,1 410,0 a 205,205 0 1,1 -410,0" fill="none" />
-              </defs>
+          <!-- Blueprint Guides & Badges -->
+          <div class="blueprint-guides">
+            <div class="guide-line-v guide-left"></div>
+            <div class="guide-line-v guide-right"></div>
+            <div class="geo-tag geo-tag-2">[ LATENCY_OK // MONIT_ON ]</div>
+            <div class="crosshair ch-tl"></div>
+            <div class="crosshair ch-tr"></div>
+            <div class="crosshair ch-bl"></div>
+            <div class="crosshair ch-br"></div>
+          </div>
 
-              <!-- Dynamic morphing background vector paths -->
-              <path class="fluid-mesh-shape anim-fluid-1" d="M 300 130 C 410 130, 470 190, 470 300 C 470 410, 410 470, 300 470 C 190 470, 130 410, 130 300 C 130 190, 190 130, 300 130 Z" fill="url(#artGrad1)" filter="url(#glowFilter)" opacity="0.95" />
-              <path class="fluid-mesh-shape anim-fluid-2" d="M 300 160 C 380 160, 440 220, 440 300 C 440 380, 380 440, 300 440 C 220 440, 160 380, 160 300 C 160 220, 220 160, 300 160 Z" fill="url(#artGrad2)" opacity="0.85" />
+          <!-- Asymmetric Hero Layout Container -->
+          <div class="hero-layout-container">
 
-              <!-- Concentric Rotating Gears & Rings -->
-              <circle cx="300" cy="300" r="230" class="chrono-ring ring-outer-dashed" />
-              <circle cx="300" cy="300" r="190" class="chrono-ring ring-middle-solid" />
-              <circle cx="300" cy="300" r="150" class="chrono-ring ring-middle-dashed" />
-              <circle cx="300" cy="300" r="110" class="chrono-ring ring-inner-axis" />
-              <circle cx="300" cy="300" r="70" class="chrono-ring ring-dial" />
+            <!-- Left Side: Typography & Interaction -->
+            <div class="hero-left-content">
+              <div class="hero-institutional-strip">
+                <div class="hero-inst-logos">
 
-              <!-- Rotating concentric editorial text branding -->
-              <g class="ring-outer-dashed">
-                <text fill="var(--color-text-dark)" font-family="var(--font-mono)" font-size="8" font-weight="700" letter-spacing="0.12em" opacity="0.45">
-                  <textPath href="#textPath-circle">DESIGN SUMMER SCHOOL 2026 • IIIT DELHI • HUMAN-CENTERED DESIGN • </textPath>
-                </text>
-              </g>
+                  <!-- HCD -->
+                  <div class="hero-logo-pair">
+                    <img src="assets/logos/hcd_logo_cropped_2.png" alt="Human Centered Design (HCD) Logo"
+                      class="hero-inst-logo logo-hcd" />
+                  </div>
 
-              <!-- Crosshair guides inside visual art frame -->
-              <line x1="300" y1="30" x2="300" y2="570" stroke="var(--color-text-dark)" stroke-width="0.5" opacity="0.12" stroke-dasharray="4, 4" />
-              <line x1="30" y1="300" x2="570" y2="300" stroke="var(--color-text-dark)" stroke-width="0.5" opacity="0.12" stroke-dasharray="4, 4" />
-            </svg>
-            
-            <!-- Editorial Curation stamps overlaying the centerpiece -->
-            <div class="art-editorial-label pane-front">
-              <div class="label-meta">[ CURATED THEMES ]</div>
-              <div class="label-title">CREATIVE SYSTEMS</div>
+                </div>
+                <div class="hero-present-label">Presents</div>
+              </div>
+              <h1 class="hero-title">
+                DESIGN <br />SUMMER<br />SCHOOL<br /><span class="text-gradient">2026.</span>
+              </h1>
+              <div class="hero-subtitle-soon">Immersive Design & Technology Workshops returning in Summer 2026 at IIIT
+                Delhi</div>
+              <!-- Workshop Date Display -->
+              <div class="workshop-date-display" id="workshop-date">
+                <div class="workshop-date-label">Workshop Dates</div>
+                <div class="workshop-date-main">
+                  <span class="workshop-date-day">24<sup>th</sup> July</span>
+                  <span class="workshop-date-separator">&ndash;</span>
+                  <span class="workshop-date-day">26<sup>th</sup> July</span>
+                  <span class="workshop-date-year">2026</span>
+                </div>
+              </div>
+
+              <!-- Primary CTA: Register Now -->
+              <a href="https://forms.gle/DSS2026register" class="hero-register-btn" id="hero-register-cta"
+                target="_blank" rel="noopener noreferrer">
+                <span class="hero-register-btn-text">Register Now</span>
+              </a>
             </div>
-            <div class="art-editorial-label pane-back">
-              <div class="label-meta">[ HCD ASSOCIATION ]</div>
-              <div class="label-title">INTERACTION & FORM</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- 4. About DSS Section -->
-    <section id="about" class="about-section-container">
-      <div class="about-columns">
-        <div class="about-left-col">
-          <div class="about-section-label">[ 01 / VISION ]</div>
-          <h2 class="about-title-large">Immersive hands-on design learning in the heart of Delhi.</h2>
-        </div>
-        <div class="about-right-col">
-          <p class="about-desc-editorial">
-            The Design Summer School (DSS), organized by the Human-Centered Design (HCD) Association of IIIT Delhi, offers a series of interactive, expert-led workshops on design and related fields, including Human-Centered AI, Sensing, character sketching, photography, and XR/AR/VR design.
-          </p>
-          <p class="about-desc-editorial">
-            Curated for students, professionals, and design enthusiasts, this program provides a premium hands-on learning opportunity to build design solutions for real-world problems. Prepare for expert mentoring, high-impact tutorials, and networking with the brightest creative minds in Summer 2026.
-          </p>
-        </div>
-      </div>
-    </section>
+            <!-- Right Side: Rich Visual Art Centerpiece -->
+            <div class="hero-right-visual">
+              <div class="art-composition-frame">
+                <!-- Background mesh color plate inside the frame -->
+                <div class="art-color-plate"></div>
 
-    <!-- 4.2. Retrospective Section -->
-    <section id="legacy" class="legacy-section-container">
-      <div class="legacy-header">
-        <div class="legacy-left-col">
-          <div class="legacy-section-label">[ 02 / RETROSPECTIVE ]</div>
-          <h2 class="legacy-title-large">DSS Legacy & Moments.</h2>
-        </div>
-        <div class="legacy-right-col">
-          <p class="legacy-desc-editorial">
-            A visual retrospective of the creative energy from previous Design Summer School editions. Through hands-on making, peer review, and interactive installations, participants transformed concepts into tangible realities.
-          </p>
-        </div>
-      </div>
-      
-      <!-- Asymmetric Artbook Collage -->
-      <div class="legacy-collage-container">
-        
-        <!-- Card 1: Top Left -->
-        <div class="legacy-card pos-1">
-          <div class="legacy-image-wrapper">
-            <img src="assets/images/carousel/1.jpg" alt="Prototyping and sensing workshop" loading="lazy" />
-          </div>
-          <div class="legacy-card-label">
-            <span class="legacy-card-meta">[ VOL. 2025 // WORKSHOP ]</span>
-            <span class="legacy-card-title">PROTOTYPING & SENSING</span>
-          </div>
-        </div>
+                <!-- Custom Layered SVG Visual Composition -->
+                <svg class="art-svg-composition" viewBox="0 0 600 600" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="artGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="var(--color-art-1)" />
+                      <stop offset="50%" stop-color="var(--color-art-2)" />
+                      <stop offset="100%" stop-color="var(--color-art-3)" />
+                    </linearGradient>
+                    <linearGradient id="artGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="var(--color-art-3)" stop-opacity="0.9" />
+                      <stop offset="100%" stop-color="var(--color-art-4)" stop-opacity="0.9" />
+                    </linearGradient>
+                    <radialGradient id="meshGrad" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="var(--color-art-2)" stop-opacity="0.8" />
+                      <stop offset="100%" stop-color="transparent" />
+                    </radialGradient>
+                    <filter id="softShadow" x="-20%" y="-20%" width="150%" height="150%">
+                      <feDropShadow dx="0" dy="20" stdDeviation="25" flood-color="#000000" flood-opacity="0.15" />
+                    </filter>
+                    <filter id="glowFilter" x="-30%" y="-30%" width="160%" height="160%">
+                      <feGaussianBlur stdDeviation="25" result="blur" />
+                      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                    </filter>
 
-        <!-- Card 2: Top Right -->
-        <div class="legacy-card pos-2">
-          <div class="legacy-image-wrapper">
-            <img src="assets/images/carousel/3.jpg" alt="Critical discourse and group feedback" loading="lazy" />
-          </div>
-          <div class="legacy-card-label">
-            <span class="legacy-card-meta">[ VOL. 2025 // COLLABORATION ]</span>
-            <span class="legacy-card-title">CRITICAL DISCOURSE</span>
-          </div>
-        </div>
+                    <!-- Circular text path for concentric typography integration -->
+                    <path id="textPath-circle" d="M 300 300 m -205,0 a 205,205 0 1,1 410,0 a 205,205 0 1,1 -410,0"
+                      fill="none" />
+                  </defs>
 
-        <!-- Card 3: Center Overlapping -->
-        <div class="legacy-card pos-3">
-          <div class="legacy-image-wrapper">
-            <img src="assets/images/carousel/4.jpg" alt="Material experiments and hands-on crafting" loading="lazy" />
-          </div>
-          <div class="legacy-card-label">
-            <span class="legacy-card-meta">[ VOL. 2025 // LABS ]</span>
-            <span class="legacy-card-title">MATERIAL EXPERIMENTS</span>
-          </div>
-        </div>
+                  <!-- Dynamic morphing background vector paths -->
+                  <path class="fluid-mesh-shape anim-fluid-1"
+                    d="M 300 130 C 410 130, 470 190, 470 300 C 470 410, 410 470, 300 470 C 190 470, 130 410, 130 300 C 130 190, 190 130, 300 130 Z"
+                    fill="url(#artGrad1)" filter="url(#glowFilter)" opacity="0.95" />
+                  <path class="fluid-mesh-shape anim-fluid-2"
+                    d="M 300 160 C 380 160, 440 220, 440 300 C 440 380, 380 440, 300 440 C 220 440, 160 380, 160 300 C 160 220, 220 160, 300 160 Z"
+                    fill="url(#artGrad2)" opacity="0.85" />
 
-        <!-- Card 4: Bottom Right -->
-        <div class="legacy-card pos-4">
-          <div class="legacy-image-wrapper">
-            <img src="assets/images/carousel/8.jpg" alt="Final presentations and critique" loading="lazy" />
-          </div>
-          <div class="legacy-card-label">
-            <span class="legacy-card-meta">[ VOL. 2025 // SHOWCASE ]</span>
-            <span class="legacy-card-title">DESIGN SHOWCASE</span>
-          </div>
-        </div>
+                  <!-- Concentric Rotating Gears & Rings -->
+                  <circle cx="300" cy="300" r="230" class="chrono-ring ring-outer-dashed" />
+                  <circle cx="300" cy="300" r="190" class="chrono-ring ring-middle-solid" />
+                  <circle cx="300" cy="300" r="150" class="chrono-ring ring-middle-dashed" />
+                  <circle cx="300" cy="300" r="110" class="chrono-ring ring-inner-axis" />
+                  <circle cx="300" cy="300" r="70" class="chrono-ring ring-dial" />
 
-      </div>
-    </section>
+                  <!-- Rotating concentric editorial text branding -->
+                  <g class="ring-outer-dashed">
+                    <text fill="var(--color-text-dark)" font-family="var(--font-mono)" font-size="8" font-weight="700"
+                      letter-spacing="0.12em" opacity="0.45">
+                      <textPath href="#textPath-circle">DESIGN SUMMER SCHOOL 2026 • IIIT DELHI • HUMAN-CENTERED DESIGN •
+                      </textPath>
+                    </text>
+                  </g>
 
-    <!-- 4.5. Subscribe Section -->
-    <section id="subscribe" class="subscribe-section">
-      <div class="subscribe-container">
-        <div class="subscribe-label">[ 02 / UPDATES ]</div>
-        <h2 class="subscribe-title">Subscribe to stay updated on DSS 2026.</h2>
-        <form class="subscribe-form" id="newsletter-form">
-          <input type="email" class="subscribe-input" placeholder="Your Email Address" aria-label="Email for updates" required />
-          <button type="submit" class="subscribe-btn">SUBSCRIBE &rarr;</button>
-        </form>
-      </div>
-    </section>
+                  <!-- Crosshair guides inside visual art frame -->
+                  <line x1="300" y1="30" x2="300" y2="570" stroke="var(--color-text-dark)" stroke-width="0.5"
+                    opacity="0.12" stroke-dasharray="4, 4" />
+                  <line x1="30" y1="300" x2="570" y2="300" stroke="var(--color-text-dark)" stroke-width="0.5"
+                    opacity="0.12" stroke-dasharray="4, 4" />
+                </svg>
 
-  <div class="hidden-section">
-  <!-- 5. Our Themes Section -->
-  <section id="themes" class="section-bg-slate themes-section">
-    <div class="container">
-      <div class="themes-grid">
-        <div class="themes-left">
-          <h2 class="section-title font-krona">Our Themes</h2>
-          <blockquote class="themes-quote">
-            "Design is the silent ambassador of your brand." <br/>
-            <span class="quote-author">- Paul Rand, IBM</span>
-          </blockquote>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdzcs7iO5O46GLZTQEsTrdlL01bOlKWjABINNgGZXlT-YKDSg/viewform" target="_blank" rel="noopener noreferrer">
-            <button class="btn btn-primary">REGISTER</button>
-          </a>
-        </div>
-        <div class="themes-right">
-          <!-- Stack of Cards -->
-          <div id="themes-stack" class="themes-stack">
-            <!-- Card 1 -->
-            <div class="theme-card card-pos-0 bg-green-300" tabindex="0" role="button" aria-label="Theme: XR & AR, VR & MR. Press Enter or Space to cycle card.">
-              <img src="assets/images/themes/4.jpg" alt="XR & AR, VR & MR" class="theme-card-img-circle" />
-              <h3 class="theme-card-title-custom font-krona">XR & AR, VR & MR</h3>
-            </div>
-            <!-- Card 2 -->
-            <div class="theme-card card-pos-1 bg-pink-400" tabindex="0" role="button" aria-label="Theme: Creative Thinking & Character Design. Press Enter or Space to cycle card.">
-              <img src="assets/images/themes/3.jpg" alt="Creative Thinking & Character Design" class="theme-card-img-circle" />
-              <h3 class="theme-card-title-custom font-krona">Creative Thinking & Character Design</h3>
-            </div>
-            <!-- Card 3 -->
-            <div class="theme-card card-pos-2 bg-indigo-500 text-white" tabindex="0" role="button" aria-label="Theme: Photography & Videography/Calligraphy. Press Enter or Space to cycle card.">
-              <img src="assets/images/themes/1.jpg" alt="Photography & Videography/Calligraphy" class="theme-card-img-circle" />
-              <h3 class="theme-card-title-custom font-krona">Photography & Videography/Calligraphy</h3>
-            </div>
-            <!-- Card 4 -->
-            <div class="theme-card card-pos-3 bg-yellow-300" tabindex="0" role="button" aria-label="Theme: Design Thinking Processes. Press Enter or Space to cycle card.">
-              <img src="assets/images/themes/2.jpg" alt="Design Thinking Processes" class="theme-card-img-circle" />
-              <h3 class="theme-card-title-custom font-krona">Design Thinking Processes</h3>
-            </div>
-            <!-- Card 5 -->
-            <div class="theme-card card-pos-4 bg-blue-300" tabindex="0" role="button" aria-label="Theme: Sensing & HC AI. Press Enter or Space to cycle card.">
-              <img src="assets/images/themes/11.jpg" alt="Sensing & HC AI" class="theme-card-img-circle" />
-              <h3 class="theme-card-title-custom font-krona">Sensing & HC AI</h3>
+                <!-- Editorial Curation stamps overlaying the centerpiece -->
+                <div class="art-editorial-label pane-front">
+                  <div class="label-meta">[ CURATED THEMES ]</div>
+                  <div class="label-title">CREATIVE SYSTEMS</div>
+                </div>
+                <div class="art-editorial-label pane-back">
+                  <div class="label-meta">[ HCD ASSOCIATION ]</div>
+                  <div class="label-title">INTERACTION & FORM</div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="themes-indicator-wrapper">
-            <p class="themes-indicator-text font-krona animate-bounce-horizontal">
-              Swipe the above cards <span>→</span>
+      </section>
+
+      <!-- 4. About DSS Section -->
+      <section id="about" class="about-section-container">
+        <div class="about-columns">
+          <div class="about-left-col">
+            <div class="about-section-label">[ 01 / VISION ]</div>
+            <h2 class="about-title-large">Immersive hands-on design learning in the heart of Delhi.</h2>
+          </div>
+          <div class="about-right-col">
+            <p class="about-desc-editorial">
+              The Design Summer School (DSS), organized by the Human-Centered Design (HCD) Association of IIIT Delhi,
+              offers a series of interactive, expert-led workshops on design and related fields, including
+              Human-Centered AI, Sensing, character sketching, photography, and XR/AR/VR design.
+            </p>
+            <p class="about-desc-editorial">
+              Curated for students, professionals, and design enthusiasts, this program provides a premium hands-on
+              learning opportunity to build design solutions for real-world problems. Prepare for expert mentoring,
+              high-impact tutorials, and networking with the brightest creative minds in Summer 2026.
             </p>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- 6. Features Section -->
-  <section id="feature" class="section-bg-white">
-    <div class="container">
-      <div class="feature-slider-header">
-        <h2 class="section-title font-krona features-slider-title">
-          We're good. <span class="text-muted">Heres why.</span>
-        </h2>
-        <div class="slider-controls">
-          <button id="btn-prev-feature" class="btn-slider" aria-label="Previous features">&#8592;</button>
-          <button id="btn-next-feature" class="btn-slider" aria-label="Next features">&#8594;</button>
+      <!-- 4.1. Schedule Section - Coming Soon Preview -->
+      <section id="schedule" class="schedule-section-container">
+        <!-- Blueprint visual layout lines / grid background -->
+        <div class="schedule-blueprint-guides">
+          <div class="schedule-guide-line-v guide-left"></div>
+          <div class="schedule-guide-line-v guide-right"></div>
         </div>
-      </div>
-      
-      <div class="feature-slider-container">
-        <div id="feature-track" class="feature-track">
-          <!-- Card 1 -->
-          <div class="feature-card style-light card">
-            <span class="feature-icon-bg">&#127986;</span> <!-- University/Building -->
-            <h3 class="font-krona">Leading Institute for HCI</h3>
-            <div class="feature-desc">India’s Best institute for Human-Computer Interaction (HCI).</div>
-          </div>
-          <!-- Card 2 -->
-          <div class="feature-card style-dark card">
-            <span class="feature-icon-bg">&#128085;</span> <!-- T-Shirt -->
-            <h3 class="font-krona">Exclusive Merchandise</h3>
-            <div class="feature-desc">Get access to premium, program-only merchandise you’ll actually want to wear and flaunt.</div>
-          </div>
-          <!-- Card 3 -->
-          <div class="feature-card style-light card">
-            <span class="feature-icon-bg">&#127894;</span> <!-- Award Ribbon -->
-            <h3 class="font-krona">Certificate of Completion</h3>
-            <div class="feature-desc">Official certification from IIIT-Delhi after successful participation and completion of the program.</div>
-          </div>
-          <!-- Card 4 -->
-          <div class="feature-card style-dark card">
-            <span class="feature-icon-bg">&#9874;</span> <!-- Tools -->
-            <h3 class="font-krona">Hands-on Workshops</h3>
-            <div class="feature-desc">Get practical experience through interactive, expert-led workshops designed to boost your skills.</div>
-          </div>
-          <!-- Card 5 -->
-          <div class="feature-card style-light card">
-            <span class="feature-icon-bg">&#129309;</span> <!-- Handshake -->
-            <h3 class="font-krona">Professional Networking</h3>
-            <div class="feature-desc">Build your network with fellow learners and industry professionals through social and professional events.</div>
-          </div>
-          <!-- Card 6 -->
-          <div class="feature-card style-dark card">
-            <span class="feature-icon-bg">&#128640;</span> <!-- Rocket -->
-            <h3 class="font-krona">Future Opportunities</h3>
-            <div class="feature-desc">Top performers may be considered for future opportunities and projects at IIIT-Delhi.</div>
-          </div>
-          <!-- Card 7 -->
-          <div class="feature-card style-light card">
-            <span class="feature-icon-bg">&#128101;</span> <!-- Users -->
-            <h3 class="font-krona">1:1 Mentorship</h3>
-            <div class="feature-desc">Personal mentorship from experts at IIIT-Delhi — India’s leading institute for Human-Computer Interaction (HCI).</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- 7. Infinite Marquee Classroom Photo Carousel -->
-  <section class="marquee-section">
-    <div class="marquee-container">
-      <div id="marquee-track" class="marquee-track">
-        <div class="marquee-item">
-          <button class="lightbox-trigger" aria-label="Expand image of Classroom 1">
-            <img src="assets/images/carousel/1.jpg" alt="Classroom 1" />
-          </button>
-        </div>
-        <div class="marquee-item">
-          <button class="lightbox-trigger" aria-label="Expand image of Classroom 4">
-            <img src="assets/images/carousel/4.jpg" alt="Classroom 4" />
-          </button>
-        </div>
-        <div class="marquee-item">
-          <button class="lightbox-trigger" aria-label="Expand image of Classroom 2">
-            <img src="assets/images/carousel/2.jpg" alt="Classroom 2" />
-          </button>
-        </div>
-        <div class="marquee-item">
-          <button class="lightbox-trigger" aria-label="Expand image of Classroom 3">
-            <img src="assets/images/carousel/3.jpg" alt="Classroom 3" />
-          </button>
-        </div>
-        <div class="marquee-item">
-          <button class="lightbox-trigger" aria-label="Expand image of Classroom 8">
-            <img src="assets/images/carousel/8.jpg" alt="Classroom 8" />
-          </button>
-        </div>
-        <div class="marquee-item">
-          <button class="lightbox-trigger" aria-label="Expand image of Classroom 5">
-            <img src="assets/images/carousel/5.jpg" alt="Classroom 5" />
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Lightbox Modal -->
-  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Classroom photo viewer">
-    <button id="lightbox-close" class="lightbox-close" aria-label="Close photo viewer">&times;</button>
-    <img id="lightbox-img" class="lightbox-content" src="" alt="Lightbox View" />
-  </div>
-
-  <!-- 8. Swag. Snacks. Vibes. Section -->
-  <section id="merch" class="section-bg-white">
-    <div class="container">
-      <div class="merch-grid">
-        <div class="merch-left">
-          <h2 class="font-krona merch-title">
-            <span class="text-gradient">DSS 2025</span><br/>
-            Swag. Snacks. Vibes.
-          </h2>
-          <p class="acc-desc mt-6">
-            Celebrate DSS 2025 with exclusive merchandise and a curated selection of gourmet food, designed for developers, innovators, and visionaries alike.
-          </p>
-          <a href="https://forms.gle/qyqmH4FjPRoHP4iw8" target="_blank" rel="noopener noreferrer" class="btn btn-primary mt-6">Register</a>
-        </div>
-        <div class="merch-right">
-          <div class="merch-img-container">
-            <img src="assets/images/Merch.png" alt="DSS 2025 merch preview" class="merch-img" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 9. Accommodations Available Section -->
-  <section id="acc" class="section-bg-slate">
-    <div class="container">
-      <div class="acc-grid">
-        <div>
-          <h2 class="section-title font-krona acc-title">Accommodations<br/>Available</h2>
-          <p class="acc-subtitle">Accommodation Form and Fees need to be paid separately.</p>
-          <p class="acc-desc">
-            Shared accommodation is available for the duration of the summer school, charged separately.<br/>
-            Here is a step-by-step guide in PDF format. <br/>
-            <a href="https://drive.google.com/file/d/1PDuvJ-mXDMT047d-T_pj-bF61cK5UfSE/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="acc-link">
-              You can view or download the document.
-            </a><br/><br/>
-            To avail the same, apply by 28th June 2025 on the portal
-          </p>
-          
-          <a href="https://payments.iiitd.edu.in/pg/fees/pg.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-            Pay for Accommodations
-          </a>
-          
-          <div class="acc-list">
-            <div class="acc-list-item">1. <span>Accommodation is available for a limited time only.</span></div>
-            <div class="acc-list-item">2. <span>Kindly note that accommodation can only be availed between July 20 to July 26, 2025.</span></div>
-            <div class="acc-list-item">3. <span>Accommodation charges are not included in the registration fees.</span></div>
-            <div class="acc-list-item">4. <span>Accommodation does not include the cost of food.</span></div>
-            <div class="acc-list-item">5. <span>Seats for accommodation are limited and will be allotted on a first-come, first-served basis.</span></div>
-            <div class="acc-list-item">6. <span>Once paid, accommodation fees are strictly non-refundable.</span></div>
-            <div class="acc-list-item">7. <span>Please plan and register accordingly to secure your stay.</span></div>
-          </div>
-        </div>
-        <div>
-          <div class="acc-pdf-viewer">
-            <iframe src="assets/pdfs/acc.pdf" title="Accommodation PDF Guide" referrerpolicy="strict-origin-when-cross-origin" loading="lazy"></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 10. Schedule Section -->
-  <section id="schedule" class="section-bg-white">
-    <div class="container">
-      <h2 class="section-title font-krona text-center mb-12">Schedule</h2>
-      
-      <div class="schedule-container" data-accordion-group>
-        <!-- Monday -->
-        <div class="accordion-item" data-accordion-item>
-          <button class="accordion-header" id="schedule-trigger-1" aria-controls="schedule-content-1" aria-expanded="false" data-accordion-trigger>
-            <span class="accordion-header-title font-krona">Monday, 21st July 2025: Design Thinking Processes</span>
-            <span class="accordion-header-arrow">&#9660;</span>
-          </button>
-          <div class="accordion-content" id="schedule-content-1" role="region" aria-labelledby="schedule-trigger-1" data-accordion-content>
-            <div class="accordion-content-inner">
-              <div class="schedule-row">
-                <div class="schedule-time">08:45 a.m. - 09:15 a.m.</div>
-                <div class="schedule-event">Registration, Merchandise Distribution, and Breakfast</div>
-              </div>
-              <div class="schedule-row">
-                <div class="schedule-time">09:30 a.m. - 11:00 a.m.</div>
-                <div class="schedule-event">Opening ceremony & Keynote by Dr.Srinivasan Venkataraman, Venue B003 R&D</div>
-              </div>
-              <div class="schedule-row">
-                <div class="schedule-time">11:00 a.m. - 11:30 a.m.</div>
-                <div class="schedule-event">Tea</div>
-              </div>
-              <div class="schedule-row">
-                <div class="schedule-time">11:30 a.m. - 01:00 p.m.</div>
-                <div class="schedule-event">Session by Dr.Richa Gupta, Venue B003 R&D</div>
-              </div>
-              <div class="schedule-row">
-                <div class="schedule-time">01:00 p.m. - 02:00 p.m.</div>
-                <div class="schedule-event">Lunch</div>
-              </div>
-              <div class="schedule-row">
-                <div class="schedule-time">02:00 p.m. - 05:00 p.m.</div>
-                <div class="schedule-event">Workshop on Use of AI tools in design thinking by Mr.Arunesh Singh, Venue B003 R&D</div>
-              </div>
-              <div class="schedule-row">
-                <div class="schedule-time">05:00 p.m. - 05:15 p.m.</div>
-                <div class="schedule-event">Tea</div>
-              </div>
+        <div class="container">
+          <div class="schedule-header">
+            <div class="schedule-left-col">
+              <div class="schedule-section-label">[ 02 / TIMELINE ]</div>
+              <h2 class="schedule-title-large">Curated Days & Track Timeline.</h2>
             </div>
-          </div>
-        </div>
-
-        <!-- Tuesday -->
-        <div class="accordion-item" data-accordion-item>
-          <button class="accordion-header" id="schedule-trigger-2" aria-controls="schedule-content-2" aria-expanded="false" data-accordion-trigger>
-            <span class="accordion-header-title font-krona">Tuesday, 22nd July 2025: Creative Thinking & Character Design</span>
-            <span class="accordion-header-arrow">&#9660;</span>
-          </button>
-          <div class="accordion-content" id="schedule-content-2" role="region" aria-labelledby="schedule-trigger-2" data-accordion-content>
-            <div class="accordion-content-inner">
-              <div class="schedule-row">
-                <div class="schedule-time">09:30 a.m. - 11:00 a.m.</div>
-                <div class="schedule-event">Session on Character sketching by Mr.Manoj Sinha, Venue B003 R&D</div>
-              </div>
-              <div class="schedule-row">
-                <div class="schedule-time">11:00 a.m. - 11:30 a.m.</div>
-                <div class="schedule-event">Tea</div>
-              </div>
-              <div class="schedule-row">
-                <div class="schedule-time">11:30 a.m. - 01:00 p.m.</div>
-                <div class="schedule-event">Session by Mr.Manoj Sinha, Venue B003 R&D</div>
-              </div>
-              <div class="schedule-row">
-                <div class="schedule-time">01:00 p.m. - 02:00 p.m.</div>
-                <div class="schedule-event">Lunch</div>
-              </div>
-              <div class="schedule-row">
-                <div class="schedule-time">02:00 p.m. - 05:00 p.m.</div>
-                <div class="schedule-event">Workshop on design methods of creativity by Dr.Sonal Keshwani, Venue B003 R&D</div>
-              </div>
-              <div class="schedule-row">
-                <div class="schedule-time">05:00 p.m. - 05:15 p.m.</div>
-                <div class="schedule-event">Tea</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Wednesday -->
-        <div class="accordion-item" data-accordion-item>
-          <button class="accordion-header" id="schedule-trigger-3" aria-controls="schedule-content-3" aria-expanded="false" data-accordion-trigger>
-            <span class="accordion-header-title font-krona">Wednesday, 23rd July 2025: Sensing & HC AI</span>
-            <span class="accordion-header-arrow">&#9660;</span>
-          </button>
-          <div class="accordion-content" id="schedule-content-3" role="region" aria-labelledby="schedule-trigger-3" data-accordion-content>
-            <div class="accordion-content-inner">
-              <div class="schedule-row">
-                <div class="schedule-time">09:30 a.m. - 11:00 a.m.</div>
-                <div class="schedule-event">Session by Dr.Kalpana Shankhwar, Venue B003 R&D</div>
-              </div>
-              <div class="schedule-row">
-                <div class="schedule-time">11:00 a.m. - 11:30 a.m.</div>
-                <div class="schedule-event">Tea</div>
-              </div>
-              <div class="schedule-row">
-                <div class="schedule-time">11:30 a.m. - 01:00 p.m.</div>
-                <div class="schedule-event">Demonstration and hands-on session on BCI by Dr. Priyanka Jain & team, C-DAC, MeitY, Venue B003 R&D</div>
-              </div>
-              <div class="schedule-row">
-                <div class="schedule-time">01:00 p.m. - 02:00 p.m.</div>
-                <div class="schedule-event">Lunch</div>
-              </div>
-              <div class="schedule-row">
-                <div class="schedule-time">02:00 p.m. - 05:00 p.m.</div>
-                <div class="schedule-event">Workshop on New Media Design with Interactive Arts by Dr. Gowdham Prabhakar, IIT Kanpur, Venue B003 R&D</div>
-              </div>
-              <div class="schedule-row">
-                <div class="schedule-time">05:00 p.m. - 05:15 p.m.</div>
-                <div class="schedule-event">Tea</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Thursday -->
-        <div class="accordion-item" data-accordion-item>
-          <button class="accordion-header" id="schedule-trigger-4" aria-controls="schedule-content-4" aria-expanded="false" data-accordion-trigger>
-            <span class="accordion-header-title font-krona">Thursday, 24th July 2025: Photography & Videography/Storytelling</span>
-            <span class="accordion-header-arrow">&#9660;</span>
-          </button>
-          <div class="accordion-content" id="schedule-content-4" role="region" aria-labelledby="schedule-trigger-4" data-accordion-content>
-            <div class="accordion-content-inner">
-              <div class="schedule-row">
-                <div class="schedule-time">09:30 a.m. - 11:00 a.m.</div>
-                <div class="schedule-event">Session on Photography by Mr. Bijendra Kumar, Sr. Photographer NGMA & Mr. Anoop Ratn, Venue B105 R&D</div>
-              </div>
-              <div class="schedule-row">
-                <div class="schedule-time">11:00 a.m. - 11:30 a.m.</div>
-                <div class="schedule-event">Tea</div>
-              </div>
-              <div class="schedule-row">
-                <div class="schedule-time">11:30 a.m. - 01:00 p.m.</div>
-                <div class="schedule-event">Session on Photography by Mr. Bijendra Kumar, Sr. Photographer NGMA & Mr. Anoop Ratn, Venue B105 R&D</div>
-              </div>
-              <div class="schedule-row">
-                <div class="schedule-time">01:00 p.m. - 02:00 p.m.</div>
-                <div class="schedule-event">Lunch</div>
-              </div>
-              <div class="schedule-row">
-                <div class="schedule-time">02:00 p.m. - 05:00 p.m.</div>
-                <div class="schedule-event">Workshop on mobile Photography and videography by Mr.Aman Samuel, Venue B105 R&D</div>
-              </div>
-              <div class="schedule-row">
-                <div class="schedule-time">05:00 p.m. - 05:15 p.m.</div>
-                <div class="schedule-event">Tea</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Friday -->
-        <div class="accordion-item" data-accordion-item>
-          <button class="accordion-header" id="schedule-trigger-5" aria-controls="schedule-content-5" aria-expanded="false" data-accordion-trigger>
-            <span class="accordion-header-title font-krona">Friday, 25th July 2025: XR & AR, VR & MR</span>
-            <span class="accordion-header-arrow">&#9660;</span>
-          </button>
-          <div class="accordion-content" id="schedule-content-5" role="region" aria-labelledby="schedule-trigger-5" data-accordion-content>
-            <div class="accordion-content-inner">
-              <div class="schedule-row">
-                <div class="schedule-time">09:30 a.m. - 11:00 a.m.</div>
-                <div class="schedule-event">Session on Multisensory Interface Technologies: From Design to Evaluation by Dr. Madhan Kumar Vasudevan, Venue B003 R&D</div>
-              </div>
-              <div class="schedule-row">
-                <div class="schedule-time">11:00 a.m. - 11:30 a.m.</div>
-                <div class="schedule-event">Tea</div>
-              </div>
-              <div class="schedule-row">
-                <div class="schedule-time">11:30 a.m. - 01:00 p.m.</div>
-                <div class="schedule-event">Session by Dr.Anmol Srivastava, Venue B003 R&D</div>
-              </div>
-              <div class="schedule-row">
-                <div class="schedule-time">01:00 p.m. - 02:00 p.m.</div>
-                <div class="schedule-event">Lunch</div>
-              </div>
-              <div class="schedule-row">
-                <div class="schedule-time">02:00 p.m. - 03:00 p.m.</div>
-                <div class="schedule-event">Closing Ceremony and Certificate Distribution by Prof. Bose, Venue B003 R&D</div>
-              </div>
-              <div class="schedule-row">
-                <div class="schedule-time">03:00 p.m. - 03:15 p.m.</div>
-                <div class="schedule-event">Tea</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <p class="schedule-note">
-        *Please Note: To receive a certificate, you must attend at least 75% of the sessions. This ensures that you gain the maximum benefit from the program and can apply what you learn effectively.
-      </p>
-    </div>
-  </section>
-
-  <!-- 11. What to Bring Section -->
-  <section id="bring" class="section-bg-slate">
-    <div class="container">
-      <div class="bring-grid">
-        <div class="bring-left">
-          <h2 class="section-title font-krona line-height-tight">What to Bring</h2>
-          <p class="acc-desc">
-            Stay ready for the 5-day DSS event and secure entry to IIIT Delhi with these essentials.
-          </p>
-        </div>
-        <div class="bring-right">
-          <div class="bring-card card">
-            <span class="bring-card-icon">&#128100;</span>
-            <div class="bring-card-text">A valid Government-issued Photo ID</div>
-          </div>
-          <div class="bring-card card">
-            <span class="bring-card-icon">&#128187;</span>
-            <div class="bring-card-text">A laptop with its charger</div>
-          </div>
-          <div class="bring-card card">
-            <span class="bring-card-icon">&#129380;</span>
-            <div class="bring-card-text">Your Own Water bottle</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 12. Keynote Speaker Section -->
-  <section id="Speakers" class="section-bg-white">
-    <div class="container text-center">
-      <h2 class="section-title font-krona mb-12">Keynote Speaker</h2>
-      
-      <div class="keynote-card">
-        <div class="keynote-img-container">
-          <img src="assets/images/speakers/Srinivasan-Venkataraman.png" alt="Dr. Srinivasan Venkataraman" class="keynote-img" />
-        </div>
-        <div class="keynote-info">
-          <h3 class="keynote-name font-krona">Dr. Srinivasan Venkataraman</h3>
-          <p class="keynote-role">Associate Professor, Department of Design, Indian Institute of Technology Delhi (IIT Delhi)</p>
-          <p class="keynote-bio">
-            Dr. Srinivasan Venkataraman broad interests are in Design Creativity and Innovation, Design Theory and Methodology, Design Cognition, Design Thinking, Virtual Reality, Engineering Design and New Product Development.
-          </p>
-          <div class="keynote-socials">
-            <a href="https://www.linkedin.com/in/00vsrinivasan/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
-              <!-- SVG LinkedIn -->
-              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
-                <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 13. Workshops & Guest Speakers Section -->
-  <section id="Events" class="events-section-container">
-    <div class="container text-center">
-      <h2 class="section-title font-krona mb-4 text-dark">Workshops & Sessions</h2>
-      <h3 class="font-krona guest-subtitle">by Guest Speakers</h3>
-      
-      <div class="speakers-list">
-        <!-- Speaker 1 -->
-        <div class="speaker-row-card">
-          <div class="speaker-img-container">
-            <img src="assets/images/speakers/CDAC.png" alt="Dr. Priyanka Jain" class="speaker-img" />
-          </div>
-          <div class="speaker-details">
-            <div class="speaker-info">
-              <h4 class="speaker-name font-krona">Session on Vivan : A Vibrant Brain by Dr.Priyanka Jain</h4>
-              <p class="speaker-role">Scientist F (Associate Director) & Head of the Neuro-Cognitive AI and XR Group, C-DAC, MeitY, Government of India.</p>
-              <p class="speaker-bio">
-                We are honored to host Dr. Priyanka Jain, Scientist "F" (Associate Director) and Head of the Neuro-Cognitive AI & XR Group at C-DAC, MeitY, Government of India, for a special session titled "Vivan: A Vibrant Brain." With 24 years of AI research experience, recipient of the AWSAR-2019 Award, and leader of cutting-edge, government-funded projects in brain, computer interfaces and behavioral analysis, Dr. Jain has delivered over 25 invited talks, authored 73 research publications, secured 14 copyrights, and contributed to bilingual scientific literature. She will be accompanied by Mr. Tanmay Jain and Mr. Krishan Sharma for this insightful exploration of the human mind.
+            <div class="schedule-right-col">
+              <p class="schedule-desc-editorial">
+                The full schedule for Design Summer School 2026 is currently being finalized. Prepare for three days of
+                immersive, expert-led workshops, keynote talks, and hands-on design challenges. Detailed session
+                timelines and speaker assignments will be announced shortly.
               </p>
             </div>
-            <div class="speaker-visit">
-              <strong>Visit:</strong>
-              <a href="https://www.linkedin.com/in/priyanka-jain-phd-23308114/" target="_blank" rel="noopener noreferrer" class="speaker-link">Official LinkedIn Profile</a>
+          </div>
+
+          <!-- Futuristic Day Grid Wrapper -->
+          <div class="schedule-grid-wrapper">
+            <div class="schedule-coming-soon-grid">
+
+              <!-- Day 1 Card -->
+              <div class="schedule-day-card">
+                <div class="card-crosshair ch-tl"></div>
+                <div class="card-crosshair ch-tr"></div>
+                <div class="card-crosshair ch-bl"></div>
+                <div class="card-crosshair ch-br"></div>
+
+                <!-- Content to be blurred -->
+                <div class="schedule-day-card-content">
+                  <div class="schedule-day-meta">[ DAY 01 // TRACK 01 ]</div>
+                  <h3 class="schedule-day-number font-krona">DAY 01</h3>
+                  <h4 class="schedule-day-theme font-krona">Design Thinking & Ideation Processes</h4>
+
+                  <div class="schedule-topics-list">
+                    <span class="topic-tag">User Research Sprints</span>
+                    <span class="topic-tag">Empathy Mapping</span>
+                    <span class="topic-tag">AI-Augmented Prototyping</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Day 2 Card -->
+              <div class="schedule-day-card">
+                <div class="card-crosshair ch-tl"></div>
+                <div class="card-crosshair ch-tr"></div>
+                <div class="card-crosshair ch-bl"></div>
+                <div class="card-crosshair ch-br"></div>
+
+                <!-- Content to be blurred -->
+                <div class="schedule-day-card-content">
+                  <div class="schedule-day-meta">[ DAY 02 // TRACK 02 ]</div>
+                  <h3 class="schedule-day-number font-krona">DAY 02</h3>
+                  <h4 class="schedule-day-theme font-krona">Creative Thinking, Sensing & HC AI</h4>
+
+                  <div class="schedule-topics-list">
+                    <span class="topic-tag">Character Sketching</span>
+                    <span class="topic-tag">Cognitive HCI</span>
+                    <span class="topic-tag">BCI Interfaces (EEG)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Day 3 Card -->
+              <div class="schedule-day-card">
+                <div class="card-crosshair ch-tl"></div>
+                <div class="card-crosshair ch-tr"></div>
+                <div class="card-crosshair ch-bl"></div>
+                <div class="card-crosshair ch-br"></div>
+
+                <!-- Content to be blurred -->
+                <div class="schedule-day-card-content">
+                  <div class="schedule-day-meta">[ DAY 03 // TRACK 03 ]</div>
+                  <h3 class="schedule-day-number font-krona">DAY 03</h3>
+                  <h4 class="schedule-day-theme font-krona">New Media, Videography & XR Realities</h4>
+
+                  <div class="schedule-topics-list">
+                    <span class="topic-tag">Interactive Arts</span>
+                    <span class="topic-tag">Visual Storytelling</span>
+                    <span class="topic-tag">VR/AR Spaces</span>
+                  </div>
+                </div>
+              </div>
+
             </div>
+
+            <!-- Single group-wide placeholder overlay -->
+            <div class="schedule-grid-overlay">
+              <div class="schedule-grid-overlay-text font-krona">COMING SOON</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4.2. Retrospective Section -->
+      <section id="legacy" class="legacy-section-container">
+        <div class="legacy-header">
+          <div class="legacy-left-col">
+            <div class="legacy-section-label">[ 03 / RETROSPECTIVE ]</div>
+            <h2 class="legacy-title-large">DSS Legacy & Moments.</h2>
+          </div>
+          <div class="legacy-right-col">
+            <p class="legacy-desc-editorial">
+              A visual retrospective of the creative energy from previous Design Summer School editions. Through
+              hands-on making, peer review, and interactive installations, participants transformed concepts into
+              tangible realities.
+            </p>
           </div>
         </div>
 
-        <!-- Speaker 2 -->
-        <div class="speaker-row-card">
-          <div class="speaker-img-container">
-            <img src="assets/images/speakers/Madhan_2024_2.jpg" alt="Dr. Madhan Kumar Vasudevan" class="speaker-img" />
+        <!-- Storytelling Carousel System -->
+        <div class="legacy-carousel-container">
+          <div class="legacy-carousel-controls">
+            <div class="legacy-carousel-indicator">
+              <span class="indicator-mono">[ DRAG OR SCROLL TO EXPLORE ]</span>
+              <div class="indicator-track">
+                <div class="indicator-bar" id="legacy-progress-bar"></div>
+              </div>
+            </div>
+            <div class="legacy-carousel-arrows">
+              <button id="legacy-prev" class="legacy-arrow-btn" aria-label="Scroll left">&#8592;</button>
+              <button id="legacy-next" class="legacy-arrow-btn" aria-label="Scroll right">&#8594;</button>
+            </div>
           </div>
-          <div class="speaker-details">
-            <div class="speaker-info">
-              <h4 class="speaker-name font-krona">Session by Dr.Madhan Kumar Vasudevan</h4>
-              <p class="speaker-role">Assistant Professor, Department of Design, Indian Institute of Technology Roorkee (IITR)</p>
-              <p class="speaker-bio">
-                Dr. Madhan Kumar Vasudevan is Assistant Professor of Design at IIT Roorkee. He leverages haptics, HCI and computational neuroscience, especially affective digital touch, to enrich multisensory interaction and wellbeing. He earned his Ph.D. from IIT Madras, completed a UCL postdoc on an EU-funded contactless-haptics project, and received UCL's Healthy Ageing Challenges Award.
+
+          <div class="legacy-carousel-track" id="legacy-carousel-track">
+            <!-- Panel 1: Day 1 Keynote -->
+            <div class="legacy-story-panel" data-index="0">
+              <div class="panel-image-container">
+                <img src="assets/images/legacy/1.JPG" alt="Opening ceremony and Keynote by Dr. Srinivasan Venkataraman"
+                  loading="lazy" />
+              </div>
+              <div class="panel-info">
+                <div class="panel-meta">[ 2025 // DAY 01 // KEYNOTE ]</div>
+                <h3 class="panel-title">Design Thinking & Ideation</h3>
+                <p class="panel-desc">
+                  The summer school launched with an inspiring opening ceremony and keynote address by Dr. Srinivasan
+                  Venkataraman from IIT Delhi. The talk established the foundations of design theory, creative
+                  cognition, and rapid ideation frameworks.
+                </p>
+                <div class="panel-highlights">
+                  <strong>Key Highlights:</strong> Keynote address, cognitive design paradigms, ideation frameworks
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 2: Day 1 Session -->
+            <div class="legacy-story-panel" data-index="1">
+              <div class="panel-image-container">
+                <img src="assets/images/legacy/2.JPG" alt="Human-Centered Design session with Dr. Richa Gupta"
+                  loading="lazy" />
+              </div>
+              <div class="panel-info">
+                <div class="panel-meta">[ 2025 // DAY 01 // HUMAN-CENTERED DESIGN ]</div>
+                <h3 class="panel-title">HCD & Interactive Research</h3>
+                <p class="panel-desc">
+                  Dr. Richa Gupta from IIT Delhi guided participants through the core principles of Human-Centered
+                  Design. Teams investigated real-world empathy mapping, interactive accessibility, and user-centric
+                  problem definitions.
+                </p>
+                <div class="panel-highlights">
+                  <strong>Key Highlights:</strong> Empathy mapping, accessibility principles, interactive research
+                  methods
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 3: Day 1 Workshop -->
+            <div class="legacy-story-panel" data-index="2">
+              <div class="panel-image-container">
+                <img src="assets/images/legacy/3.JPG" alt="AI tools in design thinking workshop with Mr. Arunesh Singh"
+                  loading="lazy" />
+              </div>
+              <div class="panel-info">
+                <div class="panel-meta">[ 2025 // DAY 01 // AI WORKSHOP ]</div>
+                <h3 class="panel-title">AI in Design Thinking</h3>
+                <p class="panel-desc">
+                  An interactive, hands-on workshop led by Mr. Arunesh Singh of Superlinked. Participants experimented
+                  with state-of-the-art generative AI tools to accelerate design ideation, synthesize user data, and
+                  build initial concept drafts.
+                </p>
+                <div class="panel-highlights">
+                  <strong>Key Highlights:</strong> Generative AI workflows, data synthesis, rapid concept drafting
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 4: Day 2 Session 1 -->
+            <div class="legacy-story-panel" data-index="3">
+              <div class="panel-image-container">
+                <img src="assets/images/legacy/4.JPG" alt="Character sketching session with Mr. Manoj Sinha"
+                  loading="lazy" />
+              </div>
+              <div class="panel-info">
+                <div class="panel-meta">[ 2025 // DAY 02 // VISUAL SKETCHING ]</div>
+                <h3 class="panel-title">Character Sketching & Anatomy</h3>
+                <p class="panel-desc">
+                  Renowned Indian cartoonist Mr. Manoj Sinha introduced the fundamentals of character sketching.
+                  Attendees explored form drafting, facial proportions, and the basic skeletal structures that bring
+                  illustrated characters to life.
+                </p>
+                <div class="panel-highlights">
+                  <strong>Key Highlights:</strong> Anatomy proportions, gesture drawing, pencil drafting techniques
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 5: Day 2 Session 2 -->
+            <div class="legacy-story-panel" data-index="4">
+              <div class="panel-image-container">
+                <img src="assets/images/legacy/5.JPG" alt="Cartooning and visual narrative workshop by Mr. Manoj Sinha"
+                  loading="lazy" />
+              </div>
+              <div class="panel-info">
+                <div class="panel-meta">[ 2025 // DAY 02 // CARTOONING ]</div>
+                <h3 class="panel-title">Visual Narratives & Cartooning</h3>
+                <p class="panel-desc">
+                  A deep dive session with Mr. Manoj Sinha on translating abstract concepts into cartoon strips.
+                  Participants learned how to sequence storyboards, apply humor, and use simple ink line-weight changes
+                  to convey complex expressions.
+                </p>
+                <div class="panel-highlights">
+                  <strong>Key Highlights:</strong> Storyboard sequencing, comedic timing, visual rhythm and expression
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 6: Day 2 Workshop -->
+            <div class="legacy-story-panel" data-index="5">
+              <div class="panel-image-container">
+                <img src="assets/images/legacy/6.JPG"
+                  alt="Design methods of creativity workshop with Dr. Sonal Keshwani" loading="lazy" />
+              </div>
+              <div class="panel-info">
+                <div class="panel-meta">[ 2025 // DAY 02 // CREATIVE METHODS ]</div>
+                <h3 class="panel-title">Design Methods of Creativity</h3>
+                <p class="panel-desc">
+                  Dr. Sonal Keshwani from IISc Bangalore conducted a structured workshop on systematic creative
+                  processes. Teams engaged in cognitive exercises to bypass creative blocks and applied engineering
+                  frameworks to brainstorm solutions.
+                </p>
+                <div class="panel-highlights">
+                  <strong>Key Highlights:</strong> Cognitive mapping, structured brainstorming, creative confidence
+                  building
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 7: Day 3 Session -->
+            <div class="legacy-story-panel" data-index="6">
+              <div class="panel-image-container">
+                <img src="assets/images/legacy/7.JPG" alt="Cognitive HCI and sensing session with Dr. Kalpana Shankhwar"
+                  loading="lazy" />
+              </div>
+              <div class="panel-info">
+                <div class="panel-meta">[ 2025 // DAY 03 // COGNITIVE HCI ]</div>
+                <h3 class="panel-title">Sensing & Cognitive HCI</h3>
+                <p class="panel-desc">
+                  Dr. Kalpana Shankhwar from National Taiwan University presented advanced research on human-computer
+                  interaction and cognitive design. The session focused on the translation of cognitive signals into
+                  intuitive interface designs.
+                </p>
+                <div class="panel-highlights">
+                  <strong>Key Highlights:</strong> Cognitive signal feedback, user experience frameworks, physiological
+                  UX
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 8: Day 3 Demo -->
+            <div class="legacy-story-panel" data-index="7">
+              <div class="panel-image-container">
+                <img src="assets/images/legacy/8.JPG" alt="Live EEG sensing and BCI demo with Dr. Priyanka Jain & Team"
+                  loading="lazy" />
+              </div>
+              <div class="panel-info">
+                <div class="panel-meta">[ 2025 // DAY 03 // BCI INTERFACES ]</div>
+                <h3 class="panel-title">Brain-Computer Interfaces</h3>
+                <p class="panel-desc">
+                  An immersive, live demonstration of Brain-Computer Interfaces (BCI) led by Dr. Priyanka Jain and the
+                  Neuro-Cognitive AI & XR Group from C-DAC, MeitY. Participants conducted live EEG trials and
+                  experienced brainwave-driven feedback loops.
+                </p>
+                <div class="panel-highlights">
+                  <strong>Key Highlights:</strong> Live EEG monitoring, brainwave interaction trials, C-DAC neuro-AI
+                  showcase
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 9: Day 3 Workshop -->
+            <div class="legacy-story-panel" data-index="8">
+              <div class="panel-image-container">
+                <img src="assets/images/legacy/9.JPG"
+                  alt="Projection mapping and interactive media workshop with Dr. Gowdham Prabhakar" loading="lazy" />
+              </div>
+              <div class="panel-info">
+                <div class="panel-meta">[ 2025 // DAY 03 // INTERACTIVE ARTS ]</div>
+                <h3 class="panel-title">New Media Design & Arts</h3>
+                <p class="panel-desc">
+                  Dr. Gowdham Prabhakar from IIT Kanpur led a technical workshop on New Media Design using
+                  TouchDesigner. Attendees built projection mapping setups and designed interactive, audio-reactive
+                  digital installations.
+                </p>
+                <div class="panel-highlights">
+                  <strong>Key Highlights:</strong> TouchDesigner pipelines, projection mapping calibration,
+                  audio-reactive design
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 10: Day 4 Session Part 1 -->
+            <div class="legacy-story-panel" data-index="9">
+              <div class="panel-image-container">
+                <img src="assets/images/legacy/10.JPG"
+                  alt="Fine art photography and framing session with Bijendra Kumar & Anoop Ratn" loading="lazy" />
+              </div>
+              <div class="panel-info">
+                <div class="panel-meta">[ 2025 // DAY 04 // PHOTOGRAPHY ]</div>
+                <h3 class="panel-title">Storytelling & Lens Curation</h3>
+                <p class="panel-desc">
+                  Senior NGMA photographer Mr. Bijendra Kumar and Mr. Anoop Ratn guided participants on depth of field,
+                  visual framing, and camera mechanics. The session explored how camera settings shape narrative
+                  perspectives.
+                </p>
+                <div class="panel-highlights">
+                  <strong>Key Highlights:</strong> Depth of field studies, manual camera settings, rules of composition
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 11: Day 4 Session Part 2 -->
+            <div class="legacy-story-panel" data-index="10">
+              <div class="panel-image-container">
+                <img src="assets/images/legacy/11.JPG"
+                  alt="Light curation and narrative composition with Bijendra Kumar & Anoop Ratn" loading="lazy" />
+              </div>
+              <div class="panel-info">
+                <div class="panel-meta">[ 2025 // DAY 04 // LENS NARRATIVES ]</div>
+                <h3 class="panel-title">Light Curation & Composition</h3>
+                <p class="panel-desc">
+                  Part two of the photography masterclass focused on studio lighting and composition. Mr. Bijendra Kumar
+                  and Mr. Anoop Ratn helped participants build complex visual stories and conducted critique sessions of
+                  peer photo submissions.
+                </p>
+                <div class="panel-highlights">
+                  <strong>Key Highlights:</strong> Studio lighting setups, photographic narratives, peer review
+                  portfolios
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 12: Day 4 Workshop -->
+            <div class="legacy-story-panel" data-index="11">
+              <div class="panel-image-container">
+                <img src="assets/images/legacy/12.JPG"
+                  alt="Mobile videography and photography workshop with Mr. Aman Samuel" loading="lazy" />
+              </div>
+              <div class="panel-info">
+                <div class="panel-meta">[ 2025 // DAY 04 // MOBILE CONTENT ]</div>
+                <h3 class="panel-title">Mobile Photography & Videography</h3>
+                <p class="panel-desc">
+                  An active outdoor workshop led by Mr. Aman Samuel focusing on capturing professional-quality visual
+                  assets using mobile cameras. Attendees learned on-the-go framing, sound capture, and post-production
+                  techniques.
+                </p>
+                <div class="panel-highlights">
+                  <strong>Key Highlights:</strong> Mobile camera controls, audio recording techniques, mobile editing
+                  workflows
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 13: Day 5 Session 1 -->
+            <div class="legacy-story-panel" data-index="12">
+              <div class="panel-image-container">
+                <img src="assets/images/legacy/13.JPG"
+                  alt="Multisensory technologies and haptics session with Dr. Madhan Kumar Vasudevan" loading="lazy" />
+              </div>
+              <div class="panel-info">
+                <div class="panel-meta">[ 2025 // DAY 05 // MULTISENSORY ]</div>
+                <h3 class="panel-title">Multisensory Interface Technologies</h3>
+                <p class="panel-desc">
+                  Dr. Madhan Kumar Vasudevan from IIT Roorkee introduced advanced multisensory interfaces. The session
+                  examined haptic feedback, affective touch, and design evaluation frameworks to build products that
+                  appeal to multiple senses.
+                </p>
+                <div class="panel-highlights">
+                  <strong>Key Highlights:</strong> Haptic feedback setups, affective touch design, multisensory
+                  evaluation
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 14: Day 5 Session 2 -->
+            <div class="legacy-story-panel" data-index="13">
+              <div class="panel-image-container">
+                <img src="assets/images/legacy/14.JPG"
+                  alt="Virtual reality and interaction design session with Dr. Anmol Srivastava" loading="lazy" />
+              </div>
+              <div class="panel-info">
+                <div class="panel-meta">[ 2025 // DAY 05 // VR INTERACTION ]</div>
+                <h3 class="panel-title">VR Systems & Interaction</h3>
+                <p class="panel-desc">
+                  Dr. Anmol Srivastava from IIT Guwahati led a technical session on virtual reality. Participants
+                  explored immersive spaces, calibrated head-mounted displays, and designed interactive haptic feedback
+                  loops in virtual scenes.
+                </p>
+                <div class="panel-highlights">
+                  <strong>Key Highlights:</strong> Unity VR configuration, spatial interaction mapping, haptic device
+                  calibration
+                </div>
+              </div>
+            </div>
+
+          </div>
+      </section>
+
+      <!-- 4.3. Our Mentors Section -->
+      <section id="faculty" class="mentors-section-container">
+        <div class="mentors-blueprint-guides">
+          <div class="mentors-guide-line-v guide-left"></div>
+          <div class="mentors-guide-line-v guide-right"></div>
+        </div>
+        <div class="container">
+          <div class="mentors-header">
+            <div class="mentors-left-col">
+              <div class="mentors-section-label">[ 04 / MENTORS ]</div>
+              <h2 class="mentors-title-large font-krona">Our Mentors</h2>
+            </div>
+            <div class="mentors-right-col">
+              <p class="mentors-desc-editorial">
+                Unleash your creativity and ignite your design passion. Dive into a summer of learning and connection
+                with the industry's leading design experts.
               </p>
             </div>
-            <div class="speaker-visit">
-              <strong>Visit:</strong>
-              <a href="https://iitr.ac.in/Departments/Department%20of%20Design/People/Faculty/101088.html" target="_blank" rel="noopener noreferrer" class="speaker-link">Official IITR Profile</a>
+          </div>
+
+          <div class="mentors-grid">
+            <!-- Mentor 1 -->
+            <div class="mentor-card card">
+              <img src="assets/images/mentors/aman_samuel.jpg" alt="Mr. Aman Samuel" class="mentor-img"
+                loading="lazy" />
+              <h3 class="mentor-name font-krona">Mr. Aman Samuel</h3>
+              <p class="mentor-role">MBA, University of Madras</p>
+            </div>
+            <!-- Mentor 2 -->
+            <div class="mentor-card card">
+              <img src="assets/images/mentors/anmol_srivastav.jpg" alt="Dr. Anmol Srivastava" class="mentor-img"
+                loading="lazy" />
+              <h3 class="mentor-name font-krona">Dr. Anmol Srivastava</h3>
+              <p class="mentor-role">Ph.D, IIT Guwahati</p>
+            </div>
+            <!-- Mentor 3 -->
+            <div class="mentor-card card">
+              <img src="assets/images/mentors/anoopsir.png" alt="Mr. Anoop Ratan" class="mentor-img" loading="lazy" />
+              <h3 class="mentor-name font-krona">Mr. Anoop Ratan</h3>
+              <p class="mentor-role">MFA, Teerthanker Mahaveer University</p>
+            </div>
+            <!-- Mentor 4 -->
+            <div class="mentor-card card">
+              <img src="assets/images/mentors/Jainendra.png" alt="Dr. Jainendra Sukhla" class="mentor-img"
+                loading="lazy" />
+              <h3 class="mentor-name font-krona">Dr. Jainendra Sukhla</h3>
+              <p class="mentor-role">Ph.D, Universitat Rovira i Virgili</p>
+            </div>
+            <!-- Mentor 5 -->
+            <div class="mentor-card card">
+              <img src="assets/images/mentors/Kalpana.png" alt="Dr. Kalpana Shankhwar" class="mentor-img"
+                loading="lazy" />
+              <h3 class="mentor-name font-krona">Dr. Kalpana Shankhwar</h3>
+              <p class="mentor-role">Ph.D, National Taiwan University</p>
+            </div>
+            <!-- Mentor 6 -->
+            <div class="mentor-card card">
+              <img src="assets/images/mentors/Pragma.png" alt="Dr. Pragma Kar" class="mentor-img" loading="lazy" />
+              <h3 class="mentor-name font-krona">Dr. Pragma Kar</h3>
+              <p class="mentor-role">Ph.D, Jadavpur University</p>
+            </div>
+            <!-- Mentor 7 -->
+            <div class="mentor-card card">
+              <img src="assets/images/mentors/richa_gupta.jpg" alt="Dr. Richa Gupta" class="mentor-img"
+                loading="lazy" />
+              <h3 class="mentor-name font-krona">Dr. Richa Gupta</h3>
+              <p class="mentor-role">Ph.D, IIT Delhi</p>
+            </div>
+            <!-- Mentor 8 -->
+            <div class="mentor-card card">
+              <img src="assets/images/mentors/sonal.png" alt="Dr. Sonal Keshwani" class="mentor-img" loading="lazy" />
+              <h3 class="mentor-name font-krona">Dr. Sonal Keshwani</h3>
+              <p class="mentor-role">Ph.D, IISc Bangalore</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <div class="hidden-section">
+        <!-- 5. Our Themes Section -->
+        <section id="themes" class="section-bg-slate themes-section">
+          <div class="container">
+            <div class="themes-grid">
+              <div class="themes-left">
+                <h2 class="section-title font-krona">Our Themes</h2>
+                <blockquote class="themes-quote">
+                  "Design is the silent ambassador of your brand." <br />
+                  <span class="quote-author">- Paul Rand, IBM</span>
+                </blockquote>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdzcs7iO5O46GLZTQEsTrdlL01bOlKWjABINNgGZXlT-YKDSg/viewform"
+                  target="_blank" rel="noopener noreferrer">
+                  <button class="btn btn-primary">REGISTER</button>
+                </a>
+              </div>
+              <div class="themes-right">
+                <!-- Stack of Cards -->
+                <div id="themes-stack" class="themes-stack">
+                  <!-- Card 1 -->
+                  <div class="theme-card card-pos-0 bg-green-300" tabindex="0" role="button"
+                    aria-label="Theme: XR & AR, VR & MR. Press Enter or Space to cycle card.">
+                    <img src="assets/images/themes/4.jpg" alt="XR & AR, VR & MR" class="theme-card-img-circle" />
+                    <h3 class="theme-card-title-custom font-krona">XR & AR, VR & MR</h3>
+                  </div>
+                  <!-- Card 2 -->
+                  <div class="theme-card card-pos-1 bg-pink-400" tabindex="0" role="button"
+                    aria-label="Theme: Creative Thinking & Character Design. Press Enter or Space to cycle card.">
+                    <img src="assets/images/themes/3.jpg" alt="Creative Thinking & Character Design"
+                      class="theme-card-img-circle" />
+                    <h3 class="theme-card-title-custom font-krona">Creative Thinking & Character Design</h3>
+                  </div>
+                  <!-- Card 3 -->
+                  <div class="theme-card card-pos-2 bg-indigo-500 text-white" tabindex="0" role="button"
+                    aria-label="Theme: Photography & Videography/Calligraphy. Press Enter or Space to cycle card.">
+                    <img src="assets/images/themes/1.jpg" alt="Photography & Videography/Calligraphy"
+                      class="theme-card-img-circle" />
+                    <h3 class="theme-card-title-custom font-krona">Photography & Videography/Calligraphy</h3>
+                  </div>
+                  <!-- Card 4 -->
+                  <div class="theme-card card-pos-3 bg-yellow-300" tabindex="0" role="button"
+                    aria-label="Theme: Design Thinking Processes. Press Enter or Space to cycle card.">
+                    <img src="assets/images/themes/2.jpg" alt="Design Thinking Processes"
+                      class="theme-card-img-circle" />
+                    <h3 class="theme-card-title-custom font-krona">Design Thinking Processes</h3>
+                  </div>
+                  <!-- Card 5 -->
+                  <div class="theme-card card-pos-4 bg-blue-300" tabindex="0" role="button"
+                    aria-label="Theme: Sensing & HC AI. Press Enter or Space to cycle card.">
+                    <img src="assets/images/themes/11.jpg" alt="Sensing & HC AI" class="theme-card-img-circle" />
+                    <h3 class="theme-card-title-custom font-krona">Sensing & HC AI</h3>
+                  </div>
+                </div>
+                <div class="themes-indicator-wrapper">
+                  <p class="themes-indicator-text font-krona animate-bounce-horizontal">
+                    Swipe the above cards <span>→</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. Features Section -->
+        <section id="feature" class="section-bg-white">
+          <div class="container">
+            <div class="feature-slider-header">
+              <h2 class="section-title font-krona features-slider-title">
+                We're good. <span class="text-muted">Heres why.</span>
+              </h2>
+              <div class="slider-controls">
+                <button id="btn-prev-feature" class="btn-slider" aria-label="Previous features">&#8592;</button>
+                <button id="btn-next-feature" class="btn-slider" aria-label="Next features">&#8594;</button>
+              </div>
+            </div>
+
+            <div class="feature-slider-container">
+              <div id="feature-track" class="feature-track">
+                <!-- Card 1 -->
+                <div class="feature-card style-light card">
+                  <span class="feature-icon-bg">&#127986;</span> <!-- University/Building -->
+                  <h3 class="font-krona">Leading Institute for HCI</h3>
+                  <div class="feature-desc">India’s Best institute for Human-Computer Interaction (HCI).</div>
+                </div>
+                <!-- Card 2 -->
+                <div class="feature-card style-dark card">
+                  <span class="feature-icon-bg">&#128085;</span> <!-- T-Shirt -->
+                  <h3 class="font-krona">Exclusive Merchandise</h3>
+                  <div class="feature-desc">Get access to premium, program-only merchandise you’ll actually want to wear
+                    and flaunt.</div>
+                </div>
+                <!-- Card 3 -->
+                <div class="feature-card style-light card">
+                  <span class="feature-icon-bg">&#127894;</span> <!-- Award Ribbon -->
+                  <h3 class="font-krona">Certificate of Completion</h3>
+                  <div class="feature-desc">Official certification from IIIT-Delhi after successful participation and
+                    completion of the program.</div>
+                </div>
+                <!-- Card 4 -->
+                <div class="feature-card style-dark card">
+                  <span class="feature-icon-bg">&#9874;</span> <!-- Tools -->
+                  <h3 class="font-krona">Hands-on Workshops</h3>
+                  <div class="feature-desc">Get practical experience through interactive, expert-led workshops designed
+                    to boost your skills.</div>
+                </div>
+                <!-- Card 5 -->
+                <div class="feature-card style-light card">
+                  <span class="feature-icon-bg">&#129309;</span> <!-- Handshake -->
+                  <h3 class="font-krona">Professional Networking</h3>
+                  <div class="feature-desc">Build your network with fellow learners and industry professionals through
+                    social and professional events.</div>
+                </div>
+                <!-- Card 6 -->
+                <div class="feature-card style-dark card">
+                  <span class="feature-icon-bg">&#128640;</span> <!-- Rocket -->
+                  <h3 class="font-krona">Future Opportunities</h3>
+                  <div class="feature-desc">Top performers may be considered for future opportunities and projects at
+                    IIIT-Delhi.</div>
+                </div>
+                <!-- Card 7 -->
+                <div class="feature-card style-light card">
+                  <span class="feature-icon-bg">&#128101;</span> <!-- Users -->
+                  <h3 class="font-krona">1:1 Mentorship</h3>
+                  <div class="feature-desc">Personal mentorship from experts at IIIT-Delhi — India’s leading institute
+                    for Human-Computer Interaction (HCI).</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. Infinite Marquee Classroom Photo Carousel -->
+        <section class="marquee-section">
+          <div class="marquee-container">
+            <div id="marquee-track" class="marquee-track">
+              <div class="marquee-item">
+                <button class="lightbox-trigger" aria-label="Expand image of Classroom 1">
+                  <img src="assets/images/carousel/1.jpg" alt="Classroom 1" />
+                </button>
+              </div>
+              <div class="marquee-item">
+                <button class="lightbox-trigger" aria-label="Expand image of Classroom 4">
+                  <img src="assets/images/carousel/4.jpg" alt="Classroom 4" />
+                </button>
+              </div>
+              <div class="marquee-item">
+                <button class="lightbox-trigger" aria-label="Expand image of Classroom 2">
+                  <img src="assets/images/carousel/2.jpg" alt="Classroom 2" />
+                </button>
+              </div>
+              <div class="marquee-item">
+                <button class="lightbox-trigger" aria-label="Expand image of Classroom 3">
+                  <img src="assets/images/carousel/3.jpg" alt="Classroom 3" />
+                </button>
+              </div>
+              <div class="marquee-item">
+                <button class="lightbox-trigger" aria-label="Expand image of Classroom 8">
+                  <img src="assets/images/carousel/8.jpg" alt="Classroom 8" />
+                </button>
+              </div>
+              <div class="marquee-item">
+                <button class="lightbox-trigger" aria-label="Expand image of Classroom 5">
+                  <img src="assets/images/carousel/5.jpg" alt="Classroom 5" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Classroom photo viewer">
+          <button id="lightbox-close" class="lightbox-close" aria-label="Close photo viewer">&times;</button>
+          <img id="lightbox-img" class="lightbox-content" src="" alt="Lightbox View" />
         </div>
 
-        <!-- Speaker 3 -->
-        <div class="speaker-row-card">
-          <div class="speaker-img-container">
-            <img src="assets/images/speakers/manojSinha.jpeg" alt="Mr. Manoj Sinha" class="speaker-img" />
-          </div>
-          <div class="speaker-details">
-            <div class="speaker-info">
-              <h4 class="speaker-name font-krona">Workshop on Character Design by Mr.Manoj Sinha</h4>
-              <p class="speaker-role">Leading Cartoonists in India</p>
-              <p class="speaker-bio">
-                A cartoonist is a visual artist who specialises in drawing cartoons... There is one such man ,it has been said about him that - "he has got Ink directly from Saraswati Maa", a man with such persona is none other than Manoj Sinha, He started his journey from his native land Ranchi and is presently based in Delhi. working with the Hindustan Times Group, New Delhi.
-              </p>
+        <!-- 8. Swag. Snacks. Vibes. Section -->
+        <section id="merch" class="section-bg-white">
+          <div class="container">
+            <div class="merch-grid">
+              <div class="merch-left">
+                <h2 class="font-krona merch-title">
+                  <span class="text-gradient">DSS 2025</span><br />
+                  Swag. Snacks. Vibes.
+                </h2>
+                <p class="acc-desc mt-6">
+                  Celebrate DSS 2025 with exclusive merchandise and a curated selection of gourmet food, designed for
+                  developers, innovators, and visionaries alike.
+                </p>
+                <a href="https://forms.gle/qyqmH4FjPRoHP4iw8" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-primary mt-6">Register</a>
+              </div>
+              <div class="merch-right">
+                <div class="merch-img-container">
+                  <img src="assets/images/Merch.png" alt="DSS 2025 merch preview" class="merch-img" />
+                </div>
+              </div>
             </div>
-            <div class="speaker-visit">
-              <strong>Visit:</strong>
-              <a href="https://www.cartoonistmanojsinha.com/" target="_blank" rel="noopener noreferrer" class="speaker-link">Official Portfolio</a>
-            </div>
           </div>
-        </div>
+        </section>
 
-        <!-- Speaker 4 -->
-        <div class="speaker-row-card">
-          <div class="speaker-img-container">
-            <img src="assets/images/speakers/gowdhamPrabhakar.jpeg" alt="Dr. Gowdham Prabhakar" class="speaker-img" />
-          </div>
-          <div class="speaker-details">
-            <div class="speaker-info">
-              <h4 class="speaker-name font-krona">New Media Design with Interactive Arts by Dr.Gowdham Prabhakar</h4>
-              <p class="speaker-role">Assistant Professor, Indian Institute of Technology Kanpur (IIT Kanpur)</p>
-              <p class="speaker-bio">
-                Explore real-time interactive media with TouchDesigner in this hands-on workshop on New Media Design. Learn to create immersive experiences using sensors, projection, audio-reactive visuals, and generative design; ideal for artists, designers, coders, and storytellers interested in interactive installations and digital scenography.
-                <br/><br/>
-                Dr.Gowdham Prabhakar, Assistant Professor at IIT Kanpur and head of HIVE Lab, researches HCI, robotics, and new media art. With a Ph.D. from IISc and postdoc at UCL, his work focuses on embodied, multisensory tech and includes collaborations with firms like Kirloskar and Faurecia.
-              </p>
-            </div>
-            <div class="speaker-visit">
-              <strong>Visit:</strong>
-              <a href="https://home.iitk.ac.in/~gowdhampg/" target="_blank" rel="noopener noreferrer" class="speaker-link">HIVE Lab | IIT Kanpur</a>
-            </div>
-          </div>
-        </div>
+        <!-- 9. Accommodations Available Section -->
+        <section id="acc" class="section-bg-slate">
+          <div class="container">
+            <div class="acc-grid">
+              <div>
+                <h2 class="section-title font-krona acc-title">Accommodations<br />Available</h2>
+                <p class="acc-subtitle">Accommodation Form and Fees need to be paid separately.</p>
+                <p class="acc-desc">
+                  Shared accommodation is available for the duration of the summer school, charged separately.<br />
+                  Here is a step-by-step guide in PDF format. <br />
+                  <a href="https://drive.google.com/file/d/1PDuvJ-mXDMT047d-T_pj-bF61cK5UfSE/view?usp=sharing"
+                    target="_blank" rel="noopener noreferrer" class="acc-link">
+                    You can view or download the document.
+                  </a><br /><br />
+                  To avail the same, apply by 28th June 2025 on the portal
+                </p>
 
-        <!-- Speaker 5 -->
-        <div class="speaker-row-card">
-          <div class="speaker-img-container">
-            <img src="assets/images/speakers/aruneshSingh.jpeg" alt="Mr. Arunesh Singh" class="speaker-img" />
-          </div>
-          <div class="speaker-details">
-            <div class="speaker-info">
-              <h4 class="speaker-name font-krona">Use of AI tools in Design thinking by Mr.Arunesh Singh</h4>
-              <p class="speaker-role">Design & Growth at Superlinked</p>
-              <p class="speaker-bio">
-                Arunesh brings 6.5+ years of design experience across startups and labs including Superlinked, Taxmann, and Weave Lab (IIIT-Delhi). His work blends HCI, UX, and AI-powered interfaces, making complex tech intuitive.
-              </p>
-            </div>
-            <div class="speaker-visit">
-              <strong>Visit:</strong>
-              <a href="https://www.linkedin.com/in/aruneshsingh99/" target="_blank" rel="noopener noreferrer" class="speaker-link">LinkedIn Profile</a>
-            </div>
-          </div>
-        </div>
+                <a href="https://payments.iiitd.edu.in/pg/fees/pg.html" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-primary">
+                  Pay for Accommodations
+                </a>
 
-        <!-- Speaker 6 -->
-        <div class="speaker-row-card">
-          <div class="speaker-img-container">
-            <img src="assets/images/speakers/Brijendra.png" alt="Mr. Bijendra Kumar" class="speaker-img" />
-          </div>
-          <div class="speaker-details">
-            <div class="speaker-info">
-              <h4 class="speaker-name font-krona">Visual Storytelling & Fine Arts by Mr. Bijendra Kumar</h4>
-              <p class="speaker-role">Sr. Photographer, NGMA | Artist & Educator</p>
-              <p class="speaker-bio">
-                Bijendra Kumar is a seasoned visual artist and senior photographer at the National Gallery of Modern Art. With 15+ years across photography, painting, and animation, his work has been showcased in 60+ exhibitions and honored with awards like the CCRT Junior Fellowship and Lalit Kala Akademi accolades.
-              </p>
+                <div class="acc-list">
+                  <div class="acc-list-item">1. <span>Accommodation is available for a limited time only.</span></div>
+                  <div class="acc-list-item">2. <span>Kindly note that accommodation can only be availed between July 20
+                      to July 26, 2025.</span></div>
+                  <div class="acc-list-item">3. <span>Accommodation charges are not included in the registration
+                      fees.</span></div>
+                  <div class="acc-list-item">4. <span>Accommodation does not include the cost of food.</span></div>
+                  <div class="acc-list-item">5. <span>Seats for accommodation are limited and will be allotted on a
+                      first-come, first-served basis.</span></div>
+                  <div class="acc-list-item">6. <span>Once paid, accommodation fees are strictly non-refundable.</span>
+                  </div>
+                  <div class="acc-list-item">7. <span>Please plan and register accordingly to secure your stay.</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="acc-pdf-viewer">
+                  <iframe src="assets/pdfs/acc.pdf" title="Accommodation PDF Guide"
+                    referrerpolicy="strict-origin-when-cross-origin" loading="lazy"></iframe>
+                </div>
+              </div>
             </div>
-            <div class="speaker-visit">
-              <strong>Visit:</strong>
-              <a href="https://www.behance.net/bijendrart" target="_blank" rel="noopener noreferrer" class="speaker-link">Behance Portfolio</a>
+          </div>
+        </section>
+
+
+
+        <!-- 11. What to Bring Section -->
+        <section id="bring" class="section-bg-slate">
+          <div class="container">
+            <div class="bring-grid">
+              <div class="bring-left">
+                <h2 class="section-title font-krona line-height-tight">What to Bring</h2>
+                <p class="acc-desc">
+                  Stay ready for the 5-day DSS event and secure entry to IIIT Delhi with these essentials.
+                </p>
+              </div>
+              <div class="bring-right">
+                <div class="bring-card card">
+                  <span class="bring-card-icon">&#128100;</span>
+                  <div class="bring-card-text">A valid Government-issued Photo ID</div>
+                </div>
+                <div class="bring-card card">
+                  <span class="bring-card-icon">&#128187;</span>
+                  <div class="bring-card-text">A laptop with its charger</div>
+                </div>
+                <div class="bring-card card">
+                  <span class="bring-card-icon">&#129380;</span>
+                  <div class="bring-card-text">Your Own Water bottle</div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </section>
+
+        <!-- 12. Keynote Speaker Section -->
+        <section id="Speakers" class="section-bg-white">
+          <div class="container text-center">
+            <h2 class="section-title font-krona mb-12">Keynote Speaker</h2>
+
+            <div class="keynote-card">
+              <div class="keynote-img-container">
+                <img src="assets/images/speakers/Srinivasan-Venkataraman.png" alt="Dr. Srinivasan Venkataraman"
+                  class="keynote-img" />
+              </div>
+              <div class="keynote-info">
+                <h3 class="keynote-name font-krona">Dr. Srinivasan Venkataraman</h3>
+                <p class="keynote-role">Associate Professor, Department of Design, Indian Institute of Technology Delhi
+                  (IIT Delhi)</p>
+                <p class="keynote-bio">
+                  Dr. Srinivasan Venkataraman broad interests are in Design Creativity and Innovation, Design Theory and
+                  Methodology, Design Cognition, Design Thinking, Virtual Reality, Engineering Design and New Product
+                  Development.
+                </p>
+                <div class="keynote-socials">
+                  <a href="https://www.linkedin.com/in/00vsrinivasan/" target="_blank" rel="noopener noreferrer"
+                    class="social-link" title="LinkedIn">
+                    <!-- SVG LinkedIn -->
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1.5em"
+                      width="1.5em" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z">
+                      </path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 13. Workshops & Guest Speakers Section -->
+        <section id="Events" class="events-section-container">
+          <div class="container text-center">
+            <h2 class="section-title font-krona mb-4 text-dark">Workshops & Sessions</h2>
+            <h3 class="font-krona guest-subtitle">by Guest Speakers</h3>
+
+            <div class="speakers-list">
+              <!-- Speaker 1 -->
+              <div class="speaker-row-card">
+                <div class="speaker-img-container">
+                  <img src="assets/images/speakers/CDAC.png" alt="Dr. Priyanka Jain" class="speaker-img" />
+                </div>
+                <div class="speaker-details">
+                  <div class="speaker-info">
+                    <h4 class="speaker-name font-krona">Session on Vivan : A Vibrant Brain by Dr.Priyanka Jain</h4>
+                    <p class="speaker-role">Scientist F (Associate Director) & Head of the Neuro-Cognitive AI and XR
+                      Group, C-DAC, MeitY, Government of India.</p>
+                    <p class="speaker-bio">
+                      We are honored to host Dr. Priyanka Jain, Scientist "F" (Associate Director) and Head of the
+                      Neuro-Cognitive AI & XR Group at C-DAC, MeitY, Government of India, for a special session titled
+                      "Vivan: A Vibrant Brain." With 24 years of AI research experience, recipient of the AWSAR-2019
+                      Award, and leader of cutting-edge, government-funded projects in brain, computer interfaces and
+                      behavioral analysis, Dr. Jain has delivered over 25 invited talks, authored 73 research
+                      publications, secured 14 copyrights, and contributed to bilingual scientific literature. She will
+                      be accompanied by Mr. Tanmay Jain and Mr. Krishan Sharma for this insightful exploration of the
+                      human mind.
+                    </p>
+                  </div>
+                  <div class="speaker-visit">
+                    <strong>Visit:</strong>
+                    <a href="https://www.linkedin.com/in/priyanka-jain-phd-23308114/" target="_blank"
+                      rel="noopener noreferrer" class="speaker-link">Official LinkedIn Profile</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Speaker 2 -->
+              <div class="speaker-row-card">
+                <div class="speaker-img-container">
+                  <img src="assets/images/speakers/Madhan_2024_2.jpg" alt="Dr. Madhan Kumar Vasudevan"
+                    class="speaker-img" />
+                </div>
+                <div class="speaker-details">
+                  <div class="speaker-info">
+                    <h4 class="speaker-name font-krona">Session by Dr.Madhan Kumar Vasudevan</h4>
+                    <p class="speaker-role">Assistant Professor, Department of Design, Indian Institute of Technology
+                      Roorkee (IITR)</p>
+                    <p class="speaker-bio">
+                      Dr. Madhan Kumar Vasudevan is Assistant Professor of Design at IIT Roorkee. He leverages haptics,
+                      HCI and computational neuroscience, especially affective digital touch, to enrich multisensory
+                      interaction and wellbeing. He earned his Ph.D. from IIT Madras, completed a UCL postdoc on an
+                      EU-funded contactless-haptics project, and received UCL's Healthy Ageing Challenges Award.
+                    </p>
+                  </div>
+                  <div class="speaker-visit">
+                    <strong>Visit:</strong>
+                    <a href="https://iitr.ac.in/Departments/Department%20of%20Design/People/Faculty/101088.html"
+                      target="_blank" rel="noopener noreferrer" class="speaker-link">Official IITR Profile</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Speaker 3 -->
+              <div class="speaker-row-card">
+                <div class="speaker-img-container">
+                  <img src="assets/images/speakers/manojSinha.jpeg" alt="Mr. Manoj Sinha" class="speaker-img" />
+                </div>
+                <div class="speaker-details">
+                  <div class="speaker-info">
+                    <h4 class="speaker-name font-krona">Workshop on Character Design by Mr.Manoj Sinha</h4>
+                    <p class="speaker-role">Leading Cartoonists in India</p>
+                    <p class="speaker-bio">
+                      A cartoonist is a visual artist who specialises in drawing cartoons... There is one such man ,it
+                      has been said about him that - "he has got Ink directly from Saraswati Maa", a man with such
+                      persona is none other than Manoj Sinha, He started his journey from his native land Ranchi and is
+                      presently based in Delhi. working with the Hindustan Times Group, New Delhi.
+                    </p>
+                  </div>
+                  <div class="speaker-visit">
+                    <strong>Visit:</strong>
+                    <a href="https://www.cartoonistmanojsinha.com/" target="_blank" rel="noopener noreferrer"
+                      class="speaker-link">Official Portfolio</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Speaker 4 -->
+              <div class="speaker-row-card">
+                <div class="speaker-img-container">
+                  <img src="assets/images/speakers/gowdhamPrabhakar.jpeg" alt="Dr. Gowdham Prabhakar"
+                    class="speaker-img" />
+                </div>
+                <div class="speaker-details">
+                  <div class="speaker-info">
+                    <h4 class="speaker-name font-krona">New Media Design with Interactive Arts by Dr.Gowdham Prabhakar
+                    </h4>
+                    <p class="speaker-role">Assistant Professor, Indian Institute of Technology Kanpur (IIT Kanpur)</p>
+                    <p class="speaker-bio">
+                      Explore real-time interactive media with TouchDesigner in this hands-on workshop on New Media
+                      Design. Learn to create immersive experiences using sensors, projection, audio-reactive visuals,
+                      and generative design; ideal for artists, designers, coders, and storytellers interested in
+                      interactive installations and digital scenography.
+                      <br /><br />
+                      Dr.Gowdham Prabhakar, Assistant Professor at IIT Kanpur and head of HIVE Lab, researches HCI,
+                      robotics, and new media art. With a Ph.D. from IISc and postdoc at UCL, his work focuses on
+                      embodied, multisensory tech and includes collaborations with firms like Kirloskar and Faurecia.
+                    </p>
+                  </div>
+                  <div class="speaker-visit">
+                    <strong>Visit:</strong>
+                    <a href="https://home.iitk.ac.in/~gowdhampg/" target="_blank" rel="noopener noreferrer"
+                      class="speaker-link">HIVE Lab | IIT Kanpur</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Speaker 5 -->
+              <div class="speaker-row-card">
+                <div class="speaker-img-container">
+                  <img src="assets/images/speakers/aruneshSingh.jpeg" alt="Mr. Arunesh Singh" class="speaker-img" />
+                </div>
+                <div class="speaker-details">
+                  <div class="speaker-info">
+                    <h4 class="speaker-name font-krona">Use of AI tools in Design thinking by Mr.Arunesh Singh</h4>
+                    <p class="speaker-role">Design & Growth at Superlinked</p>
+                    <p class="speaker-bio">
+                      Arunesh brings 6.5+ years of design experience across startups and labs including Superlinked,
+                      Taxmann, and Weave Lab (IIIT-Delhi). His work blends HCI, UX, and AI-powered interfaces, making
+                      complex tech intuitive.
+                    </p>
+                  </div>
+                  <div class="speaker-visit">
+                    <strong>Visit:</strong>
+                    <a href="https://www.linkedin.com/in/aruneshsingh99/" target="_blank" rel="noopener noreferrer"
+                      class="speaker-link">LinkedIn Profile</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Speaker 6 -->
+              <div class="speaker-row-card">
+                <div class="speaker-img-container">
+                  <img src="assets/images/speakers/Brijendra.png" alt="Mr. Bijendra Kumar" class="speaker-img" />
+                </div>
+                <div class="speaker-details">
+                  <div class="speaker-info">
+                    <h4 class="speaker-name font-krona">Visual Storytelling & Fine Arts by Mr. Bijendra Kumar</h4>
+                    <p class="speaker-role">Sr. Photographer, NGMA | Artist & Educator</p>
+                    <p class="speaker-bio">
+                      Bijendra Kumar is a seasoned visual artist and senior photographer at the National Gallery of
+                      Modern Art. With 15+ years across photography, painting, and animation, his work has been
+                      showcased in 60+ exhibitions and honored with awards like the CCRT Junior Fellowship and Lalit
+                      Kala Akademi accolades.
+                    </p>
+                  </div>
+                  <div class="speaker-visit">
+                    <strong>Visit:</strong>
+                    <a href="https://www.behance.net/bijendrart" target="_blank" rel="noopener noreferrer"
+                      class="speaker-link">Behance Portfolio</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 15. FAQ Section -->
+        <section id="faq" class="section-bg-white">
+          <div class="container">
+            <h2 class="section-title font-krona text-center mb-12 faq-title-header">Frequently asked</h2>
+
+            <div class="faq-container" data-accordion-group>
+              <!-- Q1 -->
+              <div class="accordion-item" data-accordion-item>
+                <button class="accordion-header" id="faq-trigger-1" aria-controls="faq-content-1" aria-expanded="false"
+                  data-accordion-trigger>
+                  <span class="accordion-header-title font-krona faq-accordion-title">Is the program open to beginners,
+                    or do I need prior design experience?</span>
+                  <span class="accordion-header-arrow">&#9660;</span>
+                </button>
+                <div class="accordion-content" id="faq-content-1" role="region" aria-labelledby="faq-trigger-1"
+                  data-accordion-content>
+                  <div class="accordion-content-inner faq-answer">
+                    The Design Summer School is open to everyone whether you're a beginner or already have some design
+                    experience. No prior background is required to attend.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q2 -->
+              <div class="accordion-item" data-accordion-item>
+                <button class="accordion-header" id="faq-trigger-2" aria-controls="faq-content-2" aria-expanded="false"
+                  data-accordion-trigger>
+                  <span class="accordion-header-title font-krona faq-accordion-title">What is the registration
+                    deadline?</span>
+                  <span class="accordion-header-arrow">&#9660;</span>
+                </button>
+                <div class="accordion-content" id="faq-content-2" role="region" aria-labelledby="faq-trigger-2"
+                  data-accordion-content>
+                  <div class="accordion-content-inner faq-answer">
+                    The registration deadline for DSS'25 is 30th June 2025.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q3 -->
+              <div class="accordion-item" data-accordion-item>
+                <button class="accordion-header" id="faq-trigger-3" aria-controls="faq-content-3" aria-expanded="false"
+                  data-accordion-trigger>
+                  <span class="accordion-header-title font-krona faq-accordion-title">What is the minimum attendance
+                    requirement to receive a certificate?</span>
+                  <span class="accordion-header-arrow">&#9660;</span>
+                </button>
+                <div class="accordion-content" id="faq-content-3" role="region" aria-labelledby="faq-trigger-3"
+                  data-accordion-content>
+                  <div class="accordion-content-inner faq-answer">
+                    To receive a certificate, you must attend at least 75% of the sessions. This ensures that you gain
+                    the maximum benefit from the program and can apply what you learn effectively.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q4 -->
+              <div class="accordion-item" data-accordion-item>
+                <button class="accordion-header" id="faq-trigger-4" aria-controls="faq-content-4" aria-expanded="false"
+                  data-accordion-trigger>
+                  <span class="accordion-header-title font-krona faq-accordion-title">Can I attend only specific
+                    sessions, or is it mandatory to attend the entire program?</span>
+                  <span class="accordion-header-arrow">&#9660;</span>
+                </button>
+                <div class="accordion-content" id="faq-content-4" role="region" aria-labelledby="faq-trigger-4"
+                  data-accordion-content>
+                  <div class="accordion-content-inner faq-answer">
+                    Registration is required for the entire program, and there is no scope for partial registrations for
+                    individual sessions. However, once registered, you are free to attend sessions based on your
+                    interest and availability.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q5 -->
+              <div class="accordion-item" data-accordion-item>
+                <button class="accordion-header" id="faq-trigger-5" aria-controls="faq-content-5" aria-expanded="false"
+                  data-accordion-trigger>
+                  <span class="accordion-header-title font-krona faq-accordion-title">What is the Design Summer School,
+                    and who is it for?</span>
+                  <span class="accordion-header-arrow">&#9660;</span>
+                </button>
+                <div class="accordion-content" id="faq-content-5" role="region" aria-labelledby="faq-trigger-5"
+                  data-accordion-content>
+                  <div class="accordion-content-inner faq-answer">
+                    The Design Summer School is a 5-days event where the attendees get to participate in interesting
+                    talks, lectures, and workshops on various aspects of design. DSS is curated for students, industry
+                    professionals, designers, artists, and anyone interested in exploring design and its allied fields.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
       </div>
-    </div>
-  </section>
-
-  <!-- 14. Our Mentors Section -->
-  <section id="faculty" class="mentors-section-container">
-    <div class="container text-center">
-      <h2 class="section-title font-krona">Our Mentors</h2>
-      <p class="mentors-subtitle">
-        Unleash Your Creativity and Ignite Your Design Passion: Dive into a Summer of Learning and Connection with the Industry's Leading Design Experts
-      </p>
-      
-      <div class="mentors-grid">
-        <!-- Mentor 1 -->
-        <div class="mentor-card card">
-          <img src="assets/images/mentors/aman_samuel.jpg" alt="Mr. Aman Samuel" class="mentor-img" />
-          <h3 class="mentor-name font-krona">Mr. Aman Samuel</h3>
-          <p class="mentor-role">MBA, University of Madras</p>
-        </div>
-        <!-- Mentor 2 -->
-        <div class="mentor-card card">
-          <img src="assets/images/mentors/anmol_srivastav.jpg" alt="Dr. Anmol Srivastava" class="mentor-img" />
-          <h3 class="mentor-name font-krona">Dr. Anmol Srivastava</h3>
-          <p class="mentor-role">Ph.D, IIT Guwahati</p>
-        </div>
-        <!-- Mentor 3 -->
-        <div class="mentor-card card">
-          <img src="assets/images/mentors/anoopsir.png" alt="Mr. Anoop Ratan" class="mentor-img" />
-          <h3 class="mentor-name font-krona">Mr. Anoop Ratan</h3>
-          <p class="mentor-role">MFA, Teerthanker Mahaveer University</p>
-        </div>
-        <!-- Mentor 4 -->
-        <div class="mentor-card card">
-          <img src="assets/images/mentors/Jainendra.png" alt="Dr. Jainendra Sukhla" class="mentor-img" />
-          <h3 class="mentor-name font-krona">Dr. Jainendra Sukhla</h3>
-          <p class="mentor-role">Ph.D, Universitat Rovira i Virgili</p>
-        </div>
-        <!-- Mentor 5 -->
-        <div class="mentor-card card">
-          <img src="assets/images/mentors/Kalpana.png" alt="Dr. Kalpana Shankhwar" class="mentor-img" />
-          <h3 class="mentor-name font-krona">Dr. Kalpana Shankhwar</h3>
-          <p class="mentor-role">Ph.D, National Taiwan University</p>
-        </div>
-        <!-- Mentor 6 -->
-        <div class="mentor-card card">
-          <img src="assets/images/mentors/Pragma.png" alt="Dr. Pragma Kar" class="mentor-img" />
-          <h3 class="mentor-name font-krona">Dr. Pragma Kar</h3>
-          <p class="mentor-role">Ph.D, Jadavpur University</p>
-        </div>
-        <!-- Mentor 7 -->
-        <div class="mentor-card card">
-          <img src="assets/images/mentors/Rajiv.png" alt="Dr. Rajiv Ratn Shah" class="mentor-img" />
-          <h3 class="mentor-name font-krona">Dr. Rajiv Ratn Shah</h3>
-          <p class="mentor-role">Ph.D, National University of Singapore</p>
-        </div>
-        <!-- Mentor 8 -->
-        <div class="mentor-card card">
-          <img src="assets/images/mentors/richa_gupta.jpg" alt="Dr. Richa Gupta" class="mentor-img" />
-          <h3 class="mentor-name font-krona">Dr. Richa Gupta</h3>
-          <p class="mentor-role">Ph.D, IIT Delhi</p>
-        </div>
-        <!-- Mentor 9 -->
-        <div class="mentor-card card">
-          <img src="assets/images/mentors/sonal.png" alt="Dr. Sonal Keshwani" class="mentor-img" />
-          <h3 class="mentor-name font-krona">Dr. Sonal Keshwani</h3>
-          <p class="mentor-role">Ph.D, IISc Bangalore</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 15. FAQ Section -->
-  <section id="faq" class="section-bg-white">
-    <div class="container">
-      <h2 class="section-title font-krona text-center mb-12 faq-title-header">Frequently asked</h2>
-      
-      <div class="faq-container" data-accordion-group>
-        <!-- Q1 -->
-        <div class="accordion-item" data-accordion-item>
-          <button class="accordion-header" id="faq-trigger-1" aria-controls="faq-content-1" aria-expanded="false" data-accordion-trigger>
-            <span class="accordion-header-title font-krona faq-accordion-title">Is the program open to beginners, or do I need prior design experience?</span>
-            <span class="accordion-header-arrow">&#9660;</span>
-          </button>
-          <div class="accordion-content" id="faq-content-1" role="region" aria-labelledby="faq-trigger-1" data-accordion-content>
-            <div class="accordion-content-inner faq-answer">
-              The Design Summer School is open to everyone whether you're a beginner or already have some design experience. No prior background is required to attend.
-            </div>
-          </div>
-        </div>
-
-        <!-- Q2 -->
-        <div class="accordion-item" data-accordion-item>
-          <button class="accordion-header" id="faq-trigger-2" aria-controls="faq-content-2" aria-expanded="false" data-accordion-trigger>
-            <span class="accordion-header-title font-krona faq-accordion-title">What is the registration deadline?</span>
-            <span class="accordion-header-arrow">&#9660;</span>
-          </button>
-          <div class="accordion-content" id="faq-content-2" role="region" aria-labelledby="faq-trigger-2" data-accordion-content>
-            <div class="accordion-content-inner faq-answer">
-              The registration deadline for DSS'25 is 30th June 2025.
-            </div>
-          </div>
-        </div>
-
-        <!-- Q3 -->
-        <div class="accordion-item" data-accordion-item>
-          <button class="accordion-header" id="faq-trigger-3" aria-controls="faq-content-3" aria-expanded="false" data-accordion-trigger>
-            <span class="accordion-header-title font-krona faq-accordion-title">What is the minimum attendance requirement to receive a certificate?</span>
-            <span class="accordion-header-arrow">&#9660;</span>
-          </button>
-          <div class="accordion-content" id="faq-content-3" role="region" aria-labelledby="faq-trigger-3" data-accordion-content>
-            <div class="accordion-content-inner faq-answer">
-              To receive a certificate, you must attend at least 75% of the sessions. This ensures that you gain the maximum benefit from the program and can apply what you learn effectively.
-            </div>
-          </div>
-        </div>
-
-        <!-- Q4 -->
-        <div class="accordion-item" data-accordion-item>
-          <button class="accordion-header" id="faq-trigger-4" aria-controls="faq-content-4" aria-expanded="false" data-accordion-trigger>
-            <span class="accordion-header-title font-krona faq-accordion-title">Can I attend only specific sessions, or is it mandatory to attend the entire program?</span>
-            <span class="accordion-header-arrow">&#9660;</span>
-          </button>
-          <div class="accordion-content" id="faq-content-4" role="region" aria-labelledby="faq-trigger-4" data-accordion-content>
-            <div class="accordion-content-inner faq-answer">
-              Registration is required for the entire program, and there is no scope for partial registrations for individual sessions. However, once registered, you are free to attend sessions based on your interest and availability.
-            </div>
-          </div>
-        </div>
-
-        <!-- Q5 -->
-        <div class="accordion-item" data-accordion-item>
-          <button class="accordion-header" id="faq-trigger-5" aria-controls="faq-content-5" aria-expanded="false" data-accordion-trigger>
-            <span class="accordion-header-title font-krona faq-accordion-title">What is the Design Summer School, and who is it for?</span>
-            <span class="accordion-header-arrow">&#9660;</span>
-          </button>
-          <div class="accordion-content" id="faq-content-5" role="region" aria-labelledby="faq-trigger-5" data-accordion-content>
-            <div class="accordion-content-inner faq-answer">
-              The Design Summer School is a 5-days event where the attendees get to participate in interesting talks, lectures, and workshops on various aspects of design. DSS is curated for students, industry professionals, designers, artists, and anyone interested in exploring design and its allied fields.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 16. Google Map Section -->
-  <section id="map-section" class="section-bg-slate pb-0">
-    <div class="container">
-      <h2 class="section-title font-krona text-center mb-12">Where to find us ?</h2>
-      <div class="footer-map-container" id="map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.7957355134567!2d77.27060127529043!3d28.5458587880118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3e564daac1d%3A0x2c582e340e7bc556!2sIndraprastha%20Institute%20of%20Information%20Technology%20Delhi!5e0!3m2!1sen!2sin!4v1743186565396!5m2!1sen!2sin" width="100%" height="450" class="border-0" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin allow-popups" allow="geolocation 'none'; camera 'none'; microphone 'none'"></iframe>
-      </div>
-    </div>
-  </section>
-  </div>
   </main>
 
   <!-- 17. Footer -->
   <footer>
+    <div class="footer-institutional-strip">
+      <div class="footer-logo-wrapper">
+        <img src="assets/logos/HCD_Logo.png" alt="Human Centered Design (HCD) Logo" class="footer-inst-logo logo-hcd" />
+      </div>
+    </div>
+
+    <!-- Google Map in Footer -->
+    <div class="footer-map-section" id="location">
+      <div class="footer-map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.7957355134567!2d77.27060127529043!3d28.5458587880118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3e564daac1d%3A0x2c582e340e7bc556!2sIndraprastha%20Institute%20of%20Information%20Technology%20Delhi!5e0!3m2!1sen!2sin!4v1743186565396!5m2!1sen!2sin"
+          width="100%" height="100%" class="border-0" allowfullscreen="" loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin allow-popups"
+          allow="geolocation 'none'; camera 'none'; microphone 'none'"></iframe>
+      </div>
+    </div>
+
     <div class="footer-top">
       <div class="footer-column">
         <a href="/" class="nav-logo-text">DESIGN SUMMER SCHOOL</a>
@@ -1053,20 +1357,26 @@
         <h3>Quick Links</h3>
         <a href="#home">Home</a>
         <a href="#about">About us</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#legacy">Past Sessions</a>
+        <a href="#faculty">Mentors</a>
       </div>
       <div class="footer-column">
         <h3>Follow Us</h3>
         <div class="footer-socials">
-          <a class="footer-social-link" href="https://www.linkedin.com/company/hcdiiitd/posts/?feedView=all" target="_blank" rel="noopener noreferrer">
+          <a class="footer-social-link" href="https://www.linkedin.com/company/hcdiiitd/posts/?feedView=all"
+            target="_blank" rel="noopener noreferrer">
             <span>LinkedIn</span>
           </a>
-          <a class="footer-social-link" href="https://www.facebook.com/hcdiiitd/" target="_blank" rel="noopener noreferrer">
+          <a class="footer-social-link" href="https://www.facebook.com/hcdiiitd/" target="_blank"
+            rel="noopener noreferrer">
             <span>Facebook</span>
           </a>
           <a class="footer-social-link" href="https://x.com/hcdiiitd?lang=en" target="_blank" rel="noopener noreferrer">
             <span>Twitter</span>
           </a>
-          <a class="footer-social-link" href="https://www.instagram.com/hcdiiitd" target="_blank" rel="noopener noreferrer">
+          <a class="footer-social-link" href="https://www.instagram.com/hcdiiitd" target="_blank"
+            rel="noopener noreferrer">
             <span>Instagram</span>
           </a>
         </div>
@@ -1085,4 +1395,5 @@
   <!-- JS Logic -->
   <script src="scripts/index.js"></script>
 </body>
+
 </html>
