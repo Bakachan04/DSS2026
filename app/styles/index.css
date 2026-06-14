@@ -761,6 +761,10 @@ header {
 }
 
 /* Sliding hover nav links */
+.mobile-only-cta {
+  display: none;
+}
+
 .nav-link {
   height: 30px;
   overflow: hidden;
@@ -1003,6 +1007,7 @@ section {
   max-width: 1152px;
   /* max-w-6xl */
   margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
 .section-title {
@@ -2252,6 +2257,17 @@ footer {
   }
 
   .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .nav-register-btn {
+    display: none;
+  }
+
+  .theme-toggle-label-left,
+  .theme-toggle-label-right {
     display: none;
   }
 
@@ -2260,7 +2276,7 @@ footer {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 70px;
+    top: 100%;
     left: 0;
     width: 100%;
     background-color: var(--color-bg-white);
@@ -2269,6 +2285,23 @@ footer {
     border-bottom: 1px solid var(--color-border);
     gap: 1.25rem;
     align-items: flex-start;
+    z-index: 9999;
+  }
+
+  .mobile-only-cta {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    text-align: center;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #3b82f6 0%, #6366f1 50%, #818cf8 100%);
+    color: #ffffff !important;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    box-shadow: var(--shadow-md);
   }
 
   .themes-grid {
@@ -2315,6 +2348,10 @@ footer {
 
   .section-title {
     font-size: 2rem;
+  }
+
+  .acc-pdf-viewer {
+    height: 350px;
   }
 
   .merch-grid {
@@ -3943,9 +3980,14 @@ body::after {
   }
 
   .hero-left-content {
-    align-items: flex-start;
+    align-items: center;
     text-align: center;
     margin-top: 0;
+    width: 100%;
+  }
+
+  .hero-institutional-strip {
+    align-items: center;
   }
 
   .hero-subtitle-soon {
@@ -3984,24 +4026,24 @@ body::after {
 
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     line-height: 1.1;
   }
 
   .hero-right-visual {
-    max-width: 340px;
-    height: 340px;
+    max-width: 85vw;
+    height: 85vw;
   }
 }
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 2.75rem;
+    font-size: 2.35rem;
   }
 
   .hero-right-visual {
-    max-width: 290px;
-    height: 290px;
+    max-width: 85vw;
+    height: 85vw;
   }
 
   .pane-front {
@@ -4010,6 +4052,27 @@ body::after {
 
   .pane-back {
     padding: 0.65rem 0.85rem;
+  }
+
+  .workshop-date-day {
+    font-size: 1.85rem;
+  }
+  .workshop-date-separator {
+    font-size: 1.6rem;
+  }
+  .workshop-date-year {
+    font-size: 1.5rem;
+  }
+  .workshop-date-label {
+    font-size: 0.85rem;
+  }
+
+  .nav-logo-text-dss {
+    font-size: 0;
+  }
+  .nav-logo-text-dss::after {
+    content: "DSS";
+    font-size: 1.15rem;
   }
 }
 
@@ -4101,6 +4164,7 @@ body::after {
   cursor: grab;
   user-select: none;
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 .legacy-carousel-track::-webkit-scrollbar {
