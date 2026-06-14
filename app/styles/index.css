@@ -4721,4 +4721,168 @@ body::after {
     letter-spacing: 0.18em;
   }
 }
+
+/* --- MOBILE PORTRAIT AND TABLET RESPONSIVENESS OVERRIDES --- */
+
+/* Responsive breakpoints for clean spacing and layout rhythm */
+@media (max-width: 1024px) {
+  .nav-link {
+    height: auto;
+    padding: 0.5rem 0;
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Section Spacing Adjustments */
+  .about-section-container,
+  .schedule-section-container,
+  .legacy-section-container,
+  .mentors-section-container {
+    padding: 4.5rem 0;
+  }
+
+  /* Consistent Title Scaling */
+  .about-title-large,
+  .schedule-title-large,
+  .legacy-title-large,
+  .mentors-title-large {
+    font-size: 2.0rem;
+    line-height: 1.2;
+  }
+
+  /* Section Header Grid Spacing & Margins */
+  .about-columns,
+  .schedule-header,
+  .legacy-header,
+  .mentors-header {
+    gap: 1.5rem;
+    padding: 0 1.5rem;
+  }
+  
+  .mentors-header {
+    margin-bottom: 2.5rem;
+  }
+
+  /* Mentors Grid padding issue */
+  .mentors-grid {
+    padding: 0;
+    gap: 1.5rem;
+  }
+
+  /* Schedule Grid Overlay fit when stacked */
+  .schedule-grid-overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Footer Bottom Spacing and padding */
+  footer {
+    padding: 3.5rem 1.5rem 2.5rem 1.5rem;
+  }
+  
+  .footer-top {
+    gap: 2.0rem;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Header Logo shortening to fit logo, theme switch and hamburger on small screens */
+  .nav-logo-text-dss {
+    font-size: 0;
+  }
+  .nav-logo-text-dss::after {
+    content: "DSS";
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Hide hero title line breaks on mobile so text flows naturally */
+  .hero-title br {
+    display: none;
+  }
+
+  /* Retrospective Carousel Controls Stacking */
+  .legacy-carousel-controls {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .legacy-carousel-indicator {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .indicator-track {
+    width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra Spacing Compactness for small phones */
+  .about-section-container,
+  .schedule-section-container,
+  .legacy-section-container,
+  .mentors-section-container {
+    padding: 3.5rem 0;
+  }
+
+  /* Typography Sizing for portrait mobile */
+  .about-title-large,
+  .schedule-title-large,
+  .legacy-title-large,
+  .mentors-title-large {
+    font-size: 1.65rem;
+  }
+
+  .about-desc-editorial,
+  .schedule-desc-editorial,
+  .legacy-desc-editorial,
+  .mentors-desc-editorial {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Carousel Card sizing & margins */
+  .legacy-story-panel {
+    padding: 1.25rem;
+    gap: 1.25rem;
+    flex: 0 0 88%;
+  }
+
+  .panel-title {
+    font-size: 1.35rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .panel-desc {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .panel-highlights {
+    font-size: 0.8rem;
+    padding-left: 0.75rem;
+  }
+
+  .panel-meta {
+    margin-bottom: 0.75rem;
+  }
+
+  /* Mentor Card internal padding */
+  .mentor-card {
+    padding: 1.5rem 1rem;
+  }
+
+  /* Schedule Cards Padding */
+  .schedule-day-card {
+    padding: 2.0rem 1.25rem;
+  }
+}
 
