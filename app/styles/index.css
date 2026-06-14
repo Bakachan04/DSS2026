@@ -2228,7 +2228,7 @@ footer {
   .footer-map-section {
     margin: 2rem auto 3rem auto;
   }
-  
+
   .footer-map-container {
     height: 250px;
     border-radius: 16px;
@@ -2675,7 +2675,7 @@ button.lightbox-close {
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem;
-  margin-top: 0;
+  margin-top: -1.5rem;
   margin-bottom: 1.25rem;
   padding-left: 0;
 }
@@ -4057,12 +4057,15 @@ body::after {
   .workshop-date-day {
     font-size: 1.85rem;
   }
+
   .workshop-date-separator {
     font-size: 1.6rem;
   }
+
   .workshop-date-year {
     font-size: 1.5rem;
   }
+
   .workshop-date-label {
     font-size: 0.85rem;
   }
@@ -4070,6 +4073,7 @@ body::after {
   .nav-logo-text-dss {
     font-size: 0;
   }
+
   .nav-logo-text-dss::after {
     content: "DSS";
     font-size: 1.15rem;
@@ -4734,6 +4738,12 @@ body::after {
 }
 
 @media (max-width: 768px) {
+  /* Hero Layout upward adjustments */
+  .hero-layout-container {
+    padding: 5.5rem 1.5rem 2.0rem 1.5rem !important;
+    gap: 2.5rem !important;
+  }
+
   /* Section Spacing Adjustments */
   .about-section-container,
   .schedule-section-container,
@@ -4759,7 +4769,7 @@ body::after {
     gap: 1.5rem;
     padding: 0 1.5rem;
   }
-  
+
   .mentors-header {
     margin-bottom: 2.5rem;
   }
@@ -4782,17 +4792,19 @@ body::after {
   footer {
     padding: 3.5rem 1.5rem 2.5rem 1.5rem;
   }
-  
+
   .footer-top {
     gap: 2.0rem;
   }
 }
 
 @media (max-width: 600px) {
+
   /* Header Logo shortening to fit logo, theme switch and hamburger on small screens */
   .nav-logo-text-dss {
     font-size: 0;
   }
+
   .nav-logo-text-dss::after {
     content: "DSS";
     font-size: 1.15rem;
@@ -4800,6 +4812,7 @@ body::after {
 }
 
 @media (max-width: 576px) {
+
   /* Hide hero title line breaks on mobile so text flows naturally */
   .hero-title br {
     display: none;
@@ -4824,6 +4837,12 @@ body::after {
 }
 
 @media (max-width: 480px) {
+  /* Hero Layout upward adjustments for portrait mobile */
+  .hero-layout-container {
+    padding: 4.5rem 1.25rem 1.5rem 1.25rem !important;
+    gap: 2.0rem !important;
+  }
+
   /* Extra Spacing Compactness for small phones */
   .about-section-container,
   .schedule-section-container,
@@ -4950,7 +4969,7 @@ body::after {
 
   .hero-inst-logo {
     height: auto !important;
-    max-height: 38px !important;
+    max-height: 50px !important;
     max-width: 80% !important;
     object-fit: contain !important;
   }
@@ -5048,4 +5067,3 @@ body::after {
     border-radius: 12px !important;
   }
 }
-
