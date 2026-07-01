@@ -4004,7 +4004,7 @@ body::after {
   }
 
   .hero {
-    min-height: calc(100vh - 58px);
+    min-height: calc(100vh - 120px);
   }
 
   .hero-title {
@@ -4012,7 +4012,7 @@ body::after {
   }
 
   .hero-right-visual {
-    margin-top: 5.5rem;
+    margin-top: 3.5rem;
     max-width: 85vw;
     height: 85vw;
   }
